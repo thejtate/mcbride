@@ -1,0 +1,768 @@
+<?php
+
+/**
+ * @file
+ * mcbride custom functionnality.
+ */
+define('CLINIC_PAYMENT_NID', 96);
+define('CLINIC_PAYMENT_ACCOUNT', 'billingoffice@mcbrideclinic.com');
+
+define('HOSPITAL_PAYMENT_NID', 162);
+define('HOSPITAL_PAYMENT_ACCOUNT', 'billingoffice@mcboh.com');
+define('NODEQUE_HOMEPAGE_SLIDER', 5);
+define('NODEQUE_LOCATIONS', 2);
+
+module_load_include("inc", "mcbride_custom", "includes/mcbride_custom.blocks");
+
+/**
+ * Implements hook_init()
+ */
+function mcbride_custom_init() {
+  $args = arg();
+  if (
+      $args[0] == 'taxonomy'
+      && isset($args[1]) && $args['1'] == 'term'
+      && isset($args[2]) && is_numeric($args[2])
+      && !isset($args[3])
+  ) {
+    $tid = $args[2];
+    $term = taxonomy_term_load($tid);
+    if ($term->vocabulary_machine_name == 'location') {
+      $nid = mcbride_custom_get_location_nid_by_location_term($tid);
+
+      if ($nid) {
+        drupal_goto('node/' . $nid);
+      }
+    }
+  }
+  drupal_add_css('.tabledrag-toggle-weight{  display: none; }', 'inline');
+}
+
+/**
+ *
+ * Implementation of hook_form_alter().
+ */
+function mcbride_custom_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  switch ($form_id) {
+    case 'system_site_information_settings':
+      $form['site_information']['social_icons_fields'] = array(
+        '#type' => 'fieldset',
+        '#title' => 'Social icons',
+        'social_icons_facebook' => array(
+          '#type' => 'textfield',
+          '#title' => 'Facebook',
+          '#default_value' => variable_get('social_icons_facebook'),
+          '#maxlength' => 255,
+        ),
+        'social_icons_twitter' => array(
+          '#type' => 'textfield',
+          '#title' => 'Twitter',
+          '#default_value' => variable_get('social_icons_twitter')
+          ));
+      $form['site_information']['footer-logo-link'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Footer Left logo link'),
+        '#default_value' => variable_get('footer-logo-link', ''),
+        '#size' => 80,
+        '#maxlength' => 128,
+      );
+      $form['site_information']['copyright'] = array(
+        '#type' => 'textarea',
+        '#title' => 'Copyright',
+        '#default_value' => variable_get('copyright'),
+        '#maxlength' => 255,
+      );
+      $form['site_information']['calltoaction'] = array(
+        '#type' => 'textarea',
+        '#title' => 'Call to Action',
+        '#default_value' => variable_get('calltoaction'),
+        '#maxlength' => 255,
+      );
+      $form['site_information']['mcbride_custom_footer_file'] = array(
+        '#type' => 'fieldset',
+        '#title' => 'Footer file',
+        'mcbride_custom_footer_file_fid' => array(
+          '#title' => t('File'),
+          '#type' => 'managed_file',
+          '#default_value' => variable_get('mcbride_custom_footer_file_fid', ''),
+          '#upload_location' => 'public://',
+        ),
+        'mcbride_custom_footer_file_title' => array(
+          '#type' => 'textfield',
+          '#title' => 'Title',
+          '#default_value' => variable_get('mcbride_custom_footer_file_title', '')
+        ));
+      $form['#submit'][] = 'system_site_information_settings_submit';
+      break;
+    case 'webform_client_form_46':
+
+      // don't show for mobile version
+      $m = mobile_tools_is_mobile_device();
+      if (isset($m['type']) && $m['type'] != 'desktop') {
+        drupal_set_message(t("Job application form does not work on mobile or tablet devices, please access it from a computer"));
+        drupal_goto("<front>");
+      }
+
+      // added custom validation for change warnings
+      $form['#validate'][] = "mcbride_custom_webform_client_form_46_validate";
+
+
+      $form['submitted']['employment_information']['type_of_employment_desired_other']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][type_of_employment_desired]"]' => array(
+            'value' => 'other',
+          ),
+        ),
+      );
+
+      $form['submitted']['employment_information']['job_fair_referral']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][referral_source]"]' => array(
+            'value' => 'job_fair',
+          ),
+        ),
+      );
+
+      $form['submitted']['employment_information']['referral_source_website']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][referral_source]"]' => array(
+            'value' => 'web_site',
+          ),
+        ),
+      );
+
+      $form['submitted']['employment_information']['employee_referral']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][referral_source]"]' => array(
+            'value' => 'employee_referal',
+          ),
+        ),
+      );
+
+      $form['submitted']['employment_information']['school']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][referral_source]"]' => array(
+            'value' => 'school',
+          ),
+        ),
+      );
+
+      $form['submitted']['employment_information']['other']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[employment_information][referral_source]"]' => array(
+            'value' => 'other',
+          ),
+        ),
+      );
+
+      $form['submitted']['applicant_information']['if_yes_please_explain']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[applicant_information][have_you_ever_been_convicted]"]' => array(
+            'value' => 'yes',
+          ),
+        ),
+      );
+
+//      $form['submitted']['applicant_information']['employed_in_mcbride']['#states'] = array(
+//        'visible' => array(
+//          ':input[name="submitted[applicant_information][have_you_been_employed_here_before]"]' => array(
+//            'value' => 'yes',
+//          ),
+//        ),
+//      );
+
+      $form['submitted']['applicant_information']['employed_in_mcbride']['give_dates']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[applicant_information][have_you_been_employed_here_before]"]' => array(
+            'value' => 'yes',
+          ),
+        ),
+      );
+
+      $form['submitted']['applicant_information']['employed_in_mcbride']['employed_before_location']['#states'] = array(
+        'visible' => array(
+          ':input[name="submitted[applicant_information][have_you_been_employed_here_before]"]' => array(
+            'value' => 'yes',
+          ),
+        ),
+      );
+
+      $form['actions']['reset'] = array(
+        '#markup' => '<input id="reset" type="reset" value="Clear application" class="form-submit form-submit-reset"/>',
+        '#weight' => 1000,
+      );
+
+      $form['#submit'][] = 'mcbride_custom_employment_form_submit';
+
+      if (isset($_SESSION['employment_form_submitted']) && $_SESSION['employment_form_submitted']) {
+        $_SESSION['employment_form_submitted'] = FALSE;
+        drupal_add_library('system', 'ui.dialog');
+        drupal_add_library('system', 'effects.explode');
+        drupal_add_library('system', 'effects.slide');
+        drupal_add_js(array('mcbride_custom' => array('show_success_employment_popup' => TRUE)), 'setting');
+      }
+
+
+      break;
+    case 'webform_client_form_186':
+      $form['#submit'][] = 'mcbride_custom_mailing_form_submit';
+
+      if (isset($_SESSION['mailing_form_submitted']) && $_SESSION['mailing_form_submitted']) {
+        $_SESSION['mailing_form_submitted'] = FALSE;
+        drupal_add_library('system', 'ui.dialog');
+        drupal_add_library('system', 'effects.explode');
+        drupal_add_library('system', 'effects.slide');
+        drupal_add_js(array('mcbride_custom' => array('show_success_mailing_popup' => TRUE)), 'setting');
+      }
+      $required = ' *';
+      foreach (element_children($form['submitted']) as $key) {
+        $title = $form['submitted'][$key]['#title'];
+        if ($form['submitted'][$key]['#required'])
+          $title .= $required;
+        $form['submitted'][$key]['#attributes'] = array('title' => $title, 'class' => array('watermarkit'));
+      }
+
+      break;
+    case 'webform_client_form_94':
+      $form['submitted']['name_of_physician_seen']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['name_of_physician_seen']['#suffix'] = '</div>';
+      $form['submitted']['location_visited']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['location_visited']['#suffix'] = '</div>';
+      break;
+    case 'webform_client_form_92':
+      $form['submitted']['prefered_time']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['prefered_time']['#suffix'] = '</div>';
+
+      $form['submitted']['physician']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['physician']['#suffix'] = '</div>';
+
+      $form['submitted']['body_part']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['body_part']['#suffix'] = '</div>';
+      $form['submitted']['how_did_you_hear_about_mcbride']['#prefix'] = '<div class="form-item form-item-select">';
+      $form['submitted']['how_did_you_hear_about_mcbride']['#suffix'] = '</div>';
+      $form['actions']['submit']['#prefix'] = '<div class="button-wrapper">';
+      $form['actions']['submit']['#suffix'] = '</div>';
+      break;
+    case 'webform_client_form_162':
+    case 'webform_client_form_96':
+      $form['submitted']['account_number']['#theme_wrappers'] = array();
+      //adding titles for watermark displaying
+      $form['submitted']['date_of_birth']['month']['#attributes'] = array(
+        'title' => 'MM',
+        'class' => array(
+          'watermarkit',
+          'search'));
+      $form['submitted']['date_of_birth']['day']['#attributes'] = array(
+        'title' => 'DD',
+        'class' => array(
+          'watermarkit',
+          'search'));
+      $form['submitted']['date_of_birth']['year']['#attributes'] = array(
+        'title' => 'YYYY',
+        'class' => array(
+          'form-year',
+          'watermarkit',
+          'search'));
+      $form['submitted']['patient_name']['patient_name_first']['#attributes'] = array(
+        'title' => 'First',
+        'class' => array(
+          'watermarkit',
+          'search'));
+      $form['submitted']['patient_name']['patient_name_last']['#attributes'] = array(
+        'title' => 'Last',
+        'class' => array(
+          'watermarkit',
+          'search'));
+      $form['#submit'][] = 'mcbride_custom_webform_paypal_submit';
+      $summit_id = array_search("webform_paypal_submit", $form['#submit']);
+      if (isset($form['#submit'][$summit_id])) {
+        unset($form['#submit'][$summit_id]);
+      }
+      /*
+        $webform_components = $form_state['webform']['component_tree']['children'];
+        foreach ($webform_components as $key => $value) {
+        if ($value['type'] == 'paypal') {
+        $form['actions']['submit']['#value'] = t('Pay Now');
+        $form['actions']['submit']['#theme_wrappers'] = array("image_button");
+        $form['actions']['submit']['#button_type'] = "submit";
+        $form['actions']['submit']['#src'] = mcbride_custom_paypal_button_url();
+        $form['#submit'][] = 'webform_paypal_submit';
+        }
+        } */
+
+      drupal_add_library('system', 'ui.datepicker');
+      drupal_add_js(drupal_get_path('module', 'clientside_validation') . '/jquery-validate/jquery.validate.min.js');
+      drupal_add_js(drupal_get_path('module', 'mcbride_custom') . '/js/mcbride_custom.payment.js');
+//      drupal_add_js(drupal_get_path('module', 'mcbride_custom') . '/js/lib/jquery.maskMoney.min.js');
+      drupal_add_js(drupal_get_path('module', 'mcbride_custom') . '/js/lib/jquery.mask.min.js');
+      drupal_add_js(drupal_get_path('module', 'mcbride_custom') . '/js/lib/moment.min.js');
+
+      break;
+    case 'header_config_view_page_node_form':
+      array_push($form['#submit'], 'mcbride_custom_header_config_view_page_node_submit');
+    default:
+      break;
+  }
+  //hide some form items for manager user
+  if (in_array('manager', $user->roles)) {
+    switch ($form_id) {
+      case 'system_site_information_settings':
+        $form['error_page']['#access'] = FALSE;
+        $form['front_page']['#access'] = FALSE;
+        $form['site_information']['site_slogan']['#access'] = FALSE;
+        break;
+      case 'menu_edit_item':
+        $form['expanded']['#access'] = FALSE;
+        $form['parent']['#access'] = FALSE;
+        $form['weight']['#access'] = FALSE;
+        break;
+      case 'common_page_node_form':
+        $form['menu']['enabled']['#default_value'] = TRUE;
+        $form['menu']['link']['weight']['#access'] = FALSE;
+        unset($form['menu']['link']['parent']['#options']['main-menu:0']);
+        break;
+      case 'nodequeue_arrange_subqueue_form_5':
+      case 'nodequeue_arrange_subqueue_form_2':
+      case 'nodequeue_arrange_subqueue_form_4':
+      case 'nodequeue_arrange_subqueue_form_3':
+        $form['actions']['shuffle']['#access'] = FALSE;
+        $form['actions']['reverse']['#access'] = FALSE;
+        $form['actions']['clear']['#access'] = FALSE;
+        $form['add']['#access'] = FALSE;
+        break;
+    }
+  }
+}
+
+/**
+ * System settings submit.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function system_site_information_settings_submit($form, &$form_state) {
+  if ($form_state['values']['mcbride_custom_footer_file_fid'] != 0) {
+    $file = file_load($form_state['values']['mcbride_custom_footer_file_fid']);
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+
+    file_usage_add($file, 'mcbride_custom', 'footer_file', 1);
+
+    variable_set('mcbride_custom_footer_file_fid', $file->fid);
+    drupal_set_message(t('File @file_name was uploaded and saved with an ID of @fid and will be displayed using title @title.',
+      array(
+        '@file_name' => $file->filename,
+        '@fid' => $file->fid,
+        '@title' => $form_state['values']['mcbride_custom_footer_file_title'],
+      )
+    ));
+  }
+  elseif ($form_state['values']['mcbride_custom_footer_file_fid'] == 0) {
+    $fid = variable_get('mcbride_custom_footer_file_fid', FALSE);
+    $file = $fid ? file_load($fid) : FALSE;
+    if ($file) {
+      file_usage_delete($file, 'mcbride_custom', 'footer_file', 1);
+      file_delete($file);
+    }
+
+    variable_set('mcbride_custom_footer_file_fid', FALSE);
+    drupal_set_message(t('File @file_name was removed.', array('@file_name' => $file->filename)));
+  }
+
+  variable_set('mcbride_custom_footer_file_title', $form_state['values']['mcbride_custom_footer_file_title']);
+}
+
+/**
+ * Custom form validation
+ *
+ * @param $form
+ * @param $form_state
+ * @return bool
+ */
+function mcbride_custom_webform_client_form_46_validate($form, &$form_state) {
+  drupal_get_messages();
+  $errors = form_get_errors();
+  $new_errors = "";
+  $other_errors = array();
+  $checked_str = " field is required.";
+
+
+  if (!empty($errors) && is_array($errors)) {
+    foreach ($errors as $value) {
+      if (strpos($value, $checked_str)) {
+        $new_errors .= '<div class="mcbride-custom-error"> - ' . str_replace($checked_str, "", $value) . '</div>';
+      }
+      else {
+        $other_errors[] = $value;
+      }
+    }
+  }
+
+
+  if (!empty($new_errors)) {
+    $new_errors = t("Fields are required: ") . "<br/><br/>" . $new_errors . "<br/><br/>";
+    drupal_set_message($new_errors, "error");
+  }
+
+  if (!empty($other_errors)) {
+    foreach ($other_errors as $message) {
+      drupal_set_message($message, "error");
+    }
+  }
+
+  return (!empty($new_errors) || !empty($other_errors)) ? FALSE : TRUE;
+}
+
+/**
+ * Implementation of hook_webform_select_options_info().
+ * See webform/webform_hooks.php for further information on this hook in the Webform API.
+ */
+function mcbride_custom_webform_select_options_info() {
+  $items = array();
+  $items['physician'] = array(
+    'title' => t('Physician'),
+    'options callback' => 'mcbride_custom_options_physician'
+  );
+  $items['physician_rate'] = array(
+    'title' => t('Physician Rate'),
+    'options callback' => 'mcbride_custom_options_physician_rate'
+  );
+  $items['rate'] = array(
+    'title' => t('Rate'),
+    'options callback' => 'mcbride_custom_options_rate'
+  );
+  return $items;
+}
+
+/**
+ * Build an options list for use by webforms.
+ */
+function mcbride_custom_options_rate() {
+  $options = array(
+    '5' => '5',
+    '4' => '4',
+    '3' => '3',
+    '2' => '2',
+    '1' => '1',
+    '0' => t('NA'),
+  );
+  return $options;
+}
+
+/**
+ * Build an options list for use by webforms.
+ */
+function mcbride_custom_options_physician() {
+  $options = array();
+  $values = views_get_view_result('physician', 'block');
+  $options['first_available'] = t('CHOOSE A PHYSICIAN');
+  foreach ($values as $key => $item) {
+    $index = preg_replace('/[^a-z]/', '_', strtolower($item->node_title));
+    $options[$index] = $item->node_title;
+  }
+  return $options;
+}
+
+/**
+ * Build an options list for use by webforms.
+ */
+function mcbride_custom_options_physician_rate() {
+  $options = array();
+  $values = views_get_view_result('physician', 'block');
+  $options['select_physician'] = t('SELECT A PHYSICIAN');
+  foreach ($values as $key => $item) {
+    $index = preg_replace('/[^a-z]/', '_', strtolower($item->node_title));
+    $options[$index] = $item->node_title;
+  }
+  return $options;
+}
+
+/**
+ * implemenetation of hook_wysiwyg_editor_settings_alter()
+ */
+function mcbride_custom_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if ($context['profile']->editor == 'tinymce') {
+    $settings['theme_advanced_styles'] = "Top paragraph=title-notice;
+                                          Bold uppercase text=uppercase-notice;
+                                          Left image block=image-doctor;
+                                          Right image block=image-hospital;
+                                          Remark=remark;
+                                          Small dots list=dot-list
+                                          ";
+    $settings['content_css'] = drupal_get_path('theme', 'mcbride') . "/css/screen_wysiwyg_content.css";
+    $settings['content_css'] .= ',' . drupal_get_path('theme', 'mcbride') . "/css/custom_wysiwyg_content.css";
+  }
+}
+
+/**
+ * implements hoook_preprocess_page
+ */
+function mcbride_custom_preprocess_page(&$vars) {
+  global $user;
+  //hide page items from manager user
+  if (in_array('manager', $user->roles)) {
+    if (in_array('page__admin__structure__menu__manage', $vars['theme_hook_suggestions'])) {
+      $vars['tabs']['#primary'] = array();
+    }
+    if (isset($vars['node']) && $vars['node']->type == 'our_mission_item') {
+      $vars['tabs']['#primary'] = array();
+    }
+  }
+  if (in_array('page__user', $vars['theme_hook_suggestions'])) { //hide tabs from user page
+    $vars['tabs']['#primary'] = array();
+  }
+}
+
+/**
+ * Build a button url based on required parameters
+ */
+function mcbride_custom_paypal_button_url() {
+  $theme = drupal_get_path('theme', 'mcbride');
+  $url = $theme . '/images/pay_now.png';
+  return $url;
+}
+
+/**
+ * implements hook_menu_alter
+ */
+function mcbride_custom_menu_alter(&$items) {
+
+  $items['user/password']['access callback'] = FALSE;
+}
+
+function mcbride_custom_get_location_nid_by_location_term($tid) {
+  return db_select('field_data_field_location', 'fdfl')
+          ->fields('fdfl', array('entity_id'))
+          ->condition('fdfl.field_location_tid', $tid)
+          ->condition('fdfl.bundle', 'locations')
+          ->execute()
+          ->fetchField();
+}
+
+/**
+ * Custom redirect for node edit.
+ * @param type $form
+ * @param array $form_state
+ */
+function mcbride_custom_header_config_view_page_node_submit(&$form, &$form_state) {
+  $destination = drupal_get_destination();
+  if (isset($destination['destination']) && !empty($destination['destination']) && $destination['destination'] != 'node/' . $form['#node']->nid . '/edit') {
+    //it will be redirected to destination.
+  }
+  else {
+    drupal_goto('<front>');
+  }
+}
+
+/**
+ * Submit function to send user to paypal after form values saved.
+ */
+function mcbride_custom_webform_paypal_submit(&$form, &$form_state) {
+
+  global $base_url;
+  $post_data = array();
+
+  $account_number = '';
+  if (isset($form_state['input']['submitted']['account_number']) && !empty($form_state['input']['submitted']['account_number'])) {
+    $account_number = $form_state['input']['submitted']['account_number'];
+  }
+  $month = '';
+  if (isset($form_state['input']['submitted']['date_of_birth']['month']) && !empty($form_state['input']['submitted']['date_of_birth']['month'])) {
+    $month = $form_state['input']['submitted']['date_of_birth']['month'];
+  }
+  $day = '';
+  if (isset($form_state['input']['submitted']['date_of_birth']['day']) && !empty($form_state['input']['submitted']['date_of_birth']['day'])) {
+    $day = $form_state['input']['submitted']['date_of_birth']['day'];
+  }
+  $year = '';
+  if (isset($form_state['input']['submitted']['date_of_birth']['year']) && !empty($form_state['input']['submitted']['date_of_birth']['year'])) {
+    $year = $form_state['input']['submitted']['date_of_birth']['year'];
+  }
+  $date = $month . '-' . $day . '-' . $year;
+
+  $first = '';
+  if (isset($form_state['input']['submitted']['patient_name']['patient_name_first']) && !empty($form_state['input']['submitted']['patient_name']['patient_name_first'])) {
+    $first = $form_state['input']['submitted']['patient_name']['patient_name_first'];
+  }
+  $last = '';
+  if (isset($form_state['input']['submitted']['patient_name']['patient_name_last']) && !empty($form_state['input']['submitted']['patient_name']['patient_name_last'])) {
+    $last = $form_state['input']['submitted']['patient_name']['patient_name_last'];
+  }
+  $patient_name = $first . ' ' . $last;
+
+  $amount = 0;
+  if (isset($form_state['input']['submitted']['amount']) && !empty($form_state['input']['submitted']['amount'])) {
+    $amount = $form_state['input']['submitted']['amount'];
+  }
+
+  $post_data['cmd'] = '_xclick';
+  $post_data['business'] = '';
+
+  $account_email = '';
+  switch ($form['#node']->nid) {
+    case CLINIC_PAYMENT_NID:
+      $account_email = CLINIC_PAYMENT_ACCOUNT;
+      break;
+    case HOSPITAL_PAYMENT_NID:
+      $account_email = HOSPITAL_PAYMENT_ACCOUNT;
+      break;
+  }
+  $post_data['business'] = $account_email;
+  $post_data['item_name'] = 'Service';
+  $post_data['no_shipping'] = '1';
+  $post_data['return'] = $base_url;
+  $post_data['cancel_return'] = $base_url;
+  $post_data['no_note'] = '1';
+  $post_data['currency_code'] = 'USD';
+  $post_data['lc'] = 'US';
+  $post_data['bn'] = 'PP-BuyNowBF';
+
+  $post_data['on1'] = 'Account Number';
+  $post_data['os1'] = $account_number;
+  $post_data['on2'] = 'Date of Birth';
+  $post_data['os2'] = $date;
+  $post_data['on3'] = 'Patient Name';
+  $post_data['os3'] = $patient_name;
+
+  $post_data['amount'] = $amount;
+
+  //lookup our hidden webform values from the form
+  //we don't know the name because that is editable by end user
+  $webform_components = $form_state['webform']['component_tree']['children'];
+  foreach ($webform_components as $key => $value) {
+    if ($value['type'] == 'paypal') {
+      $paypal_component_name = $value['form_key'];
+
+      if ($value['extra']['transaction'] == 'live') {
+        $url = 'https://www.paypal.com/cgi-bin/webscr';
+      }
+      else {
+        $url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+      }
+    }
+  }
+  drupal_goto($url, array('query' => $post_data));
+}
+
+function mcbride_custom_employment_form_submit($form, &$form_state) {
+  $_SESSION['employment_form_submitted'] = TRUE;
+}
+
+function mcbride_custom_mailing_form_submit($form, &$form_state) {
+  $_SESSION['mailing_form_submitted'] = TRUE;
+}
+
+/**
+ * Implements hook_captcha().
+ */
+function mcbride_custom_captcha($op, $captcha_type = '', $captcha_sid = NULL) {
+  switch ($op) {
+    case 'list':
+      // Only offer the image CAPTCHA if it is possible to generate an image on this setup.
+      if (!(_image_captcha_check_setup() & IMAGE_CAPTCHA_ERROR_NO_GDLIB)) {
+        return array('Image');
+      }
+      else {
+        return array();
+      }
+      break;
+
+    case 'generate':
+      if ($captcha_type == 'Image') {
+        // In maintenance mode, the image CAPTCHA does not work because the request
+        // for the image itself won't succeed (only ?q=user is permitted for
+        // unauthenticated users). We fall back to the Math CAPTCHA in that case.
+        global $user;
+        if (variable_get('maintenance_mode', 0) && $user->uid == 0) {
+          return captcha_captcha('generate', 'Math');
+        }
+        // generate a CAPTCHA code
+        $allowed_chars = _image_captcha_utf8_split(variable_get('image_captcha_image_allowed_chars', IMAGE_CAPTCHA_ALLOWED_CHARACTERS));
+        $code_length = (int) variable_get('image_captcha_code_length', 5);
+        $code = '';
+        for ($i = 0; $i < $code_length; $i++) {
+          $code .= $allowed_chars[array_rand($allowed_chars)];
+        }
+
+        // build the result to return
+        $result = array();
+
+        $result['solution'] = $code;
+        // Generate image source URL (add timestamp to avoid problems with
+        // client side caching: subsequent images of the same CAPTCHA session
+        // have the same URL, but should display a different code).
+        $img_src = check_url(url("image_captcha/$captcha_sid/" . REQUEST_TIME));
+        list($width, $height) = _image_captcha_image_size($code);
+        // TODO: start using a theming funtion for generating the image markup?
+        $result['form']['captcha_image'] = array(
+          '#type' => 'markup',
+          '#markup' => '<img src="' . $img_src
+          . '" width="' . $width . '" height="' . $height
+          . '" alt="' . t('Image CAPTCHA') . '" title="' . t('Image CAPTCHA') . '" />',
+          '#weight' => -2,
+        );
+        $result['form']['captcha_response'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Enter the characters shown in the image.'),
+          //'#description' => t(''),
+          '#weight' => 0,
+          '#required' => TRUE,
+          '#size' => 15,
+        );
+
+        // Handle the case insensitive validation option combined with ignoring spaces.
+        switch (variable_get('captcha_default_validation', CAPTCHA_DEFAULT_VALIDATION_CASE_INSENSITIVE)) {
+          case CAPTCHA_DEFAULT_VALIDATION_CASE_SENSITIVE:
+            $result['captcha_validate'] = 'captcha_validate_ignore_spaces';
+            break;
+          case CAPTCHA_DEFAULT_VALIDATION_CASE_INSENSITIVE:
+            $result['captcha_validate'] = 'captcha_validate_case_insensitive_ignore_spaces';
+            break;
+        }
+
+        return $result;
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_action_info().
+ */
+function mcbride_custom_action_info() {
+  return array(
+    'mcbride_custom_add_action' => array(
+      'type' => 'node',
+      'label' => t('Add to Nodequeue Homepage slider'),
+      'configurable' => FALSE,
+      'triggers' => array(
+        'node_presave',
+        'node_insert',
+        'node_update',
+      ),
+    ),
+  );
+}
+
+/**
+ * Action to add a node to a queue.
+ */
+function mcbride_custom_add_action($node, $context) {
+  $type = $node->type;
+  // only process project node
+  if ($type != 'homepage_slider') {
+    return FALSE;
+  }
+
+  if ($node->field_homepage_slider_home[LANGUAGE_NONE][0]['value'] == 1) {
+    if (nodequeue_get_subqueue_position(NODEQUE_HOMEPAGE_SLIDER, $node->nid) == 0) {
+      $queue = nodequeue_load(NODEQUE_HOMEPAGE_SLIDER);
+      $subqueue = nodequeue_load_subqueue(NODEQUE_HOMEPAGE_SLIDER);
+      nodequeue_subqueue_add($queue, $subqueue, $node->nid);
+    }
+  }
+  if ($node->field_homepage_slider_home[LANGUAGE_NONE][0]['value'] == 0) {
+    nodequeue_subqueue_remove_node(NODEQUE_HOMEPAGE_SLIDER, $node->nid);
+  }
+}

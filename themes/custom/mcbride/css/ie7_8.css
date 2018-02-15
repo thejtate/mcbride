@@ -1,0 +1,11 @@
+.selectboxfoot {
+  width: 252px;
+  height: 14px;
+  margin-top: -2px;
+  margin-bottom: 30px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7147px no-repeat;
+}
+
+.selectboxoptions_radio li.hover {
+  background: url("../images/bg-hor-select-form.png") repeat-y 0 0 !important;
+}

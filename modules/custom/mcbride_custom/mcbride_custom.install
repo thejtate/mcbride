@@ -1,0 +1,5 @@
+<?php
+function mcbride_custom_install(){
+    db_query("UPDATE {system} SET weight = 101 WHERE name = 'mcbride_custom'");
+
+}

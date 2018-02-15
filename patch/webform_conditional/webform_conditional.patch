@@ -1,0 +1,23 @@
+diff --git a/webform_conditional.module b/webform_conditional.module
+index 8f366e5..c98d4eb 100644
+--- a/webform_conditional.module
++++ b/webform_conditional.module
+@@ -376,6 +376,7 @@ function _webform_conditional_was_hidden($cid, $components) {
+       }
+     }
+     $show_values = _webform_conditional_convert_textarea_lines_to_array($components[$cid]['extra']['webform_conditional_field_value']);
++if (isset($trigger_field)) {
+     if (is_array($trigger_field['value'])) {
+       $match_values = array_intersect($show_values, $trigger_field['value']);
+       if (count($match_values) == 0) {
+@@ -388,7 +389,10 @@ function _webform_conditional_was_hidden($cid, $components) {
+     else {
+       $matched = in_array($trigger_field['value'], $show_values);
+     }
++}
++if (!empty($matched)) {
+     $this_hidden = (!$matched &&  $components[$cid]['extra']['webform_conditional_operator'] == "=") || ($matched &&  $components[$cid]['extra']['webform_conditional_operator'] == "!=");
++}
+     if (!$this_hidden) {
+       //trigger matched - check if trigger should be shown
+       if (!empty($trigger_field['extra']['webform_conditional_cid'])) {

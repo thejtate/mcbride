@@ -1,0 +1,5 @@
+name = mcbride physicians
+description = Physicians mcbride module.
+core = 7.x
+files[] = mcbride_physicians.module
+package = custom

@@ -1,0 +1,259 @@
+<?php
+
+/**
+ * @file
+ * Adds manager links to perform actions related to elements on a page.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function manager_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#manager':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The manager links module displays links related to regions of pages on your site to users with <em>access manager links</em> permission.') . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Displaying manager links') . '</dt>';
+      $output .= '<dd>' . t('manager links give you quick access to tasks associated with regions of pages on your site. ') . '</dd>';
+      $output .= '</dl>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function manager_permission() {
+  return array(
+    'access manager links' => array(
+      'title' => t('Use manager links'),
+      'description' => t('Use manager links to perform actions related to elements on a page.'),
+    ),
+    'access top manager menu' => array(
+      'title' => t('Access top manager menu'),
+      'description' => t('Display the administration menu at the top of each page.'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_init
+ */
+function manager_init() {
+  if (user_access('access manager links')) {
+    drupal_add_css(drupal_get_path('module', 'manager') . '/css/manager-links.css');
+    drupal_add_js(drupal_get_path('module', 'manager') . '/manager.js');
+  }
+}
+
+/**
+ * Implements of hook_preprocess_page
+ * defines $manager_links for page templates
+ */
+function manager_preprocess_page(&$vars) {
+
+ if (user_access('access top manager menu') && !user_access("access administration menu")) {
+    drupal_add_css(drupal_get_path('module', 'manager') . '/css/manager-top-menu.css');
+
+    $top_links = array();
+    $top_links[] = array(
+          'title' => t('Logout'),
+          'path' => 'user/logout',
+         );
+    $top_links[] = array(
+          'title' => t('Site configuration'),
+          'path' => 'site-configuration',
+          'options' => array('query' => drupal_get_destination()),
+         );
+
+
+  $vars['manager_top_menu'] = theme('manager_top_menu', array('links' => $top_links));
+
+ } else {
+   $vars['manager_top_menu'] = '';
+ }
+
+}
+
+
+/**
+ * Implements of hook_preprocess_node
+ * defines $manager_links for node templates
+ */
+function manager_preprocess_node(&$vars) {
+  // Nothing to do here if the user is not permitted to access manager links.
+  if (!user_access('access manager links')) {
+    $vars['manager_links'] = '';
+    return;
+  }
+  $options = variable_get('manager_links_node_types');
+  //display manager links only for nodes selected on module configuration page
+  if (!empty($options[$vars['type']])) {
+    $node_type = preg_replace('/_/', '-', $vars['type']);
+
+    switch ($node_type) {
+      case 'news':
+         $links[] = array(
+          'title' => t('Add News'),
+          'path' => 'node/add/' . $node_type,
+         );
+        break;
+      default:
+        $links[] = array(
+          'title' => t('Add'),
+          'path' => 'node/add/' . $node_type,
+        );
+        break;
+    }
+
+    if(!empty($links)){
+      $vars['manager_links'] = theme('manager_links', $links);
+    } else {
+      $vars['manager_links'] = '';
+    }
+  } else
+    $vars['manager_links'] = '';
+}
+
+/**
+ * Implrements of hook_preprocess_views_view
+ * defines $manager_links for view templates
+ */
+function manager_preprocess_views_view(&$vars) {
+  // Nothing to do here if the user is not permitted to access manager links.
+  if (!user_access('access manager links')) {
+    $vars['manager_links'] = '';
+    return;
+  }
+  //kpr($vars);
+  $options = variable_get('manager_links_view_types');
+  //display manager links only for views selected on module configuration page
+  if (!empty($options[$vars['name']]) && isset($vars['view']->filter['type']->value)) {
+    $product_type = each($vars['view']->filter['type']->value);
+    $product_type = preg_replace('/_/', '-', $product_type);
+
+    switch ($product_type["value"]){
+      case 'news':
+        $links[] = array(
+          'title' => t('Add News'),
+          'path' => 'node/add/' . $product_type['value'],
+        );
+        break;
+      default:
+        $links[] = array(
+          'title' => t('Add'),
+          'path' => 'node/add/' . $product_type['value'],
+        );
+        break;
+    }
+
+    if(!empty($links)){
+      $vars['manager_links'] = theme('manager_links', $links);
+    } else {
+      $vars['manager_links'] = '';
+    }
+  } else {
+    $vars['manager_links'] = '';
+  }
+}
+
+/**
+ * Implements of hook_menu
+ */
+function manager_menu(){
+
+  $items['admin/config/manager'] = array(
+      'title' => 'Manager links',
+      'description' => 'Adjust manager links options.',
+      'position' => 'right',
+      'weight' => -5,
+      'page callback' => 'system_admin_menu_block_page',
+      'access arguments' => array('administer site configuration'),
+      'file' => 'system.admin.inc',
+      'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/manager/settings'] = array(
+      'title' => 'Manager links settings',
+      'description' => 'Change how managers links behave.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('manager_admin_settings'),
+      'access arguments' => array('administer site configuration'),
+      'type' => MENU_NORMAL_ITEM,
+      'file' => 'manager.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme
+ */
+function manager_theme() {
+  return array(
+    'manager_links' => array(
+      'arguments' => array('links' => null),
+    ),
+    'manager_top_menu' => array(
+      'arguments' => array('links' => NULL),
+      'template' => 'manager_top_menu',
+      'path' => drupal_get_path('module', 'manager') . '/theme'
+    ),
+  );
+}
+
+/**
+ * Theme function for creating manager links
+ *
+ * @param $variables
+ * An associative array containing:
+ *   - links: array ( description => link).
+ * @return string
+ * Html for manager links
+ */
+function theme_manager_links($variables) {
+
+  $output = '<div class="manager-links-region">
+                <div class="manager-links-wrapper">';
+  if (!empty($variables) && is_array($variables)) {
+    $output .= '<ul class="manager-links">';
+    if (!empty($variables['arr_links']) && is_array($variables['arr_links'])) {
+      foreach ($variables['arr_links'] as $key => $value) {
+        if ((!empty($value['access']) && user_access($value['access'])) || empty($value['access'])) {
+          //if empty set defautl destination value
+          if (!isset($value['options']['query'])) {
+            $value['options']['query'] = drupal_get_destination();
+          }
+          $output .= '<li class="manager-link-item-' . $key . '">';
+          $output .= l($value['title'], $value['path'], $value['options']);
+          $output .= '</li>';
+        }
+      }
+    }
+    else {
+      foreach ($variables as $key => $value) {
+        if (is_string($value)) {
+          continue;
+        }
+        if ((!empty($value['access']) && user_access($value['access'])) || empty($value['access'])) {
+
+          //if empty set defautl destination value
+          if (!isset($value['options']['query'])) {
+
+            $value['options']['query'] = drupal_get_destination();
+          }
+          $output .= '<li class="manager-link-item-' . $key . '">';
+          $output .= l($value['title'], $value['path'], $value['options']);
+          $output .= '</li>';
+        }
+      }
+    }
+    $output .= '</ul>';
+  }
+
+  $output .= '</div></div>';
+  return $output;
+
+}

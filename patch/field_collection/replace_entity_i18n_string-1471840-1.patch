@@ -1,0 +1,42 @@
+diff --git a/field_collection.module b/field_collection.module
+index fe9911c..50fa3eb 100644
+--- a/field_collection.module
++++ b/field_collection.module
+@@ -834,7 +834,7 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
+           $links = array();
+           foreach (array('edit', 'delete') as $op) {
+             if ($settings[$op] && field_collection_item_access($op == 'edit' ? 'update' : $op, $field_collection)) {
+-              $title = entity_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_$op", $settings[$op]);
++              $title = field_collection_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_$op", $settings[$op]);
+               $links[] = l($title, $field_collection->path() . '/' . $op, array('query' => drupal_get_destination()));
+             }
+           }
+@@ -866,7 +866,7 @@ function field_collection_field_formatter_view($entity_type, $entity, $field, $i
+           foreach (array('edit', 'delete') as $op) {
+             if ($settings[$op] && field_collection_item_access($op == 'edit' ? 'update' : $op, $field_collection)) {
+               $links['#links'][$op] = array(
+-                'title' => entity_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_$op", $settings[$op]),
++                'title' => field_collection_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_$op", $settings[$op]),
+                 'href' => $field_collection->path() . '/' . $op,
+                 'query' => drupal_get_destination(),
+               );
+@@ -910,7 +910,7 @@ function field_collection_field_formatter_links(&$element, $entity_type, $entity
+       if (!empty($settings['description'])) {
+         $element['#suffix'] .= '<div class="description field-collection-description">' . field_filter_xss($instance['description']) . '</div>';
+       }
+-      $title = entity_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_add", $settings['add']);
++      $title = field_collection_i18n_string("field:{$field['field_name']}:{$instance['bundle']}:setting_add", $settings['add']);
+       $add_path = $path . '/add/' . $entity_type . '/' . $id;
+       $element['#suffix'] .= '<ul class="action-links action-links-field-collection-add"><li>';
+       $element['#suffix'] .= l($title, $add_path, array('query' => drupal_get_destination()));
+@@ -1456,3 +1456,10 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
+ 
+   return array('value' => $field_collection->item_id);
+ }
++
++/**
++ * Conditionally checks for i18n_string().
++ */
++function field_collection_i18n_string($name, $default, $langcode = NULL) {
++  return function_exists('i18n_string') ? i18n_string($name, $default, array('langcode' => $langcode)) : $default;
++}

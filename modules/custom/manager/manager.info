@@ -1,0 +1,7 @@
+name = Manager links
+description = Provides manager links to perform actions related to elements on a page, based on contextual links module
+package = Volcano
+version = VERSION
+core = 7.x
+
+

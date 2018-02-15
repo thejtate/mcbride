@@ -1,0 +1,155 @@
+<?php
+
+/**
+ * Implements of hook_menu
+ */
+function mcbride_gmap_menu() {
+
+  $items['admin/config/gmap'] = array(
+    'title' => 'Gmap config',
+    'description' => 'Configuration gmap',
+    'position' => 'right',
+    'weight' => -5,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/gmap/settings'] = array(
+    'title' => 'Gmap settings',
+    'description' => 'Change Gmap behave.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('mcbride_gmap_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'mcbride_gmap.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Override or insert variables into the page templates.
+ * Implements hook_preprocess_page
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("page" in this case.)
+ */
+function mcbride_gmap_preprocess_page(&$vars, $hook) {
+  $module_path = drupal_get_path('module', 'mcbride_gmap');
+//Get Gmap available content types
+
+
+  /* Gmap parameters */
+  $gmap_key = variable_get('mcbride_gmap_key');
+  $gmap_width = variable_get('mcbride_gmap_width');
+  $gmap_height = variable_get('mcbride_gmap_heigh');
+  $gmap_zoom = variable_get('mcbride_gmap_zoom');
+
+  drupal_add_js('http://maps.google.com/maps?file=api&v=2&key=' . $gmap_key);
+  drupal_add_js($module_path . '/js/gmap.js');
+  drupal_add_js(array('maps_config' =>
+    array(
+      'width' => (int) $gmap_width,
+      'height' => (int) $gmap_height,
+      'zoom' => (int) $gmap_zoom,
+      )), 'setting');
+}
+
+/**
+ * Override or insert variables into the node templates.
+ * Implements hook_preprocess_node
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("node" in this case.)
+ */
+function mcbride_gmap_preprocess_node(&$vars, $hook) {
+  $module_path = drupal_get_path('module', 'mcbride_gmap');
+  $content_types = variable_get('mcbride_gmap_node_types');
+  $content_types_allowed = array_filter($content_types);
+  foreach ($content_types_allowed as $key => $type) {
+    switch ($vars['type']) {
+      case $type:
+
+        $nid = $vars['nid'];
+        $query = $vars['field_loc_map_link'][0]['query'];
+        $link = $vars['field_loc_map_link'][0]['display_url'];
+
+        $maps = array();
+        $coords = explode(',', $query['sll']);
+        $maps[] = array('nid' => $nid, 'long' => (float) $coords[0], 'lat' => (float) $coords[1]);
+
+        drupal_add_js(array('maps' => $maps), 'setting');
+
+        $vars['content']['gmap_link'] = array(
+          '#type' => 'markup',
+          '#markup' => theme('map_iframe', array('param' => array('nid' => $nid, 'link' => $link))),
+          'weight' => -1
+        );
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function mcbride_gmap_theme() {
+  $path = drupal_get_path('module', 'mcbride_gmap');
+
+  $items = array(
+    'map_iframe' => array(
+      'template' => 'map_iframe',
+      'render element' => 'param',
+      'path' => $path . '/theme'
+    ),
+    'gmap_search' => array(
+      'template' => 'gmap_search',
+//      'render element' => 'param',
+      'path' => $path . '/theme'
+    )
+  );
+
+  return $items;
+}
+
+function mcbride_gmap_form_alter(&$form, &$form_state, $form_id) {
+//  kpr($form_id);
+
+  $module_path = drupal_get_path('module', 'mcbride_gmap');
+  $gmap_key = variable_get('mcbride_gmap_key');
+
+
+  drupal_add_js('http://maps.google.com/maps?file=api&v=2&key=' . $gmap_key);
+
+  drupal_add_css($module_path . '/css/gmap.css');
+  $content_types = variable_get('mcbride_gmap_node_types');
+  $content_types_allowed = array_filter($content_types);
+  foreach ($content_types_allowed as $key => $type) {
+    switch ($form_id) {
+      case $type . '_node_form':
+        $form['gmap'] = array(
+          '#type' => 'fieldset',
+          '#title' => 'Gmap search',
+          '#collapsible' => TRUE,
+          '#collapsed' => TRUE,
+          '#group' => 'additional_settings',
+          '#weight' =>-20,
+          'gmap_search' => array(
+            '#type' => 'markup',
+            '#markup' => theme('gmap_search')
+          )
+        );
+        break;
+      default:
+        break;
+    }
+  }
+//  kpr($form);
+}

@@ -1,0 +1,159 @@
+.block-read_more .block-read_more-bottom,
+.block-read_more .block-read_more-top {
+    background: transparent;
+    before: ' ';
+    suffix: -item;
+    after: ' ';
+    suffix: -item;
+}
+
+.block-read_more .block-read_more-bottom .before-item,
+.block-read_more .block-read_more-top .before-item {
+    background: transparent;
+}
+
+.block-read_more .block-read_more-bottom .after-item,
+.block-read_more .block-read_more-top .after-item {
+    background: transparent;
+}
+
+.block-read_more .block-read_more-middle {
+    before: ' ';
+    suffix: -item;
+    after: ' ';
+    suffix: -item;
+}
+
+.block-read_more .block-read_more-middle .before-item {
+    background: transparent;
+}
+
+.block-read_more .block-read_more-middle .after-item {
+    background: transparent;
+}
+
+.wrapper-block-content .field-collection-container {
+    display: inline;
+}
+
+.wrapper-block-content .field-collection-container .field-collection-view {
+    display: inline;
+}
+
+.view-id-our_mission_items .views-row-even h5.node-title {
+    width: 330px;
+}
+
+.wrapper-block-content .block-image-top {
+    position: relative;
+    z-index: 100;
+}
+
+.node-physician .wrapper-block-content .block-title a.new_search {
+    right: 0;
+    padding-top: 12px;
+}
+
+.webform-client-form #webform-component-employment-history > legend > .fieldset-legend,
+.webform-client-form #webform-component-employment-information > legend > .fieldset-legend {
+    before: ' ';
+    suffix: -item;
+}
+
+.webform-client-form #webform-component-employment-history > legend > .fieldset-legend .before-item,
+.webform-client-form #webform-component-employment-information > legend > .fieldset-legend .before-item {
+    height: 16px;
+    width: 21px;
+    background: url("../images/sprites-scf0bfceb3e.png") 0 -6972px no-repeat;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 14px;
+    left: 2px;
+}
+
+.page-location.patients .left-part .block-title {
+    width: 288px;
+}
+
+.page-survey.patients .webform-client-form .block-content-item {
+    padding-bottom: 60px;
+}
+
+.page-history.about-us .block-content-item.border-none p {
+    display: inline;
+}
+
+.wrapper-block-content .block-image-top {
+    before: ' ';
+    suffix: -item;
+    after: ' ';
+    suffix: -item;
+}
+
+.wrapper-block-content .block-image-top .before-item {
+    height: 150px;
+    width: 246px;
+    background: url('../images/sprites-s95d247b3c3.png') 0 -3311px no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -150px;
+    left: 0;
+    display: inline-block;
+    position: absolute;
+}
+
+.wrapper-block-content .block-image-top .after-item {
+    height: 10px;
+    width: 246px;
+    background: url('../images/sprites-s95d247b3c3.png') 0 -7393px no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: inline-block;
+    position: absolute;
+}
+
+.page-privacy .block-content-item li,
+.page-right .block-content-item li {
+    before: ' ';
+    suffix: -item;
+}
+
+.page-privacy .block-content-item li .before-item,
+.page-right .block-content-item li .before-item {
+    height: 4px;
+    width: 4px;
+    background: url('../images/sprites-s95d247b3c3.png') 0 -7922px no-repeat;
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    top: 12px;
+    left: 0;
+    margin-right: 5px;
+    display: inline-block;
+    position: absolute;
+}
+
+.page-careers-listings .more-info span {
+    before: ' ';
+    suffix: -item;
+}
+
+.page-careers-listings .more-info span .before-item {
+    display: inline-block;
+    position: absolute;
+    height: 11px;
+    width: 15px;
+    background: url("../images/sprites-s9dca7e87d2.png") 0 -7271px no-repeat;
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 2px;
+}

@@ -1,0 +1,5 @@
+name = mcbride custom
+description = Custom mcbride module.
+core = 7.x
+files[] = mcbride_custom.module
+package = custom

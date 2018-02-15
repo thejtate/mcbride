@@ -1,0 +1,1789 @@
+﻿﻿/**
+ * @file
+ * Custom Styling
+*/
+      .block-content-item, .title-notice {
+  font: 15px MerriweatherRegular;
+}
+
+.middle-content .bg-list-tabs li {
+  width: 140px;
+}
+
+.block-read_more-middle div.contextual-links-wrapper {
+  top: 190px;
+}
+
+/*Contextual links*/
+.middle-content .bg-list-tabs li .contextual-links-wrapper ul.contextual-links li,
+.block ul.contextual-links li,
+.left-nav-menu ul.contextual-links li {
+  height: 20px;
+  background: none;
+  line-height: 100%;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+
+}
+
+.middle-top.home .manager-links-region {
+  z-index: 99;
+}
+
+.middle-content .bg-list-tabs li .contextual-links-wrapper ul.contextual-links li a,
+.block ul.contextual-links li a,
+.left-nav-menu ul.contextual-links li a, .left-nav-menu ul.contextual-links li.first a:before, .left-nav-menu ul.contextual-links li.last a:after {
+  background: none;
+  text-indent: inherit;
+  position: static;
+  border: none;
+  display: inline;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.middle-content .bg-list-tabs li .contextual-links-wrapper a, .left-nav-menu li .contextual-links-wrapper a {
+  text-decoration: none;
+  position: relative;
+  height: 18px;
+}
+
+.contextual-links-wrapper .contextual-links li {
+  width: auto;
+}
+
+/*Contextual links*/
+.page-node ul.tabs {
+  margin-top: -24px;
+}
+
+.node-type-awards .field-collection-view .field-collection-view-links {
+  margin-top: -54px;
+}
+
+.page-visitors .field-collection-view .field-collection-view-links {
+  margin-top: -45px;
+}
+
+.page-node .tabs .clearfix:after {
+  clear: none;
+}
+
+.page-about_us .block-content-item ul {
+  line-height: 23px;
+  margin-bottom: 23px;
+  margin-left: 15px;
+}
+
+.page-phys_owned .first-block-content .block-content-item {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.page-phys_owned .wrapper-block-content .secont-block-content {
+  padding-bottom: 40px;
+}
+
+.page-phys_owned #block-system-main {
+  width: 705px;
+  float: right;
+}
+
+div.messages {
+  width: 660px;
+  margin-left: 210px;
+}
+
+.left-nav-menu ul.menu li {
+  margin-left: 0;
+}
+
+.page-phys_owned .first-block-content .title-notice {
+  margin-bottom: 0;
+}
+
+.page-phys_owned .title-notice strong,
+.node-type-awards .title-notice strong {
+  font: 16px/29px 'MerriweatherBold', sans-serif;
+  text-transform: uppercase;
+}
+
+.social-net .item-list ul li {
+  margin: 5px;
+  padding: 0;
+}
+
+.left-nav-menu ul li {
+  list-style: none;
+  padding: 0px;
+}
+
+.block-content-item.short-line .clearfix:after {
+  display: inline;
+}
+
+.page-news .block-content-item .block-title {
+  text-decoration: none;
+}
+
+.bg-list-tabs li .node {
+  position: static;
+}
+
+.article-autor-block div.manager-links-wrapper {
+  right: 0;
+}
+
+#block-views-front-page-blocks-list-block ul.manager-links li a {
+  text-indent: 1.5em;
+  position: static;
+}
+
+#block-views-front-page-blocks-list-block ul.manager-links li {
+  height: 20px;
+  width: 30px;
+  float: none;
+}
+
+/* find a physicians */
+
+.physicians-find-a-physicians-items {
+  width: 750px;
+  display: block;
+}
+
+.physicians-find-a-physicians-collapsible {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+.physicians-find-a-physicians-collapsible span, .physicians-find-a-physicians-collapsible a {
+  font-weight: normal !important;
+}
+
+.page-default .middle-top .block-structure {
+  background: url("../images/bg-top-AboutUs.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.page-default #block-system-main {
+  padding-top: 23px;
+  color: #5E4F2F;
+  font: 13px 'MerriweatherRegular', sans-serif;
+}
+
+/*Physicians TODO wysiwyg editing*/
+.content-item p strong {
+  font: bold 15px 'MerriweatherBold', sans-serif;
+  color: #5e4f2f;
+  padding-bottom: 0;
+  margin-bottom: 2px;
+}
+
+.content-item p {
+  font-family: 'MerriweatherRegular';
+  font-weight: normal;
+  padding-bottom: 0;
+  margin-bottom: 2px;
+}
+
+/*--
+Physicians TODO wysiwyg editing*/
+.social-net {
+  right: 25px;
+  top: 0px;
+}
+
+.page-articles .block-content-item h4 a {
+  color: #5C83A1;
+  font: bold 20px 'MerriweatherBold', sans-serif;
+  text-decoration: none;
+}
+
+.block-content-item a.adobe-reader {
+  color: #5C83A1;
+}
+
+.page-about_us .block-content-item ul li {
+  list-style: disc;
+}
+
+.page-article2 .block-content-item .sign-author em {
+  font: bold 16px 'CabinBold', sans-serif;
+  font-style: italic;
+}
+
+.page-location .block-title h4 {
+  color: #B59F64;
+  font: 20px 'CabinBold', sans-serif;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 1px white;
+  text-transform: uppercase;
+}
+
+.page-location .right-part {
+  /* min-height: 620px; */
+}
+
+.block-map .geolocation-help, .geolocation-map {
+  margin: 0;
+}
+
+.wrapper-block-content .field-collection-container {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.wrapper-block-content .field-collection-view {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.page-visitors .field-collection-container .field-items .field-item {
+  margin: 0px;
+}
+
+.page-work-comp .middle-top .block-structure h1 {
+  width: 410px;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top p a {
+  color: #5C83A1;
+  text-decoration: none;
+}
+
+.page-survey .block-content-item form .form-item.webform-component-select.last {
+  margin-bottom: 38px;
+}
+
+#webform-component-would-you-like-us-to-contact-you label {
+  float: left;
+}
+
+#webform-component-if-so-please-leave-your-name-phone-number-and-e-mail-address-below .fieldset-legend {
+  clear: both;
+  margin-bottom: 23px;
+  line-height: 23px;
+  font-size: 16px;
+}
+
+.page-survey .body-item strong {
+  font: 15px 'CabinBold', sans-serif;
+}
+
+.page-survey .body-item .title-notice {
+  margin-bottom: 30px;
+}
+
+/*Payment webform*/
+.block-date-birth fieldset,
+.pation_name fieldset {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth legend span.fieldset-legend,
+.page-payments .wrapper-block-content .block-content-item form .pation_name legend span.fieldset-legend {
+  position: absolute;
+  top: -3px;
+  white-space: nowrap;
+  display: block;
+  font: bold 13px 'MerriweatherRegular', sans-serif;
+  margin-bottom: 5px;
+}
+
+.page-payments .wrapper-block-content .block-content-item .block-social-net li {
+  margin-left: 0;
+}
+
+/*.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item .form-text {
+    width: 40px !important;
+}*/
+.block-content-item .title-noticep {
+  line-height: 23px;
+  margin-bottom: 23px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth.watermark input#edit-submitted-date-of-birth-month {
+  width: 40px !important;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item input.form-year.form-text {
+  width: 65px !important;
+}
+
+.page-location .block-title h3 a {
+  color: #5E4F2F;
+  font: 26px 'MerriweatherBold', sans-serif;
+  margin-bottom: 23px;
+  text-shadow: 0 1px 1px white;
+  text-decoration: none;
+}
+
+/*--Payment webform*/
+.block-structure ul.manager-links li a {
+  text-indent: inherit;
+  width: auto;
+  text-shadow: none;
+}
+
+.block-structure ul.manager-links li {
+  width: auto;
+}
+
+/*Videos page*/
+.block-content-item .title-notice {
+  line-height: 23px;
+  margin-bottom: 23px;
+}
+
+a.phone {
+  text-decoration: none;
+}
+
+.block-content-item .block-image-top {
+  margin-left: 0;
+}
+
+.content .img_phys_owned {
+  margin-bottom: 0;
+}
+
+.wrapper-middle-content .tabs {
+  float: right;
+  position: relative;
+  z-index: 2;
+}
+
+body .page-location .block-physician_assistants, .page-location-hospital .block-physician_assistants {
+  width: 390px;
+}
+
+.block-physician-assistants-second {
+  float: left;
+  padding-top: 0px;
+  margin: 0 15px 0 0;
+  position: relative;
+  width: 180px;
+}
+
+#webform-client-form-162 .form-item .form-text,
+#webform-client-form-96 .form-item .form-text {
+  color: #5E4F2F;
+  font: 12px MerriweatherRegular;
+}
+
+body .combo-wrapper.combo-wrapper-active {
+  border-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#webform-client-form-94 #webform-component-if-so-please-leave-your-name-phone-number-and-e-mail-address-below {
+  padding-left: 0;
+}
+
+.page-location-phys .block-title h3 a {
+  color: #5E4F2F;
+  font: 26px MerriweatherBold;
+  text-shadow: 0 1px 1px white;
+  text-decoration: none;
+}
+
+.page-location-phys .views-row.views-row-last {
+  background: none repeat scroll 0 0 transparent;
+  padding-bottom: 0;
+}
+
+.page-location-phys .views-row {
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-bottom: 1px;
+  margin-bottom: 32px;
+}
+
+.page-staff-phys .block-content-item .list_owned p {
+  color: #5C83A1;
+  display: inline;
+  font-family: MerriweatherBold;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.3;
+  width: 212px;
+}
+
+.page-staff-phys .block-content-item .list_customer p {
+  line-height: 1.55;
+  margin-bottom: 0;
+  border: medium none;
+  color: #4C4C4C;
+  outline: medium none;
+  font-family: MerriweatherBold;
+}
+
+.page-orth .block-title h2 {
+  min-height: 42px;
+}
+
+.node-our-mission-item .block-image-left {
+  margin: 9px 40px 0 0;
+  padding: 13px;
+  width: 220px;
+}
+
+.view-id-our_mission_items .views-row-even .block-image-left {
+  float: left;
+}
+
+.view-id-our_mission_items .views-row-odd .block-image-left {
+  float: right;
+}
+
+.view-id-our_mission_items .views-row-even .field-name-body {
+  float: right;
+  width: 330px;
+}
+
+.view-id-our_mission_items .views-row-odd .field-name-body {
+  float: left;
+  width: 375px;
+}
+
+.view-id-our_mission_items .field-name-body p {
+  font: 18px/29px 'MerriweatherBold', sans-serif;
+  color: #5E4F2F;
+}
+
+.view-id-our_mission_items .views-row-even h5.node-title {
+  color: #B59F64;
+  font: 20px CabinSemiBold;
+  font-style: italic;
+  float: right;
+  margin-top: 20px;
+}
+
+.view-id-our_mission_items .views-row-odd h5.node-title {
+  color: #B59F64;
+  font: 20px CabinSemiBold;
+  font-style: italic;
+  float: left;
+  margin-top: 20px;
+}
+
+.page-mission .middle-top .block-structure {
+  background: url('../images/bg-top-MIssion.jpg') no-repeat;
+}
+
+.text-title {
+  text-align: center;
+  color: #B59F64;
+  font: 14px CabinSemiBold;
+  font-style: italic;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+}
+
+.block-image-top .text-title {
+  padding: 0 20px 20px 20px;
+}
+
+.image-doctor .text-title {
+  padding: 10px 0 20px 0;
+  width: 221px;
+}
+
+.image-hospital .text-title {
+  padding: 10px 0 20px 0;
+  width: 454px;
+}
+
+.image-hospital .block-rounded {
+  padding: 15px;
+}
+
+.block-read_more .block-read_more-middle h2 {
+  font-size: 30px;
+  line-height: 28px;
+  z-index: 1;
+}
+
+.views-row-odd .block-read_more {
+  left: auto;
+  right: 90px;
+}
+
+.block-read_more {
+  z-index: 20;
+}
+
+.views-row-1.views-row-odd .block-read_more {
+  /*left: 53px;*/
+  /*right: auto;*/
+}
+
+.block-read_more .block-read_more-middle .sign-author {
+  /*margin: 0 27px 5px;*/
+  width: 260px;
+  position: absolute;
+  bottom: 65px;
+  left: 40px;
+}
+
+.block-read_more .block-read_more-middle h2 {
+  margin-bottom: 5px;
+}
+
+.block-read_more .block-read_more-middle .sign-author p {
+  margin: 0px;
+  font-size: 19px;
+}
+
+.block-read_more .block-read_more-middle .field-items .field-item {
+  /*position: absolute;
+  top: 50%;*/
+}
+
+.node-type-homepage-slider .middle-top .block-structure h1 {
+  /*  color: #EEEBE3;
+    font-family: MerriweatherBold;
+    font-size: 41px;
+    left: 25px;
+    text-shadow: 0 1px 2px #595959;
+    top: 19px;*/
+}
+
+.page-articles .block-content-item {
+  width: 100%;
+}
+
+.page-news .block-content-item:after {
+  display: none;
+}
+
+.page-news .block-content-item .clearfix:after {
+  display: none;
+}
+
+.list_faq-item h3 {
+  cursor: pointer;
+}
+
+.node-type-locations-landing-page .block-physicians {
+  width: 270px;
+}
+
+.cafeteria-edit-button {
+  float: right;
+  margin-right: 32px;
+  font-size: 13.1333px;
+  list-style-type: none;
+  font-weight: normal;
+}
+
+.page-privacy .middle-top .block-structure {
+  background: url('../images/bg-top-PrivacyPractices.jpg') no-repeat 0 0 transparent;
+}
+
+.page-privacy .block-content-item ul {
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+.page-privacy .block-content-item ul:first-child {
+  margin-top: 0px;
+}
+
+.page-appointment .middle-top .block-structure {
+  background: url('../images/bg-top-FAQ.jpg') no-repeat 0 0 transparent;
+}
+
+.page-location-phys .middle-top .block-structure {
+  background: url("../images/bg-top-PTLocations.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.page-location .middle-top .block-structure {
+  background: url("../images/bg-top-HospitalLocation.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.page-payments .middle-top .block-structure {
+  background: url("../images/bg-top-ClinicPayment.jpg") no-repeat scroll 0 0 transparent;
+}
+
+.patients .middle-top .block-structure h1 {
+  color: #5C83A1;
+}
+
+.patients .middle-top .block-structure h2 {
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px #595959;
+}
+
+.bg-list-tabs li h3 {
+  text-align: center;
+}
+
+ul.tabs.primary {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+ul.tabs.primary > li {
+  background: url("../images/bg-header.png") repeat scroll 0 0 transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #232F38;
+}
+
+ul.tabs.primary > li > a {
+  font-family: 'CabinSemiBold', ​ sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  color: #ABDBFF;
+  text-decoration: none;
+  line-height: 18px;
+  background: none;
+  text-shadow: 0 1px 1px #1E262B;
+  border-top: 1px solid #7A97AD;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  margin: 0px;
+}
+
+ul.tabs.primary > li > a:hover {
+  background: url("../images/bg-nav-submenu-hover.png") repeat scroll -3px 0px transparent;
+}
+
+/* FOOTER */
+.footer .copyright {
+  float: left;
+}
+
+.social-net .item-list {
+  margin-top: 37px;
+}
+
+/* Patients Forms */
+.page-forms .middle-top .block-structure {
+  background: url('../images/patients_forms_header.jpg') no-repeat;
+}
+
+/* News page */
+.page-news .block-image-top a.button {
+  display: block;
+  background: url("../images/icon-download.png") no-repeat 0 2px;
+  padding: 14px 0 14px 60px;
+  color: #5C83A1;
+  height: 20px;
+  font: 17px 'MerriweatherBold', sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  margin-bottom: 6px;
+}
+
+.page-news .block-image-top a.button:hover {
+  background: url("../images/icons_news_high.png") no-repeat 1px 2px;
+}
+
+/* Location Page */
+.node-location .block-content-item .field-name-field-location-address p {
+  margin-bottom: 0px;
+}
+
+span.loc_more {
+  font: 14px CabinMediumItalic;
+}
+
+.page-location .field-name-field-location-more {
+  clear: both;
+}
+
+div.loc_more_link a {
+  font: 15px MerriweatherBold;
+  color: #5C83A1;
+  text-decoration: none;
+}
+
+.page-location .right-part .block-map a.view-map::after {
+  top: 3px;
+}
+
+.page-location .field-collection-container .field-items .field-item {
+  margin-bottom: 0;
+}
+
+.page-phys .block-content-item.lift_up .block-title {
+  clear: both;
+}
+
+/* Sleep Lab page */
+#node-166 h3 {
+  font: 15px 'MerriweatherHeavy', sans-serif;
+}
+
+.node-common-page .field-name-body ul li::before {
+  height: 4px;
+  width: 4px;
+  background: url('../images/sprites-s2d8660b07d.png') 0 -7009px no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 12px;
+  left: 0;
+  margin-right: 5px;
+}
+
+.node-common-page .field-name-body ul li {
+  line-height: 26px;
+}
+
+/* Awards Page */
+.node-awards .block-content-item .block-image-top {
+  margin-top: 0px;
+}
+
+.node-awards h2.award_title {
+  margin-bottom: 28px;
+  font: 26px 'MerriweatherBold';
+}
+
+.node-awards .field-collection-view .block-image-top + p img {
+  margin-top: 87px;
+}
+
+.node-awards .block-image-top {
+  margin: 79px 0 23px 0;
+}
+
+.node-type-history .block-image-top {
+  margin: 69px 0 23px 25px;
+}
+
+.node-type-history .title-notice {
+  line-height: 29px !important;
+}
+
+.node-type-history .wrapper-block-content p {
+  line-height: 23px;
+  width: 633px;
+}
+
+.node-type-history .image-hospital {
+  margin-left: 39px
+}
+
+.node-careers-listing {
+  font-family: 'MerriweatherRegular';
+  color: #5e4f2f;
+}
+
+.node-careers-listing h3 {
+  font-size: 22px;
+  letter-spacing: 1px;
+
+}
+
+.node-careers-listing .field-name-field-cl-group-title {
+  margin-bottom: 10px;
+}
+
+.node-careers-listing .careers-item {
+  display: inline-block;
+  display: inline;
+  width: 320px;
+
+  margin-top: 20px;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+}
+
+.node-careers-listing .careers-item.even {
+  margin-right: 50px;
+}
+
+.node-careers-listing .careers-item-apply {
+  display: block;
+  width: 64px;
+  height: 32px;
+  text-indent: 9999px;
+  font-size: 0;
+  /*background-color: #000000;*/
+  background: url('../images/careers-item-apply.png') no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.node-careers-listing .field-collection-item-field-careers-listing-group {
+  margin-bottom: 20px;
+}
+
+.page-careers .block-image-top a.button.button-listings {
+  bottom: 40px;
+}
+
+.page-mri .block-content-item ul li {
+  width: 100%;
+}
+
+.visitors-top-image {
+  margin-left: 20px;
+  padding: 15px 13px 13px;
+  width: 336px;
+  font: 18px 'MerriweatherHeavy';
+  margin-bottom: 25px;
+  float: right;
+}
+
+.visitors-bottom-image {
+  width: 262px;
+  height: 326px;
+  float: left;
+  margin-right: 50px;
+}
+
+.visitors-bottom-image img {
+  padding: 13px;
+}
+
+.testimonials-item h3 p {
+  margin-bottom: 0px;
+}
+
+.testimonials-item h4 {
+  font: 22px 'CabinSemiBoldItalic';
+  color: #B59F64;
+}
+
+.node-testimonials .field-name-field-testimonials-item .field-item {
+  margin-bottom: 45px;
+}
+
+.page-find-a-physicians .sub-hor-select {
+  /*height: 165px;*/
+  max-height: 165px;
+  max-height: 330px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 352px;
+}
+
+/*
+.page-find-a-physicians .sub-hor-select .sub-hor-select-span{
+  height: 220px;
+  max-height: 330px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 352px;
+}
+*/
+
+.physicians-find-a-physicians-items ul.sub-hor-select li span:hover {
+  color: #8c6c31
+}
+
+div.manager-links-wrapper {
+  z-index: 10;
+}
+
+.main-hor-select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.sub-hor-select li {
+  border: none;
+}
+
+.sub-hor-select {
+  margin-top: 0px;
+}
+
+.physicians-find-a-physicians-items ul.sub-hor-select .top-border-line {
+  /*background: url("../images/bg-hor-select-border.png") repeat-x scroll 0 0 transparent;*/
+  background: url("../images/bg-hor-top-border.png") repeat-x scroll 0 0 transparent;
+  /*border-top: 1px solid #E1DFDA;
+  border-bottom: 1px solid #FDFDFD;*/
+  display: block;
+  height: 2px;
+  /*margin: 0 3px;*/
+  /*position: relative;*/
+  visibility: visible;
+  width: 337px;
+}
+
+.expanded .main-hor-select:after {
+  visibility: hidden;
+}
+
+.navigation {
+  z-index: 200;
+}
+
+/**
+ * Contextual links regions.
+ */
+/*
+.contextual-links-region {
+ outline: none !important;
+ position: relative !important;
+}*/
+.contextual-links-region-active {
+  outline: #999 dashed 1px !important;
+}
+
+/**
+ * Contextual links.
+ */
+div.contextual-links-wrapper {
+  display: none;
+  font-size: 90% !important;
+  position: absolute !important;
+  right: 5px !important;
+  top: 2px !important;
+  z-index: 999 !important;
+}
+
+html.js div.contextual-links-wrapper {
+  display: block;
+}
+
+a.contextual-links-trigger {
+  background: transparent url(/modules/contextual/images/gear-select.png) no-repeat 2px 0 !important;
+  border: 1px solid transparent !important;
+  display: none;
+  height: 18px !important;
+  margin: 0 !important;
+  padding: 0 2px !important;
+  outline: none !important;
+  text-indent: 34px !important;
+  width: 28px !important;
+  overflow: hidden !important;
+  -khtml-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px !important;
+}
+
+a.contextual-links-trigger:hover,
+div.contextual-links-active a.contextual-links-trigger {
+  background-position: 2px -18px !important;
+}
+
+div.contextual-links-active a.contextual-links-trigger {
+  background-color: #fff !important;
+  border-color: #ccc !important;
+  border-bottom: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+  -moz-border-radius: 4px 4px 0 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-radius: 4px 4px 0 0 !important;
+}
+
+div.contextual-links-wrapper ul.contextual-links {
+  background-color: #fff !important;
+  border: 1px solid #cc !important;
+  display: none;
+  margin: 0 !important;
+  padding: 0.25em 0 !important;
+  position: absolute !important;
+  right: 0 !important;
+  text-align: left !important;
+  top: 18px !important;
+  white-space: nowrap !important;
+  -moz-border-radius: 4px 0 4px 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-top-left-radius: 4px;
+  border-radius: 4px 0 4px 4px !important;
+}
+
+.contextual-links-region:hover a.contextual-links-trigger,
+div.contextual-links-active a.contextual-links-trigger,
+div.contextual-links-active ul.contextual-links {
+  display: block;
+}
+
+ul.contextual-links li {
+  line-height: 100% !important;
+  list-style: none !important;
+  list-style-image: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+div.contextual-links-wrapper a {
+  text-decoration: none !important;
+}
+
+ul.contextual-links li a {
+
+  color: #333 !important;
+  display: block;
+  margin: 0.25em 0 !important;
+  padding: 0.25em 1em 0.25em 0.5em !important;
+}
+
+ul.contextual-links li a:hover {
+  background-color: #bfdcee !important;
+}
+
+ul.contextual-links li a {
+  border: 0 none !important;
+  /*
+  font-family: inherit !important;
+  font-size: 100% !important;
+  font-size-adjust: inherit !important;
+  font-stretch: inherit !important;
+  font-style: inherit !important;
+  font-variant: inherit !important;
+  font-weight: inherit !important;
+  */
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+
+  font: 12px sans-serif !important;
+}
+
+/*
+ * End Contextual links.
+ */
+
+/*
+* Manager links.
+*/
+
+ul.manager-links li a {
+  height: auto;
+}
+
+ul.manager-links > li {
+  list-style: none;
+}
+
+/*
+ * End Manager links.
+ */
+
+.physicians-find-a-physicians-collapsible ul ul {
+  position: absolute;
+}
+
+.sub-hor-select li.expanded span {
+  background: url("../images/bg-hor-select-active-gradient_3.png") no-repeat scroll 0 0 transparent;
+}
+
+.expanded .sub-hor-select-span {
+  margin-top: -10px;
+}
+
+.expanded .sub-hor-select-span:after {
+  background: url('../images/sprites-s812f06c210.png') 0 -6307px no-repeat;
+  content: "";
+  display: block;
+  height: 8px;
+  /*position: absolute;*/
+  width: 337px;
+}
+
+.sub-hor-select-span:before {
+  background: url("../images/sprites-s812f06c210.png") no-repeat scroll 0 -6748px transparent;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 0;
+  /*position: absolute;*/
+  top: -10px;
+  width: 337px;
+}
+
+#webform-client-form-46 .name-of-employer-field,
+#webform-client-form-46 .employment-history-address-field {
+  width: 440px;
+}
+
+#webform-client-form-46 .employment-history-from-field,
+#webform-client-form-46 .employment-history-to-field,
+#webform-client-form-46 .employment-history-city-field,
+#webform-client-form-46 .beginning-field,
+#webform-client-form-46 .ending-salary-field {
+  width: 200px;
+}
+
+#webform-client-form-46 .employment-history-state-field {
+  width: 40px;
+}
+
+#webform-client-form-46 .emp-history-zip-field {
+  width: 120px;
+}
+
+#webform-client-form-46 .positions-held-list-all-field,
+#webform-client-form-46 .emp-duties-field {
+  width: 320px;
+  height: 150px;
+  resize: none;
+  padding: 10px 0px 10px 10px;
+}
+
+#webform-client-form-46 .employment-supervisor-field,
+#webform-client-form-46 .employment-phone-field {
+  width: 300px;
+}
+
+#webform-client-form-46 .if-no-reason-field {
+  width: 280px;
+  height: 75px;
+  resize: none;
+  padding: 10px 0px 10px 10px;
+}
+
+#webform-client-form-46 .may-we-contact-field--wrapper {
+  width: 160px;
+}
+
+#webform-client-form-46 .may-we-contact-field .form-type-radio {
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+#webform-client-form-46 .reason-for-leaving-field {
+  width: 680px;
+  height: 100px;
+  resize: none;
+  padding: 10px 0px 10px 10px;
+}
+
+#webform-client-form-46 .employment-history-city-field--wrapper,
+#webform-client-form-46 .employment-history-state-field--wrapper,
+#webform-client-form-46 .emp-history-zip-field--wrapper,
+#webform-client-form-46 .employment-history-from-field--wrapper,
+#webform-client-form-46 .employment-history-to-field--wrapper,
+#webform-client-form-46 .positions-held-list-all-field--wrapper,
+#webform-client-form-46 .emp-duties-field--wrapper,
+#webform-client-form-46 .beginning-field--wrapper,
+#webform-client-form-46 .ending-salary-field--wrapper,
+#webform-client-form-46 .employment-supervisor-field--wrapper,
+#webform-client-form-46 .employment-phone-field--wrapper,
+#webform-client-form-46 .may-we-contact-field--wrapper,
+#webform-client-form-46 .if-no-reason-field--wrapper {
+  margin-right: 15px;
+  float: left;
+  clear: none;
+}
+
+/*
+.webform-client-form #webform-component-describe-your-full-qualifications label{
+  font-family: MerriweatherRegular;
+  margin-bottom: 20px;
+}*/
+#webform-client-form-46 #edit-submitted-describe-your-full-qualifications {
+  resize: none;
+  padding: 10px 0px 10px 10px;
+}
+
+#webform-client-form-46 #webform-component-applicant-information--conviction-note {
+  width: 700px;
+}
+
+#webform-client-form-46 #webform-component-applicant-information--conviction-note p {
+  font: 15px 'CabinRegular', sans-serif;
+}
+
+#webform-component-educational-history .form-type-radio {
+  padding-right: 0px;
+}
+
+#webform-client-form-46 #webform-component-describe-your-full-qualifications label {
+  font-family: MerriweatherRegular;
+  margin-bottom: 25px;
+}
+
+.field-name-field-work-comp-service-text sup {
+  font-size: 7px;
+}
+
+.page-mri .block-content-item ul li {
+  margin-bottom: 10px;
+}
+
+/*.page-node-130 #block-system-main .field-name-body ul li:before {*/
+  /*position: relative;*/
+  /*content: '';*/
+  /*display: inline-block;*/
+  /*width: 3px;*/
+  /*height: 3px;*/
+  /*background: url('../images/sprites-see03ea90e5.png') 0 -7291px no-repeat;*/
+  /*background: url("../images/sprites-s2d8660b07d.png") no-repeat scroll 0 -7009px transparent;*/
+  /*background: url("../images/sprites-scf0bfceb3e.png") no-repeat scroll 0 -7541px transparent;*/
+  /*left: 0px;*/
+  /*top: 13px;*/
+/*}*/
+
+/*
+#block-system-main ul li::before {
+  content: ''!important;
+  display: block!important;
+  width: 3px!important;
+  height: 3px!important;
+  background: url('../images/sprites-see03ea90e5.png') 0 -7291px no-repeat!important;
+  left: -8px!important;
+  top: 13px!important;
+  position: absolute!important;
+}
+*/
+.page-right .block-content-item ul {
+  margin: -17px 0 25px;
+}
+
+#block-system-main ul.sub-hor-select li::before {
+  display: none !important;
+}
+
+#block-system-main ul.field-collection-view-links li::before {
+  list-style: none;
+}
+
+.node-physical-therapy-staff .block-content-item .list_owned li {
+  color: #5C83A1;
+  font-family: MerriweatherBold;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.node-physical-therapy-staff .list_owned ul {
+  margin-right: 0;
+  padding-right: 50px;
+  width: 300px;
+}
+
+.page-privacy .block-content-item .field-item ul {
+  margin-top: 0;
+}
+
+.page-orth.physician .middle-top .block-structure {
+  background: url("../images/find_a_physician_header.jpeg") no-repeat scroll 0 0 transparent;
+}
+
+.page-orth.physician .middle-top .block-structure h1 {
+  color: white !important;
+  font-size: 41px !important;
+  font-weight: normal !important;
+  position: relative !important;
+  text-shadow: 0 1px 2px #595959 !important;
+}
+
+.combo-list .combo-item-active {
+  display: none;
+}
+
+.field-name-field-customer-service-reps {
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.node-physical-therapy-staff h4.therapy-staff-title {
+  color: #B59F64;
+  font: 20px 'CabinBold', sans-serif;
+  text-shadow: 0 1px 1px white;
+  text-transform: uppercase;
+}
+
+.middle-top .block-structure h1,
+.middle-top .block-structure h2 {
+  text-shadow: none !important;
+}
+
+.page-orth .block-content-item .block-title .description a {
+  font: 16px 'CabinSemiBoldItalic', sans-serif;
+  color: #B59F64;
+  text-decoration: none;
+}
+
+.middle.page-default .block-structure h1 {
+  font-size: 41px !important;
+  top: 24px !important;
+  left: 34px !important;
+  font-weight: normal !important;
+  position: relative !important;
+  font-family: MerriweatherBold !important;
+  color: white !important;
+}
+
+.button-wrapper .form-submit-reset {
+  background: url('../images/sprites-scf0bfceb3e.png') 0 -5162px no-repeat;
+  width: 230px;
+}
+
+.button-wrapper .form-submit-reset:hover {
+  background: url('../images/sprites-scf0bfceb3e.png') 0 -5400px no-repeat;
+}
+
+.webform-client-form #webform-component-employment-information--date-available-to-work,
+.webform-client-form #webform-component-employment-information--preferred-salary {
+  float: left;
+  clear: none;
+  margin-right: 13px;
+}
+
+#edit-submitted-applicant-information-if-yes-please-explain {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 10px 0px 10px 10px;
+}
+
+.webform-client-form #webform-component-employment-information > legend > .fieldset-legend:before,
+.webform-client-form #webform-component-applicant-information > legend > .fieldset-legend:before,
+.webform-client-form #webform-component-educational-history > legend > .fieldset-legend:before,
+.webform-client-form #webform-component-employment-history > legend > .fieldset-legend:before {
+  height: 16px;
+  width: 21px;
+  background: url('../images/sprites-scf0bfceb3e.png') 0 -6972px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 2px;
+}
+
+.webform-client-form #webform-component-employment-information > legend > .fieldset-legend,
+.webform-client-form #webform-component-applicant-information > legend > .fieldset-legend,
+.webform-client-form #webform-component-educational-history > legend > .fieldset-legend,
+.webform-client-form #webform-component-employment-history > legend > .fieldset-legend {
+  text-shadow: -1px 1px 1px white;
+  color: #5E4F2F;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.webform-client-form #webform-component-employment-information > legend,
+.webform-client-form #webform-component-applicant-information > legend,
+.webform-client-form #webform-component-educational-history > legend,
+.webform-client-form #webform-component-employment-history > legend {
+  position: relative;
+}
+
+#webform-component-upload-resume input.form-submit {
+  border: none;
+  width: 133px;
+  height: 59px;
+  padding-bottom: 9px;
+  background: url('../images/sprites-scf0bfceb3e.png') 0 -5463px no-repeat;
+  color: #f0e4c2;
+  text-shadow: #6e582f 0px -1px 1px;
+  text-transform: uppercase;
+  font: 16.83px CabinBold;
+  font-weight: normal;
+  padding-right: 15px;
+  position: relative;
+  right: 5px;
+  cursor: pointer;
+}
+
+.webform-client-form #webform-component-educational-history--high-school,
+.webform-client-form #webform-component-educational-history--college,
+.webform-client-form #webform-component-educational-history--advanced-degree {
+  margin-bottom: 9px;
+  background: url("../images/horisont-line.png") repeat-x scroll 0 100% transparent;
+}
+
+.ui-dialog {
+  background: url("../images/bg-middle-content.png") repeat;
+  box-shadow: 0px 0px 15px #000;
+
+}
+
+.ui-dialog p {
+  font: 15px MerriweatherRegular;
+  color: #5e4f2f;
+  margin-bottom: 5px;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+  background: none;
+  border: none;
+}
+
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+
+.ui-widget-overlay {
+  opacity: 0.666;
+}
+
+.views-row.line {
+  background: url("../images/horisont-line.png") repeat-x scroll 0 100% transparent;
+  padding-bottom: 14px;
+}
+
+.location-body {
+  margin-bottom: 25px;
+  padding-bottom: 14px;
+  font: 15px MerriweatherRegular;
+  color: rgb(94, 79, 47);
+}
+
+.node tbody {
+  border: none;
+}
+
+.node-careers-listing ul, .node-careers-listing ol {
+  list-style: outside;
+}
+
+.page-orth .block-content-item .block-title .description {
+  margin-bottom: 0px;
+}
+
+.block-mailing .form-item.field-state--wrapper {
+  margin-right: 21px;
+  float: left;
+}
+
+.block-mailing .form-item.field-state--wrapper .form-text {
+  width: 70px;
+}
+
+.block-mailing .form-item.field-zip--wrapper {
+  float: left;
+  clear: none;
+}
+
+.block-mailing .form-item.field-zip--wrapper .form-text {
+  width: 70px;
+}
+
+.block-mailing #inline-messages {
+  width: auto;
+  margin-left: 0px;
+  padding: 10px 0px 10px 10px;
+  background-image: none;
+}
+
+#employment-success-message .button.button-return {
+  color: white;
+}
+
+.node-careers ul, .node-careers ol {
+  list-style: disc inside none;
+}
+
+.hidden {
+  display: none;
+}
+
+.logout {
+  position: absolute;
+  right: 100px;
+}
+
+select {
+  -webkit-appearance: menulist-button;
+}
+
+.mcbride-custom-error {
+  margin-left: 20px;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.webform.form-text {
+  border-bottom: 2px solid transparent;
+  border-top-width: 2px;
+}
+
+.node-physician .ability-ttile {
+  margin-left: 14px;
+}
+
+.node-physician .ability {
+  margin-left: 14px;
+  margin-bottom: 21px;
+}
+
+.node-physician .ability ul {
+  /* padding-left: 10px;*/
+}
+
+.pysician-video {
+  clear: both;
+}
+
+.pysician-video-block {
+  clear: both;
+}
+
+.node-physician .field-name-field-physician-list-of-link a {
+  color: #5c83a1;
+  text-decoration: none;
+}
+
+.osmplayer-default .ui-state-default:before,
+.minplayer-default .ui-state-default:before {
+  background: none;
+}
+
+.view-playlist-physicians-videos h4 {
+  color: #b59f64;
+  font: 16px 'CabinBold', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.node-physician .manager-links-wrapper {
+  margin-top: 15px;
+}
+
+.slides_control .block-read_more.left {
+  left: 53px;
+  right: auto;
+}
+
+.slides_control .block-read_more.right {
+  left: auto;
+  right: 93px;
+}
+
+.social .item-list ul {
+  margin: auto;
+}
+
+.page-news .tabs {
+  z-index: 999;
+}
+
+.page-news .manager-links-region {
+  position: static;
+}
+
+.page-news .manager-links-region .manager-links-wrapper {
+  right: -45px;
+  z-index: 999;
+}
+
+.bg-list-tabs .content > ul > li > div > a {
+  top: -50px;
+}
+
+.node-wide-page {
+  padding-top: 23px;
+}
+
+.node-wide-page span {
+  color: rgb(94, 79, 47);
+  display: inline;
+  font-family: MerriweatherBold, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  cursor: default;
+}
+
+.form-radio {
+  width: 18px !important;
+  height: 18px !important;
+  z-index: 100 !important;
+  visibility: visible !important;
+  left: 1px !important;
+  top: -1px !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+}
+
+.page-node-92 .combo-selected, .page-node-94 .combo-selected {
+  width: 195px !important;
+  overflow: hidden;
+}
+
+#node-94 .messages {
+  margin-left: 0px;
+}
+
+.manager-links-region {
+  z-index: 999;
+}
+
+.page-node-252 .middle-top .block-structure h1 {
+  display: none;
+}
+
+.bg-list-tabs li h3 {
+  font: bold 19px "MerriweatherBold", sans-serif;
+  text-align: center;
+}
+
+.vimeo-iframe-wrapper {
+  display: none;
+}
+
+#webform-component-date-of-birth .combo-wrapper {
+  background: url('../images/sprites/select-s.png');
+}
+
+#webform-component-date-of-birth .webform-container-inline div, #webform-component-date-of-birth .webform-container-inline div.form-item {
+  height: 60px !important;
+  display: inline-block;
+  width: 129px !important;
+  margin-right: 15px;
+}
+
+#webform-component-date-of-birth .combo-wrapper .combo-selected {
+  line-height: 65px;
+}
+
+#webform-component-date-of-birth .combo-wrapper-active {
+  background: url('../images/sprites/select-s-open.png');
+}
+
+.page-node-92 .combo-list {
+  overflow: hidden !important;
+}
+
+.page-node-92 .webform-confirmation {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.page-node-92 .webform-confirmation p {
+  color: #b59f64;
+  text-shadow: white -1px 1px 1px;
+  background: url(../images/horisont-line.png) repeat-x 0 100%;
+  padding-bottom: 14px;
+  font: 33px MerriweatherBold;
+  margin-bottom: 38px;
+}
+
+.page-node-92 .webform-confirmation + .links a {
+  margin-left: 20px;
+  color: #b59f64;
+}
+
+.page-node-92 .combo-list {
+  max-height: 400px;
+  overflow-y: auto !important;
+}
+
+.header .top-wrapper .region-header-top, .header .top-wrapper .social {
+  float: right;
+}
+
+.header .top-wrapper .region-header-top {
+  margin-top: 20px;
+}
+
+.header .top-wrapper .social {
+  position: relative;
+  top: auto;
+  right: auto;
+  margin: 18px 20px 0 0;
+}
+
+.header .call-to-action {
+  position: relative;
+  float: right;
+  right: auto;
+  margin: 22px 0 0 0;
+}
+
+.header .call-to-action p {
+  padding: 0;
+}
+
+.file-footer {
+  float: right;
+  margin-top: 69px;
+  margin-right: 34px;
+}
+
+.file-footer a {
+  color: #a19e9a !important;
+  text-shadow: #3b3936 1px 1px 0;
+  font: 14px "CabinRegular", sans-serif;
+  text-decoration: none;
+}
+
+.file-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .logo-footer-1{
+  float: left;
+  display: block;
+  width: 60px;
+  margin-right: 20px;
+  margin-top: 16px
+}
+
+.footer .logo-footer-2{
+  float: left;
+  display: block;
+  width: 80px;
+  margin-right: 20px;
+  margin-top: 16px
+}
+
+.footer .logo-footer{
+  width: 112px;
+}
+
+.footer img {
+  max-width: 100%;
+}
+
+form#payment-form .form-radios div.form-type-radio.form-item {
+  margin-right: 18px;
+  padding-right: 0;
+
+}
+
+form#payment-form .form-radios div.form-type-radio.form-item input{
+  cursor: pointer;
+}
+
+form#payment-form .form-radios .form-item label {
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+form#payment-form .amount-wrap, form#payment-form  .dates-wrap {
+  clear: both;
+}
+
+form#payment-form  .dates-wrap {
+  margin-bottom: 10px;
+}
+
+.ui-datepicker-calendar .ui-state-default, .ui-datepicker-calendar .ui-widget-content .ui-state-default, .ui-datepicker-calendar .ui-widget-header .ui-state-default, .ui-datepicker-calendar .ui-state-default::before {
+  background: none;
+}
+
+/* Task https://funneleyes.com/node/94241 */
+.page-node-130 .wrapper-block-content ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.page-node-130 .wrapper-block-content ul li {
+  font-size: 13px;
+  line-height: 23px;
+  position: relative;
+  margin-left: 8px;
+}
+
+.page-node-130 .wrapper-block-content ul li:before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  background: url(/sites/all/themes/custom/mcbride/images/sprites-s95d247b3c3.png) 0 -7871px no-repeat;
+  left: -8px;
+  top: 8px;
+  position: absolute;
+}

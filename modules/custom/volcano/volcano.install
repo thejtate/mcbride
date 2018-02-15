@@ -1,0 +1,29 @@
+<?php
+
+function volcano_install(){
+    variable_set('volcano_settings', array());
+    // create any roles we will be using
+    $manager_permissions = array('manager');
+    _add_role('manager');
+}
+
+
+function volcano_uninstall(){
+    variable_del('volcano_settings');
+    // remove any roles we created
+    user_role_delete('manager');
+} 
+
+
+/**
+ *	Adds a new role
+ *      @machine_name - the name of the role to be added
+ *      @weight - the optional display weight for role
+ */
+function _add_role($machine_name, $weight = 0)  {
+	$role = new stdClass();
+	$role->name = $machine_name;
+	$role->weight = $weight;
+	user_role_save($role);
+}
+?>

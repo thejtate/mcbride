@@ -1,0 +1,10 @@
+name = McBride GMap
+description = Provides GMap
+package = custom
+version = VERSION
+core = 7.x
+
+
+version = "7.8"
+project = Volcano
+configure = admin/config/gmap/settings

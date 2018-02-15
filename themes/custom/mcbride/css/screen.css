@@ -1,0 +1,4515 @@
+.form-type-select select {
+  height: 56px;
+  width: 116px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../images/bg-body.png") repeat;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.node-type-common-page .field-name-body ul {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+.node-type-common-page .field-name-body ol {
+  list-style-type: decimal;
+  padding-left: 15px;
+}
+
+.node-type-common-page .field-name-body h3{
+  margin: 20px 0;
+}
+
+img {
+  border: none;
+}
+
+a {
+  border: none;
+  outline: none;
+  color: #4C4C4C;
+}
+
+a:visited {
+  color: #4C4C4C;
+}
+
+hr {
+  display: block;
+  border: 0 none;
+  clear: both;
+  height: 0px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  outline: none;
+}
+
+.block-structure {
+  width: 940px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@font-face {
+  font-family: 'CabinSemiBold';
+  src: url("../fonts/cabin-semibold-webfont.eot");
+  src: url("../fonts/cabin-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-semibold-webfont.woff") format("woff"), url("../fonts/cabin-semibold-webfont.ttf") format("truetype"), url("../fonts/cabin-semibold-webfont.svg#CabinSemiBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinRegular';
+  src: url("../fonts/cabin-regular-webfont.eot");
+  src: url("../fonts/cabin-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-regular-webfont.woff") format("woff"), url("../fonts/cabin-regular-webfont.ttf") format("truetype"), url("../fonts/cabin-regular-webfont.svg#CabinRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinMedium';
+  src: url("../fonts/cabin-medium-webfont.eot");
+  src: url("../fonts/cabin-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-medium-webfont.woff") format("woff"), url("../fonts/cabin-medium-webfont.ttf") format("truetype"), url("../fonts/cabin-medium-webfont.svg#CabinMedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinMediumItalic';
+  src: url("../fonts/cabin-mediumitalic-webfont.eot");
+  src: url("../fonts/cabin-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-mediumitalic-webfont.woff") format("woff"), url("../fonts/cabin-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/cabin-mediumitalic-webfont.svg#CabinMediumItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinSemiBoldItalic';
+  src: url("../fonts/cabin-semibolditalic-webfont.eot");
+  src: url("../fonts/cabin-semibolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-semibolditalic-webfont.woff") format("woff"), url("../fonts/cabin-semibolditalic-webfont.ttf") format("truetype"), url("../fonts/cabin-semibolditalic-webfont.svg#CabinSemiBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinBold';
+  src: url("../fonts/cabin-bold-webfont.eot");
+  src: url("../fonts/cabin-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-bold-webfont.woff") format("woff"), url("../fonts/cabin-bold-webfont.ttf") format("truetype"), url("../fonts/cabin-bold-webfont.svg#CabinBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinBoldItalic';
+  src: url("../fonts/cabin-bolditalic-webfont.eot");
+  src: url("../fonts/cabin-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cabin-bolditalic-webfont.woff") format("woff"), url("../fonts/cabin-bolditalic-webfont.ttf") format("truetype"), url("../fonts/cabin-bolditalic-webfont.svg#CabinBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MerriweatherBold';
+  src: url("../fonts/merriweather-bold-webfont.eot");
+  src: url("../fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-bold-webfont.woff") format("woff"), url("../fonts/merriweather-bold-webfont.ttf") format("truetype"), url("../fonts/merriweather-bold-webfont.svg#MerriweatherBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MerriweatherRegular';
+  src: url("../fonts/merriweather-webfont.eot");
+  src: url("../fonts/merriweather-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-webfont.woff") format("woff"), url("../fonts/merriweather-webfont.ttf") format("truetype"), url("../fonts/merriweather-webfont.svg#MerriweatherRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MerriweatherHeavy';
+  src: url("../fonts/merriweather-black-webfont.eot");
+  src: url("../fonts/merriweather-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-black-webfont.woff") format("woff"), url("../fonts/merriweather-black-webfont.ttf") format("truetype"), url("../fonts/merriweather-black-webfont.svg#MerriweatherHeavy") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.footer {
+  height: 115px;
+  background: url("../images/bg-footer.png") repeat-x;
+}
+
+.footer .copyright {
+  color: #a19e9a;
+  text-shadow: #3b3936 1px 1px 0;
+  font: 14px "CabinRegular", sans-serif;
+  float: left;
+  margin-top: 33px;
+}
+
+.footer .logo-footer {
+  margin-top: 31px;
+  float: right;
+}
+
+.footer .block-structure {
+  position: static;
+}
+
+.social-net {
+  position: relative;
+  float: right;
+  top: 45px;
+  right: 137px;
+}
+
+.social-net li {
+  float: left;
+  margin-right: 13px;
+}
+
+.social-net li a {
+  width: 38px;
+  height: 39px;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.header {
+  height: 100px;
+  background: url("../images/bg-header.png") repeat 0 0;
+}
+
+.logo {
+  width: 447px;
+  height: 100px;
+  background: url("../images/bg-logo.png") no-repeat 0 0;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  left: -100px;
+}
+
+.logo a {
+  position: relative;
+  top: 19px;
+}
+
+.facebook {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7878px no-repeat;
+}
+
+.twitter {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7838px no-repeat;
+}
+
+.social {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.social li {
+  float: left;
+  margin-left: 10px;
+}
+
+.social li a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 30px;
+  height: 31px;
+}
+
+.navigation {
+  position: absolute;
+  top: 49px;
+  right: 0;
+  z-index: 13;
+}
+
+.navigation ul {
+  position: relative;
+  /*   a{
+      &:hover{
+        color: #000;
+      }
+     &:active{
+        color: #ffa500;
+      }
+    }*/
+}
+
+.navigation ul li {
+  font-weight: bold;
+  float: left;
+  zoom: 1;
+}
+
+.navigation ul li li.active {
+  background: url("../images/bg-nav-submenu-hover.png") repeat-y 0 0;
+}
+
+.navigation ul li li.active:before, .navigation ul li li.active:after {
+  background: none;
+}
+
+.navigation ul li li.active a {
+  color: #abdbff !important;
+}
+
+.navigation ul li li.last {
+  background: url("../images/bg-nav-submenu-hover.png") repeat-y 0 0;
+}
+
+.navigation ul li a {
+  display: block;
+  padding: 20px 15px 13px;
+  color: #c0beb1;
+  font: 100 14px "CabinSemiBold", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: #2c363e 0px 1px 1px;
+}
+
+.navigation ul li a .close-open-select {
+  display: block;
+  width: 11px;
+  height: 15px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7374px no-repeat;
+  position: absolute;
+  top: 35%;
+  right: 10px;
+}
+
+.navigation ul li a:hover .close-open-select, .navigation ul li a .hover .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7355px no-repeat;
+}
+
+.navigation ul li:hover, .navigation ul li .hover {
+  position: relative;
+}
+
+.navigation ul li.active {
+  position: relative;
+  background: url("../images/bg-active.png") repeat-x;
+}
+
+.navigation ul li.active:before {
+  content: '';
+  display: block;
+  width: 21px;
+  height: 57px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7580px no-repeat;
+  left: 0;
+  top: -5px;
+  position: absolute;
+}
+
+.navigation ul li.active:after {
+  content: '';
+  display: block;
+  width: 21px;
+  height: 57px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7664px no-repeat;
+  right: 0;
+  top: -5px;
+  position: absolute;
+}
+
+.navigation ul li.active a {
+  color: #fffdf5;
+}
+
+.navigation ul ul {
+  width: 194px;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: -5px;
+}
+
+.navigation ul ul li {
+  font-weight: normal;
+  background: url("../images/bg-nav-submenu.png") repeat-y 0 0;
+  float: none;
+  position: relative;
+}
+
+.navigation ul ul li.first a {
+  border-top: none;
+}
+
+.navigation ul ul li.last {
+  border-bottom: none;
+  background: url("../images/bg-nav-submenu.png") repeat-y 0 0;
+}
+
+.navigation ul ul li.last.active {
+  background: url("../images/bg-nav-submenu-hover.png") repeat-y 0 0;
+}
+
+.navigation ul ul li.last:after {
+  content: '';
+  display: block;
+  width: 194px;
+  height: 20px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6056px no-repeat;
+  left: 0;
+  bottom: -19px;
+  position: absolute;
+}
+
+.navigation ul ul li.last:hover:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6698px no-repeat;
+}
+
+.navigation ul ul li.last a {
+  padding-bottom: 5px;
+  padding-right: 20px;
+}
+
+.navigation ul ul li a {
+  border-right: none;
+  width: 146px;
+  padding: 12px 20px;
+  margin: 0 auto;
+  border-top: 1px solid #7a97ad;
+  border-bottom: 1px solid #232f38;
+  display: inline-block;
+  margin-left: 4px;
+  color: #abdbff !important;
+  text-shadow: #1e262b 0px 1px 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: 14px "CabinSemiBold", sans-serif;
+  position: relative;
+}
+
+.navigation ul ul li:hover, .navigation ul ul li .hover {
+  background: url("../images/bg-nav-submenu-hover.png") repeat-y 0 0;
+}
+
+.navigation ul ul li:hover > ul {
+  visibility: visible;
+  top: 8px;
+}
+
+.navigation ul ul li:hover > ul li {
+  background: url("../images/bg-nav-submenu-hover.png") repeat-y 0 0;
+}
+
+.navigation ul ul li:hover > ul li:hover a {
+  color: #e5f4ff !important;
+}
+
+.navigation ul ul li:hover > ul li.first {
+  position: relative;
+}
+
+.navigation ul ul li:hover > ul li.first:before {
+  content: '';
+  display: block;
+  width: 194px;
+  height: 9px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6043px no-repeat;
+  left: 0;
+  top: -8px;
+  position: absolute;
+}
+
+.navigation ul ul li:hover > ul li.first a {
+  padding-top: 5px;
+  border-top: none;
+}
+
+.navigation ul ul li:hover > ul li.last:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6698px no-repeat;
+}
+
+.navigation ul ul li:hover > ul li a:after {
+  background: none;
+}
+
+.navigation ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+.navigation ul li li.active.last:after {
+  content: '';
+  display: block;
+  width: 194px;
+  height: 20px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6698px no-repeat;
+  top: 100%;
+  position: absolute;
+}
+
+.navigation ul li li.active.last a {
+  border-bottom: none;
+}
+
+.navigation ul li.active a {
+  color: #fffdf5;
+}
+
+.navigation .sub_menu li ul li.active a {
+  color: #fffdf5 !important;
+}
+
+.combo-wrapper {
+  position: relative;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5982px no-repeat;
+  font: 16px CabinBold;
+  text-transform: uppercase;
+  text-shadow: white 0px 1px 1px;
+  color: #b59f64;
+}
+
+.combo-wrapper.combo-wrapper-active {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6718px no-repeat;
+  border-bottom: 1px solid #fdfdfd;
+  margin-bottom: 5px;
+}
+
+.combo-wrapper .combo-button {
+  position: absolute;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.combo-wrapper .combo-selected {
+  line-height: 56px;
+  padding-left: 23px;
+  cursor: pointer;
+}
+
+.page-survey .combo-wrapper .combo-selected {
+  color: #5c83a1;
+}
+
+.combo-list {
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible;
+  margin-top: -4px;
+}
+
+.combo-list li {
+  padding: 14px 0 14px 23px;
+  border-top: 1px solid #e1dfda;
+  border-bottom: 1px solid #fdfdfd;
+  background: url("../images/bg-hor-select-form.png") repeat-y 0 0;
+  font: 16px CabinBold;
+  text-transform: uppercase;
+  text-shadow: white 0px 1px 1px;
+  color: #b59f64;
+  cursor: pointer;
+}
+
+.combo-list li:last-child {
+  position: relative;
+}
+
+.combo-list li:last-child:before {
+  content: '';
+  display: block;
+  width: 252px;
+  height: 14px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7147px no-repeat;
+  left: 0;
+  bottom: -14px;
+  position: absolute;
+}
+
+.combo-list li:hover:before {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7182px no-repeat;
+}
+
+.combo-list li:hover {
+  color: #8c6c31;
+  background: url("../images/bg-hor-select-form-hover.png") repeat-y 0 0;
+}
+
+.form-item {
+  clear: both;
+  margin: 0;
+}
+
+.page-survey .form-item .title-notice {
+  font-size: 15px;
+}
+
+.form-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: MerriweatherRegular;
+  font-size: 13px;
+}
+
+.page-survey .form-item label {
+  width: auto;
+  font-weight: normal;
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+.form-item .form-text {
+  width: 408px;
+  height: 33px;
+  padding: 0 10px;
+}
+
+.form-item .form-text, .form-item .form-textarea {
+  outline: none;
+  background: #f3f2ee;
+  color: #5e4f2f;
+  font: 12px MerriweatherRegular;
+  margin-bottom: 15px;
+  border-style: solid none none solid;
+  border-width: 1px 0 0 2px;
+  border-color: #bdb5a2 white white #cbc4b3;
+}
+
+.page-survey .form-item .form-text, .page-survey .form-item .form-textarea {
+  margin-bottom: 10px;
+}
+
+.form-item p {
+  width: 428px;
+  font: 13px MerriweatherRegular;
+}
+
+.form-item p .page-appointment, .page-appointment-phys .form-item p {
+  margin-bottom: 38px;
+  line-height: 20px;
+}
+
+.form-item-select {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-item-select label {
+  float: left;
+  line-height: 52px;
+}
+
+.form-item-select select {
+  height: 56px;
+  width: 242px;
+  line-height: 52px;
+}
+
+.form-item-select .page-appointment label, .page-appointment-phys .form-item-select label {
+  width: 120px;
+}
+
+.form-textarea-wrapper .page-appointment, .page-appointment-phys .form-textarea-wrapper {
+  margin-top: 38px;
+}
+
+.form-textarea-wrapper .page-appointment p, .page-appointment-phys .form-textarea-wrapper p {
+  margin-bottom: 15px;
+  line-height: 25px;
+}
+
+.page-survey .form-textarea-wrapper {
+  margin-top: 10px;
+}
+
+.form-textarea-wrapper .form-textarea {
+  width: 428px;
+  height: 157px;
+}
+
+.form-radios .form-item {
+  margin-right: 16px;
+}
+
+.form-radios {
+  position: relative;
+  float: left;
+  margin-bottom: 16px;
+}
+
+.question .form-radios {
+  margin-bottom: 0;
+}
+
+.form-radios .form-item {
+  float: left;
+  position: relative;
+  padding-right: 26px;
+  clear: none;
+  margin-right: 39px;
+}
+
+.question .form-radios .form-item {
+  margin-right: 14px;
+}
+
+.question .form-radios .form-item ~ .title-notice {
+  margin-bottom: 20px;
+}
+
+.form-radios .form-item label {
+  float: left;
+  font-family: CabinBold;
+}
+
+.question .form-radios .form-item label {
+  font-family: MerriweatherRegular;
+}
+
+.form-radio {
+  width: 30px;
+}
+
+.radiobox {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7200px no-repeat;
+  right: 13px;
+  top: 1px;
+}
+
+.radiobox-checked {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6998px no-repeat;
+}
+
+.button-wrapper {
+  /*margin-top: 37px;
+  
+  .form-submit {
+  border: none;
+  width:133px;
+  height:57px;
+  padding-bottom:5px;
+  background: sprite($sprites, buttom-pay-now) no-repeat;
+  color: #e7dab8;
+  @include text-shadow(#614f29 0px -1px 1px);
+  @incldue uppercase;
+  font: 16.83px $font-bold;
+  font-weight: normal;
+  
+  &:hover{
+  background: sprite($sprites, buttom-pay-now-rol) no-repeat;
+  }
+  }*/
+}
+
+.button-wrapper {
+  margin: 35px 0 0 0;
+  clear: left;
+}
+
+.button-wrapper .form-submit {
+  border: none;
+  width: 133px;
+  height: 59px;
+  padding-bottom: 9px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5730px no-repeat;
+  color: #f0e4c2;
+  text-shadow: #6e582f 0px -1px 1px;
+  text-transform: uppercase;
+  font: 16.83px CabinBold;
+  font-weight: normal;
+  padding-right: 15px;
+  position: relative;
+  right: 5px;
+  cursor: pointer;
+}
+
+.button-wrapper .form-submit:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5793px no-repeat;
+}
+
+.webform-client-form .form-item p {
+  width: 100%;
+}
+
+.webform-client-form .form-item label {
+  font-family: MerriweatherBold;
+}
+
+.webform-client-form strong {
+  font-size: 15px;
+}
+
+.webform-client-form .form-radios label, .webform-client-form em {
+  font-family: CabinBold;
+}
+
+.webform-client-form fieldset {
+  padding: 0 0 3px;
+  width: 100%;
+  height: auto !important;
+  margin-bottom: 9px;
+  background: url("../images/horisont-line.png") repeat-x scroll 0 100% transparent;
+}
+
+.webform-client-form fieldset fieldset {
+  background: none;
+}
+
+.webform-client-form .fieldset-legend {
+  margin-bottom: 10px;
+  padding-left: 28px !important;
+  background: none !important;
+}
+
+.webform-client-form .fieldset-legend .fieldset-title {
+  text-shadow: -1px 1px 1px white;
+  color: #5E4F2F;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.webform-client-form .collapsible .fieldset-legend:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 2px;
+}
+
+.webform-client-form .collapsed .fieldset-legend {
+  background: none;
+}
+
+.webform-client-form .collapsed .fieldset-legend:before {
+  top: 10px;
+}
+
+.webform-client-form .form-type-radio {
+  padding-left: 24px;
+  margin-right: 22px;
+  margin-top: 10px;
+}
+
+.webform-client-form .radiobox {
+  left: 1px;
+  top: -1px;
+}
+
+.webform-client-form .form-item label {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.webform-client-form #webform-component-employment-information--position-are-you-applying-for,
+.webform-client-form #webform-component-employment-information--shift {
+  float: left;
+  clear: none;
+}
+
+.webform-client-form #webform-component-employment-information--position-are-you-applying-for input,
+.webform-client-form #webform-component-employment-information--shift input {
+  width: 314px;
+}
+
+.webform-client-form #webform-component-employment-information--shift {
+  margin-left: 21px;
+}
+
+.webform-client-form #webform-component-employment-information--preferred-salary input {
+  width: 110px;
+}
+
+.webform-client-form #webform-component-employment-information--referral-source .form-item {
+  padding-right: 0;
+}
+
+.webform-client-form #webform-component-applicant-information--first,
+.webform-client-form #webform-component-applicant-information--middle-initial,
+.webform-client-form #webform-component-applicant-information--last,
+.webform-client-form #webform-component-applicant-information--city,
+.webform-client-form #webform-component-applicant-information--state,
+.webform-client-form #webform-component-applicant-information--zip,
+.webform-client-form #webform-component-applicant-information--telephone,
+.webform-client-form #webform-component-applicant-information--mobile-pager,
+.webform-client-form #webform-component-applicant-information--email,
+.webform-client-form #webform-component-applicant-information--any-other-names-by-which-known,
+.webform-client-form #webform-component-applicant-information--drivers-license-,
+.webform-client-form #webform-component-educational-history--high-school--school-name,
+.webform-client-form #webform-component-educational-history--high-school--school-city,
+.webform-client-form #webform-component-educational-history--high-school--school-did-you-graduate,
+.webform-client-form #webform-component-educational-history--high-school--school-date-granted,
+.webform-client-form #webform-component-educational-history--high-school--school-gpa,
+.webform-client-form #webform-component-educational-history--college--college-name,
+.webform-client-form #webform-component-educational-history--college--college-city,
+.webform-client-form #webform-component-educational-history--college--college-course-of-study,
+.webform-client-form #webform-component-educational-history--college--college-degree-received,
+.webform-client-form #webform-component-educational-history--college--college-from,
+.webform-client-form #webform-component-educational-history--college--college-to,
+.webform-client-form #webform-component-educational-history--college--college-gpa,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degreename,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-city,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-course-of-study,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-degree-received,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-from,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-to,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-gpa,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-name,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-city,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-course-of-study,
+.webform-client-form #webform-component-educational-history--other-course-of-study--degree-received,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-from,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-to,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-gpa,
+.webform-client-form #webform-component-educational-history--foreign-language--read,
+.webform-client-form #webform-component-educational-history--foreign-language--write,
+.webform-client-form #webform-component-educational-history--foreign-language--speak,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-city,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-state,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-city-1,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-state-1,
+.webform-client-form #webform-component-employment-history--employment-history-5--emp-history-zip-1,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-dates-of-employment--employment-history-from,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-salary--beginning,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-5--supervisor,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-city-2,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-state-2,
+.webform-client-form #webform-component-employment-history--employment-history-2--emp-history-zip-2,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-dates-of-employment--employment-history-from,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-salary--beginning,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-2--supervisor,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-city-3,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-state-3,
+.webform-client-form #webform-component-employment-history--employment-history-3--emp-history-zip-3,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-dates-of-employment--employment-history-from,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-salary--beginning,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-3--supervisor,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-city-4,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-state-4,
+.webform-client-form #webform-component-employment-history--employment-history-4--emp-history-zip-4,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-dates-of-employment--employment-history-from,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-salary--beginning,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-4--supervisor,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-telephone {
+  float: left;
+  clear: none;
+  margin-right: 12px;
+}
+
+.webform-client-form #webform-component-applicant-information--first input,
+.webform-client-form #webform-component-applicant-information--middle-initial input,
+.webform-client-form #webform-component-applicant-information--last input,
+.webform-client-form #webform-component-applicant-information--city input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-city-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-dates-of-employment--employment-history-from input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-dates-of-employment--employment-history-to input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-salary--beginning input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-salary--ending input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-city-2 input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-dates-of-employment--employment-history-from input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-dates-of-employment--employment-history-to input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-salary--beginning input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-salary--ending input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-city-3 input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-dates-of-employment--employment-history-from input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-dates-of-employment--employment-history-to input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-salary--beginning input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-salary--ending input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-city-4 input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-dates-of-employment--employment-history-from input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-dates-of-employment--employment-history-to input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-salary--beginning input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-salary--ending input {
+  width: 201px;
+}
+
+.webform-client-form #edit-submitted-employment-information-referral-source div:first-child {
+  min-width: 129px;
+}
+
+.webform-client-form #webform-component-applicant-information--last,
+.webform-client-form #webform-component-applicant-information--zip,
+.webform-client-form #webform-component-applicant-information--email,
+.webform-client-form #webform-component-applicant-information--drivers-license-,
+.webform-client-form #webform-component-educational-history--high-school--school-city,
+.webform-client-form #webform-component-educational-history--high-school--school-gpa,
+.webform-client-form #webform-component-educational-history--college--college-city,
+.webform-client-form #webform-component-educational-history--college--college-degree-received,
+.webform-client-form #webform-component-educational-history--college--college-gpa,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-city,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-degree-received,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-gpa,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-city,
+.webform-client-form #webform-component-educational-history--other-course-of-study--degree-received,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-gpa,
+.webform-client-form #webform-component-educational-history--foreign-language--speak,
+.webform-client-form #webform-component-employment-history--employment-history-5--emp-history-zip-1,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-2--emp-history-zip-2,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-3--emp-history-zip-3,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-telephone,
+.webform-client-form #webform-component-employment-history--employment-history-4--emp-history-zip-4,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-dates-of-employment--employment-history-to,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-salary--ending,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-telephone {
+  margin-right: 0;
+}
+
+.webform-client-form #webform-component-applicant-information--address-line-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-5--name-of-employer-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-address-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-2--name-of-employer-2 input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-address-2 input,
+.webform-client-form #webform-component-employment-history--employment-history-3--name-of-employer-3 input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-address-3 input,
+.webform-client-form #webform-component-employment-history--employment-history-4--name-of-employer-4 input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-address-4 input {
+  width: 437px;
+}
+
+.webform-client-form #webform-component-applicant-information--state input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-state input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-state-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-state-2 input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-state-3 input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-state-4 input {
+  width: 44px;
+}
+
+.webform-client-form #webform-component-applicant-information--zip input,
+.webform-client-form #webform-component-employment-history--employment-history-5--emp-history-zip-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-2--emp-history-zip-2 input,
+.webform-client-form #webform-component-employment-history--employment-history-3--emp-history-zip-3 input,
+.webform-client-form #webform-component-employment-history--employment-history-4--emp-history-zip-4 input {
+  width: 123px;
+}
+
+.webform-client-form #webform-component-applicant-information--telephone,
+.webform-client-form #webform-component-educational-history--college--college-course-of-study,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-course-of-study,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-course-of-study {
+  clear: left;
+}
+
+.webform-client-form #webform-component-applicant-information--telephone input,
+.webform-client-form #webform-component-applicant-information--mobile-pager input {
+  width: 174px;
+}
+
+.webform-client-form #webform-component-applicant-information--email input {
+  width: 256px;
+}
+
+.webform-client-form #webform-component-applicant-information--any-other-names-by-which-known input,
+.webform-client-form #webform-component-applicant-information--drivers-license- input,
+.webform-client-form #webform-component-employment-history--employment-history-5--supervisor input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-telephone input,
+.webform-client-form #webform-component-employment-history--employment-history-2--supervisor input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-telephone input,
+.webform-client-form #webform-component-employment-history--employment-history-2--supervisor input,
+.webform-client-form #webform-component-employment-history--employment-history-2--employment-history-telephone input,
+.webform-client-form #webform-component-educational-history--high-school--school-name input,
+.webform-client-form #webform-component-educational-history--high-school--school-city input,
+.webform-client-form #webform-component-educational-history--college--college-name input,
+.webform-client-form #webform-component-educational-history--college--college-city input,
+.webform-client-form #webform-component-educational-history--college--college-course-of-study input,
+.webform-client-form #webform-component-educational-history--college--college-degree-received input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degreename input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-city input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-course-of-study input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-degree-received input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-name input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-city input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-course-of-study input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--degree-received input,
+.webform-client-form #webform-component-employment-history--employment-history-3--supervisor input,
+.webform-client-form #webform-component-employment-history--employment-history-3--employment-history-telephone input,
+.webform-client-form #webform-component-employment-history--employment-history-4--supervisor input,
+.webform-client-form #webform-component-employment-history--employment-history-4--employment-history-telephone input {
+  width: 320px;
+}
+
+.webform-client-form #webform-component-applicant-information--are-you-over-18 .form-item,
+.webform-client-form #webform-component-applicant-information--are-you-legally-elligible-to-work-in-the-united-states .form-item,
+.webform-client-form #webform-component-applicant-information--have-you-been-employed-here-before .form-item,
+.webform-client-form #webform-component-applicant-information--have-you-ever-been-convicted .form-item {
+  padding-right: 9px;
+}
+
+.webform-client-form #webform-component-applicant-information--list-any-relatives-employed-by-mcbride input {
+  width: 675px;
+}
+
+.webform-client-form .fieldset-wrapper .fieldset-legend {
+  font-family: MerriweatherHeavy;
+  font-size: 17px;
+  color: #b59f64;
+  padding-left: 0 !important;
+}
+
+.webform-client-form #webform-component-educational-history--high-school--school-did-you-graduate {
+  margin-right: 5px;
+}
+
+.webform-client-form #webform-component-educational-history--high-school--school-date-granted input {
+  width: 305px;
+}
+
+.webform-client-form #webform-component-educational-history--college--college-from input,
+.webform-client-form #webform-component-educational-history--college--college-to input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-from input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-to input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-from input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-to input {
+  width: 230px;
+}
+
+.webform-client-form #webform-component-educational-history--high-school--school-gpa input,
+.webform-client-form #webform-component-educational-history--college--college-gpa input,
+.webform-client-form #webform-component-educational-history--advanced-degree--advanced-degree-gpa input,
+.webform-client-form #webform-component-educational-history--other-course-of-study--other-course-of-study-gpa input {
+  width: 145px;
+}
+
+.webform-client-form #webform-component-educational-history--additional-education textarea,
+.webform-client-form #webform-component-employment-history--employment-history-4--reason-for-leaving-4 textarea,
+.webform-client-form #webform-component-describe-your-full-qualifications textarea,
+.webform-client-form #webform-component-employment-history--employment-history-5--reason-for-leaving textarea,
+.webform-client-form #webform-component-employment-history--employment-history-2--reason-for-leaving-2 textarea,
+.webform-client-form #webform-component-employment-history--employment-history-3--reason-for-leaving-3 textarea {
+  width: 100%;
+}
+
+.webform-client-form #webform-component-educational-history--foreign-language--read input,
+.webform-client-form #webform-component-educational-history--foreign-language--write input,
+.webform-client-form #webform-component-educational-history--foreign-language--speak input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-city input {
+  width: 202px;
+}
+
+.webform-client-form #webform-component-employment-history--employment-history-5--company-1 input,
+.webform-client-form #webform-component-employment-history--employment-history-5--employment-history-address input,
+.webform-client-form #webform-component-type-full-name input {
+  width: 439px;
+}
+
+.webform-client-form #webform-component-employment-history--employment-history-4--reason-for-leaving-4 textarea,
+.webform-client-form #webform-component-employment-history--employment-history-3--reason-for-leaving-3 textarea,
+.webform-client-form #webform-component-employment-history--employment-history-2--reason-for-leaving-2 textarea,
+.webform-client-form #webform-component-employment-history--employment-history-5--reason-for-leaving textarea {
+  height: 97px;
+}
+
+.webform-client-form #webform-component-employment-history--employment-history-3--may-we-contact,
+.webform-client-form #webform-component-employment-history--employment-history-5--may-we-contact {
+  overflow: hidden;
+}
+
+.webform-client-form .all-jobs .jobs .fieldset-wrapper {
+  overflow: hidden;
+  clear: both;
+}
+
+.webform-client-form .all-jobs .jobs .fieldset-wrapper > div {
+  float: left;
+  margin-right: 12px;
+  clear: none;
+}
+
+.webform-client-form .all-jobs .jobs .fieldset-wrapper > div.third--wrapper {
+  margin-right: 0;
+}
+
+.webform-client-form .all-jobs .first--wrapper input {
+  width: 201px;
+}
+
+.webform-client-form .all-jobs .second--wrapper input {
+  width: 123px;
+}
+
+.webform-client-form .all-jobs .third--wrapper input {
+  width: 280px;
+}
+
+.webform-client-form .all-jobs .add-position {
+  color: #5c83a1;
+  font-size: 13px;
+  font-family: CabinBold;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding-left: 25px;
+}
+
+.webform-client-form .all-jobs .add-position:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.middle-top .block-structure {
+  height: 218px;
+}
+
+.middle-top .block-structure h1, .middle-top .block-structure h2 {
+  position: relative;
+  font-weight: normal;
+}
+
+.about-us .middle-top .block-structure h1, .about-us .middle-top .block-structure h2 {
+  color: #eeebe3;
+  text-shadow: #595959 0px 1px 2px;
+  top: 19px;
+  font-size: 41px;
+  font-family: MerriweatherBold;
+  left: 25px;
+}
+
+.page-about_us .short-line {
+  width: 250px;
+}
+
+.page-about_us .middle-top .block-structure,
+.page-mission .middle-top .block-structure,
+.page-history .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-locations.jpg') no-repeat;
+}
+
+.page-privacy .block-content-item,
+.page-right .block-content-item {
+  background: none;
+}
+
+.page-privacy .block-content-item ul,
+.page-right .block-content-item ul {
+  list-style: none;
+}
+
+.page-privacy .block-content-item li,
+.page-right .block-content-item li {
+  position: relative;
+  line-height: 26px;
+}
+
+.page-privacy .block-content-item li:before,
+.page-right .block-content-item li:before {
+  height: 4px;
+  width: 4px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7922px no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  top: 12px;
+  left: 0;
+  margin-right: 5px;
+}
+
+.page-privacy .middle-top .block-structure {
+  background: url('../images/bg-top-AboutUs-privacy.jpg') no-repeat;
+}
+
+.page-privacy .block-content-item ul {
+  margin: 25px 0 25px 0;
+}
+
+.page-right .middle-top .block-structure {
+  background: url('../images/bg-top-AboutUs-right.jpg') no-repeat;
+}
+
+.page-right .block-content-item ul {
+  margin: -17px 0 25px 18px;
+}
+
+.page-testimonials .middle-top .block-structure {
+  background: url('../images/bg-top-AboutUs-testimonials.jpg') no-repeat;
+}
+
+.page-careers-listings .block-title h3 {
+  color: #5E4F2F;
+  font: 26px "MerriweatherBold", sans-serif;
+  text-shadow: 0 1px 1px white;
+  margin-bottom: 25px;
+}
+
+.page-careers-listings .more-info {
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-bottom: 30px;
+  margin-bottom: 13px;
+  position: relative;
+}
+
+.page-careers-listings .more-info span:before {
+  height: 11px;
+  width: 15px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7529px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+}
+
+.page-careers-listings .more-info .content {
+  padding-top: 15px;
+  display: none;
+  padding-left: 20px;
+}
+
+.page-careers-listings .more-info .content p {
+  line-height: 21px;
+  margin-bottom: 0;
+}
+
+.page-careers-listings .more-info.active .content {
+  display: block;
+}
+
+.page-careers-listings .more-info.active span:before {
+  height: 16px;
+  width: 11px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7437px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 2px;
+}
+
+.page-careers-listings span {
+  color: #5c83a1;
+  text-transform: uppercase;
+  font-family: CabinBold;
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.page-careers-listings .btn-apply {
+  height: 30px;
+  width: 61px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6664px no-repeat;
+  position: absolute;
+  top: -2px;
+  left: 110px;
+  display: block;
+  text-indent: -9999px;
+}
+
+.page-careers .middle-top .block-structure, .page-careers-listings .middle-top .block-structure {
+  background: url('../images/bg-top-AboutUs-careers.jpg') no-repeat;
+}
+
+.page-careers .block-image-top, .page-careers-listings .block-image-top {
+  background: lime;
+  width: 236px;
+  background: url('../images/bg-middle-news.png') repeat-y;
+  margin: 181px 0 48px 40px;
+  padding-top: 14px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.page-careers .block-image-top:before, .page-careers-listings .block-image-top:before {
+  height: 228px;
+  width: 246px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -1434px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -228px;
+  left: 0;
+}
+
+.page-careers .block-image-top:after, .page-careers-listings .block-image-top:after {
+  height: 10px;
+  width: 246px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7393px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.page-careers .block-image-top a.button, .page-careers-listings .block-image-top a.button {
+  display: block;
+  width: 228px;
+  height: 59px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  color: #f0e4c2;
+  text-shadow: #614f29 0px -1px 1px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5305px no-repeat;
+  text-align: center;
+  text-decoration: none;
+  font: bold 16px/57px "CabinBold", sans-serif;
+}
+
+.page-careers .block-image-top a.button:hover, .page-careers-listings .block-image-top a.button:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5543px no-repeat;
+}
+
+.page-careers .block-content-item .block-image-left, .page-careers-listings .block-content-item .block-image-left {
+  float: left;
+  margin: 9px 87px 0 0;
+  padding: 13px;
+}
+
+.page-careers .block-content-item .block-image-left img, .page-careers-listings .block-content-item .block-image-left img {
+  display: block;
+}
+
+.page-phys_owned .middle-top .block-structure {
+  background: url('../images/bg-top-AboutUs-phys_owned.jpg') no-repeat;
+}
+
+.page-phys_owned .block-title h2 {
+  margin-bottom: 23px;
+}
+
+.page-phys_owned .title-notice {
+  margin-bottom: 40px;
+}
+
+.page-phys_owned .block-content-item {
+  float: left;
+  margin-bottom: 39px;
+}
+
+.page-news .middle-top .block-structure {
+  background: url('../images/bg-top-News.jpg') no-repeat;
+}
+
+.page-news .block-image-top {
+  position: relative;
+  width: 206px;
+  background: url("../images/bg-middle-news.png") repeat-y;
+  padding: 0 20px 0;
+  margin-top: 93px;
+}
+
+.page-news .block-image-top .block-image-top-before {
+  position: absolute;
+  left: 0;
+  top: -150px;
+}
+
+.page-news .block-image-top:after {
+  height: 10px;
+  width: 246px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7393px no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.page-news .block-image-top p {
+  color: #5e4f2f;
+  text-shadow: white 0px 1px 1px;
+  font: 16px/24px "CabinMedium", sans-serif;
+  text-align: center;
+  display: block;
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.page-news .block-image-top a.button {
+  display: block;
+  width: 180px;
+  padding-left: 35px;
+  height: 59px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -4791px no-repeat;
+  color: #f0e4c2;
+  text-shadow: #624f2a 0px 1px 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 16px/52px "CabinBold", sans-serif;
+  margin-bottom: 14px;
+}
+
+.page-news .block-image-top a.button:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -4854px no-repeat;
+}
+
+.page-news .block-title h2 {
+  margin-bottom: 34px;
+}
+
+.page-news .block-content-item {
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.page-news .block-content-item .date {
+  color: #b59f64;
+  font: 16px CabinSemiBold;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+
+.page-news .block-content-item .block-title {
+  color: #5c83a1;
+  font: 20px MerriweatherBold;
+  margin-bottom: 5px;
+}
+
+.page-news .block-content-item p {
+  color: #5e4f2f;
+  font: 14px MerriweatherRegular;
+}
+
+.patients .middle-top .block-structure h1 {
+  color: #bdac7d;
+  font-size: 21px;
+  font-family: CabinBold;
+  text-transform: uppercase;
+  top: 24px;
+  left: 34px;
+  letter-spacing: 2px;
+}
+
+.patients .middle-top .block-structure h2 {
+  color: #506575;
+  font-family: MerriweatherBold;
+  text-shadow: white 0px 1px 1px;
+  font-size: 41px;
+  top: 24px;
+  left: 32px;
+}
+
+.page-appointment .middle-top .block-structure,
+.page-faq .middle-top .block-structure,
+.page-survey .middle-top .block-structure,
+.page-appointment-phys .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-appoitment.jpg') no-repeat;
+}
+
+.page-appointment .form-item-select label {
+  min-width: 120px;
+}
+
+.page-payments .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-Pay.jpg') no-repeat;
+}
+
+.page-payments .middle-top .block-structure h1 {
+  color: #506575;
+}
+
+.page-payments .middle-top .block-structure h2 {
+  text-shadow: #595959 0px 1px 2px 0px 1px 2px;
+  color: #fff;
+}
+
+.page-faq .block-title h2 {
+  margin-bottom: 0;
+}
+
+.page-forms .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-forms.jpg') no-repeat;
+}
+
+.page-location .block-title h4,
+.page-survey .block-title h4,
+.page-location-phys .block-title h4,
+.page-location-hospital .block-title h4 {
+  font: 20px CabinBold;
+  text-transform: uppercase;
+  color: #b59f64;
+  text-shadow: white 0px 1px 1px;
+  margin-bottom: 40px;
+}
+
+.page-location .block-title h3,
+.page-survey .block-title h3,
+.page-location-phys .block-title h3,
+.page-location-hospital .block-title h3 {
+  font: 26px MerriweatherBold;
+  color: #5e4f2f;
+  text-shadow: white 0px 1px 1px;
+}
+
+.page-location h5,
+.page-survey h5,
+.page-location-phys h5,
+.page-location-hospital h5 {
+  color: #5e4f2f;
+  font: 17px/23px MerriweatherBold;
+  margin-bottom: 8px;
+}
+
+.page-location .left-part,
+.page-location-phys .left-part,
+.page-location-hospital .left-part {
+  width: 288px;
+  float: left;
+}
+
+.page-location .left-part .block-physician_assistants,
+.page-location-phys .left-part .block-physician_assistants,
+.page-location-hospital .left-part .block-physician_assistants {
+  margin-left: 0px;
+}
+
+.page-location .left-part .remark,
+.page-location-phys .left-part .remark,
+.page-location-hospital .left-part .remark {
+  margin-bottom: 0px;
+}
+
+.page-location .block-contacts,
+.page-location-phys .block-contacts,
+.page-location-hospital .block-contacts {
+  margin: 15px 0 35px 0;
+  float: left;
+}
+
+.page-location .block-contacts .title-contact,
+.page-location-phys .block-contacts .title-contact,
+.page-location-hospital .block-contacts .title-contact {
+  width: 145px;
+  clear: both;
+  float: left;
+  text-transform: uppercase;
+  color: #b59f64;
+  font: 15px/24px CabinBold;
+}
+
+.page-location .block-contacts .phone-contact,
+.page-location-phys .block-contacts .phone-contact,
+.page-location-hospital .block-contacts .phone-contact {
+  float: left;
+  font: 15px MerriweatherBold;
+}
+
+.page-location .right-part,
+.page-location-phys .right-part,
+.page-location-hospital .right-part {
+  float: right;
+  width: 395px;
+  padding-top: 26px;
+}
+
+.page-location .right-part .block-image-top,
+.page-location-phys .right-part .block-image-top,
+.page-location-hospital .right-part .block-image-top {
+  padding: 15px;
+}
+
+.page-location .right-part img,
+.page-location .left-part img,
+.page-location-phys .right-part img,
+.page-location-phys .left-part img,
+.page-location-hospital .right-part img,
+.page-location-hospital .left-part img {
+  display: block;
+}
+
+.page-location .right-part .block-map,
+.page-location .left-part .block-map,
+.page-location-phys .right-part .block-map,
+.page-location-phys .left-part .block-map,
+.page-location-hospital .right-part .block-map,
+.page-location-hospital .left-part .block-map {
+  clear: both;
+}
+
+.page-location .right-part .block-map a,
+.page-location .left-part .block-map a,
+.page-location-phys .right-part .block-map a,
+.page-location-phys .left-part .block-map a,
+.page-location-hospital .right-part .block-map a,
+.page-location-hospital .left-part .block-map a {
+  float: right;
+  text-decoration: none;
+  color: #5c83a1;
+  font: 11px CabinSemiBold;
+  position: relative;
+  padding-right: 2px;
+}
+
+.page-location .right-part .block-map a:after,
+.page-location .left-part .block-map a:after,
+.page-location-phys .right-part .block-map a:after,
+.page-location-phys .left-part .block-map a:after,
+.page-location-hospital .right-part .block-map a:after,
+.page-location-hospital .left-part .block-map a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: -8px;
+}
+
+.page-location .middle-top .block-structure,
+.page-location-hospital .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-locations.jpg') no-repeat;
+}
+
+.page-location .middle-top .block-structure h2,
+.page-location-hospital .middle-top .block-structure h2 {
+  color: #fff;
+  text-shadow: #595959 0px 1px 2px;
+}
+
+.page-location .block-title h2,
+.page-location-hospital .block-title h2 {
+  margin-bottom: 25px;
+}
+
+.page-location .block-title h3,
+.page-location-hospital .block-title h3 {
+  margin-bottom: 23px;
+}
+
+.page-location .block-content-item,
+.page-location-hospital .block-content-item {
+  clear: both;
+  float: left;
+}
+
+.page-location .block-content-item.title-notice,
+.page-location-hospital .block-content-item.title-notice {
+  padding-bottom: 27px;
+  margin-bottom: 29px;
+}
+
+.page-location .block-content-item.title-notice .title-notice,
+.page-location-hospital .block-content-item.title-notice .title-notice {
+  font: 13px/22px MerriweatherRegular;
+  margin-bottom: 0;
+}
+
+.page-location .block-physicians,
+.page-location-hospital .block-physicians {
+  width: 190px;
+  float: left;
+  margin-bottom: 3px;
+}
+
+.page-location .block-physicians:after,
+.page-location-hospital .block-physicians:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.page-location .block-physicians a,
+.page-location-hospital .block-physicians a {
+  color: #5c83a1;
+  font: normal 13px MerriweatherBold;
+  text-decoration: none;
+  line-height: 24px;
+}
+
+.page-location .block-title-physicians,
+.page-location-hospital .block-title-physicians {
+  font: normal 15px CabinBold;
+  text-transform: uppercase;
+  color: #b59f64;
+  padding-bottom: 6px;
+}
+
+.page-location .left-part,
+.page-location-hospital .left-part {
+  margin-right: 16px;
+}
+
+.page-location .right-part .block-map,
+.page-location-hospital .right-part .block-map {
+  padding: 15px;
+  margin: 0 0 52px 5px;
+}
+
+.page-location .right-part .block-map a,
+.page-location-hospital .right-part .block-map a {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+}
+
+.page-location .right-part .block-physician_assistants,
+.page-location-hospital .right-part .block-physician_assistants {
+  margin-left: 15px;
+}
+
+.page-location .right-part .block-title-physicians,
+.page-location-hospital .right-part .block-title-physicians {
+  position: absolute;
+  margin-top: -26px;
+}
+
+.page-location .block-physician_assistants,
+.page-location-hospital .block-physician_assistants {
+  float: left;
+  width: 180px;
+  padding-top: 26px;
+  position: relative;
+}
+
+.page-location .block-physician_assistants a,
+.page-location-hospital .block-physician_assistants a {
+  font: 13px/23px MerriweatherBold;
+  color: #5c83a1;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+}
+
+.page-survey .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Clinic-survey.jpg') no-repeat;
+}
+
+.page-survey .middle-top .block-structure h1 {
+  color: #fff;
+}
+
+.page-survey .block-content-item {
+  padding-bottom: 13px;
+  margin-bottom: 27px;
+}
+
+.page-survey .block-content-item p.remark {
+  margin-bottom: 0;
+}
+
+.page-survey .block-title h2 {
+  margin-bottom: 20px;
+}
+
+.page-survey .block-title h3 {
+  margin-bottom: 13px;
+}
+
+.page-survey .title-notice {
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.page-survey .wrapper-remark {
+  margin-top: 32px;
+}
+
+.page-survey .wrapper-remark p span {
+  font: 15px CabinBold;
+  margin-right: 18px;
+}
+
+.page-survey .question .title-notice {
+  float: left;
+  margin-right: 19px;
+}
+
+.page-survey .question + .title-notice {
+  margin-bottom: 20px;
+}
+
+.page-location-phys .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Phys-locations.jpg') no-repeat;
+}
+
+.page-location-phys .middle-top .block-structure h1 {
+  color: #5c83a1;
+}
+
+.page-location-phys .middle-top .block-structure h2 {
+  color: #fff;
+  text-shadow: #595959 0px 1px 2px;
+}
+
+.page-location-phys .block-title h2 {
+  margin-bottom: 26px;
+}
+
+.page-location-phys .block-content-item.title-notice {
+  font-family: CabinMediumItalic;
+}
+
+.page-location-phys .block-content-item p.title-notice {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.page-location-phys .left-part .block-title {
+  margin-bottom: 14px;
+}
+
+.page-location-phys .left-part h5 {
+  margin-bottom: 15px;
+}
+
+.page-location-phys .left-part .block-map {
+  padding: 10px;
+}
+
+.page-location-phys .left-part .block-map a {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+}
+
+.page-patients2 .block-image-top,
+.page-patients2 .block-image-left,
+.page-visitors .block-image-top,
+.page-visitors .block-image-left {
+  width: 347px;
+  height: 260px;
+  margin-top: 0;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -4917px no-repeat;
+  padding: 15px 0 0 15px;
+}
+
+.page-patients2 .block-title.short-line,
+.page-visitors .block-title.short-line {
+  width: 300px;
+}
+
+.page-patients2 .middle-top .block-structure {
+  background: url("../images/bg-top-Patients-hospital-pollys.jpg") no-repeat;
+}
+
+.page-visitors .middle-top .block-structure {
+  background: url("../images/bg-top-Patients-hospital-visitors.jpg") no-repeat;
+}
+
+.page-resources-phys .middle-top .block-structure {
+  background: url("../images/bg-top-Patients-Phys-resources.jpg") no-repeat;
+}
+
+.page-resources-phys .block-little-title {
+  text-transform: uppercase;
+  color: #b59f64;
+  font-family: CabinSemiBold;
+  margin-bottom: 34px;
+}
+
+.page-resources-phys h3, .page-resources-phys a {
+  font-size: 16px;
+  font-family: MerriweatherBold;
+  font-weight: normal;
+}
+
+.page-resources-phys h3 {
+  margin-bottom: 6px;
+}
+
+.page-resources-phys a {
+  color: #5c83a1;
+  text-decoration: none;
+}
+
+.page-resources-phys .block-content-item {
+  margin-bottom: 17px;
+  padding-bottom: 16px;
+}
+
+.page-staff-phys .middle-top .block-structure {
+  background: url("../images/bg-top-Patients-Phys-staff.jpg") no-repeat;
+}
+
+.page-staff-phys .list_owned {
+  margin-bottom: 45px;
+}
+
+.page-staff-phys .list_owned ul {
+  margin-right: 81px;
+}
+
+.page-staff-phys .list_owned li {
+  margin-bottom: 12px;
+}
+
+.page-staff-phys .list_owned li a {
+  font-family: MerriweatherBold;
+  font-weight: normal;
+}
+
+.page-staff-phys .list_customer h3 {
+  color: #b59f64;
+  text-transform: uppercase;
+  font-family: CabinSemiBold;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.page-staff-phys .list_customer li {
+  margin-bottom: 4px;
+}
+
+.page-staff-phys .list_customer li a {
+  text-decoration: none;
+  font-family: MerriweatherBold;
+}
+
+.speciality .middle-top .block-structure h1, .speciality .middle-top .block-structure h2 {
+  color: #eeebe3;
+  text-shadow: #595959 0px 1px 2px;
+  font-size: 41px;
+  font-family: MerriweatherBold;
+  left: 25px;
+}
+
+.speciality .middle-top .block-structure h1 {
+  top: 19px;
+}
+
+.speciality .middle-top .block-structure h2 {
+  top: 5px;
+}
+
+.page-work-comp .middle-top .block-structure {
+  background: url('../images/bg-top-Speciality-workers-comp.jpg') no-repeat;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top {
+  padding: 140px 30px 0;
+  width: 186px;
+  height: 370px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -1941px no-repeat;
+  color: #5e4f2f;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top .block-image-item {
+  margin-bottom: 25px;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top h4 {
+  font: 26px "MerriweatherBold", sans-serif;
+  text-shadow: white 0px 1px 1px;
+  margin-bottom: 18px;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top p {
+  font: 15px "CabinMedium", sans-serif;
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.page-work-comp .wrapper-block-content .block-image-top p em {
+  font-family: 'CabinMediumItalic';
+}
+
+.page-work-comp .wrapper-block-content .block-image-top p strong {
+  font-family: 'CabinBold';
+}
+
+.page-work-comp .wrapper-block-content .block-image-top p.e-mail a {
+  color: #5c83a1;
+  text-decoration: none;
+}
+
+.page-work-comp .wrapper-block-content .block-content-item h5 {
+  font: 15px MerriweatherHeavy;
+}
+
+.page-work-comp .block-title h3 {
+  margin-bottom: 30px;
+  font: 26px MerriweatherBold;
+  color: #5e4f2f;
+  text-shadow: white 0px 1px 1px;
+}
+
+.page-occupational .middle-top .block-structure {
+  background: url('../images/bg-top-Speciality-occupational.jpg') no-repeat;
+}
+
+.page-spine .middle-top .block-structure {
+  background: url('../images/bg-top-Speciality-spine.jpg') no-repeat;
+}
+
+.page-joint .middle-top .block-structure {
+  background: url('../images/bg-top-Speciality-joint.jpg') no-repeat;
+}
+
+.page-sports .middle-top .block-structure {
+  background: url('../images/bg-top-Speciality-sports.jpg') no-repeat;
+}
+
+.page-joint .block-image-top,
+.page-occupational .block-image-top,
+.page-spine .block-image-top,
+.page-sports .block-image-top {
+  margin: -54px 0 23px 15px;
+  position: relative;
+}
+
+.page-joint .block-image-top a.button,
+.page-occupational .block-image-top a.button,
+.page-spine .block-image-top a.button,
+.page-sports .block-image-top a.button {
+  display: block;
+  width: 208px;
+  height: 49px;
+  position: absolute;
+  bottom: -30px;
+  right: 4px;
+  text-transform: uppercase;
+  color: #f0e4c2;
+  text-shadow: #614f29 0px -1px 1px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5305px no-repeat;
+  text-align: left;
+  text-decoration: none;
+  font: normal 16px CabinBold;
+  padding: 10px 0 0 20px;
+  line-height: 16px;
+}
+
+.page-joint .block-image-top a.button:hover,
+.page-occupational .block-image-top a.button:hover,
+.page-spine .block-image-top a.button:hover,
+.page-sports .block-image-top a.button:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5543px no-repeat;
+}
+
+.page-scan .middle-top .block-structure h1,
+.page-ultrasound .middle-top .block-structure h1,
+.page-mri .middle-top .block-structure h1 {
+  color: #bdac7d;
+  font-size: 21px;
+  font-family: CabinBold;
+  text-transform: uppercase;
+  top: 24px;
+  left: 34px;
+  letter-spacing: 2px;
+}
+
+.page-scan .middle-top .block-structure h2,
+.page-ultrasound .middle-top .block-structure h2,
+.page-mri .middle-top .block-structure h2 {
+  color: #506575;
+  font-family: MerriweatherBold;
+  text-shadow: white 0px 1px 1px;
+  font-size: 41px;
+  top: 24px;
+  left: 32px;
+}
+
+.page-scan .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Imaging-scan.jpg') no-repeat;
+}
+
+.page-ultrasound .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Imaging-ultrasound.jpg') no-repeat;
+}
+
+.page-mri .middle-top .block-structure {
+  background: url('../images/bg-top-Patients-Imaging-MSI.jpg') no-repeat;
+}
+
+.page-mri .middle-top .block-structure h1 {
+  color: #506575;
+}
+
+.page-mri .middle-top .block-structure h2 {
+  color: #fff;
+  text-shadow: #595959 0px 1px 2px;
+}
+
+.page-mri .block-content-item ul {
+  float: left;
+  margin-right: 89px;
+  margin-bottom: 26px;
+}
+
+.page-mri .block-content-item ul li {
+  font-size: 15px;
+  width: 271px;
+  margin-bottom: 29px;
+}
+
+.page-mri .block-content-item ul li:first-child {
+  margin-bottom: 10px;
+}
+
+.page-mri .block-content-item ul li h2 {
+  font-size: 26px;
+}
+
+.page-mri .block-content-item ul.last {
+  margin-right: 0;
+}
+
+.page-mri .block-content-item .block-title {
+  clear: left;
+}
+
+.page-articles .middle-top .block-structure,
+.page-article2 .middle-top .block-structure,
+.page-resource .middle-top .block-structure,
+.page-videos .middle-top .block-structure {
+  background: url("../images/bg-top-education.jpg") no-repeat;
+}
+
+.page-articles .middle-top .block-structure h1,
+.page-article2 .middle-top .block-structure h1,
+.page-resource .middle-top .block-structure h1,
+.page-videos .middle-top .block-structure h1 {
+  color: #506575;
+  text-shadow: none;
+  top: 25px;
+  left: 33px;
+  letter-spacing: -2px;
+  font-size: 44px;
+  font-family: MerriweatherBold;
+}
+
+.page-phys .middle-top .block-structure,
+.page-orth .middle-top .block-structure,
+.page-pa .middle-top .block-structure {
+  background: url("../images/bg-top-physicians.jpg") no-repeat;
+}
+
+.page-phys .middle-top .block-structure h1,
+.page-orth .middle-top .block-structure h1,
+.page-pa .middle-top .block-structure h1 {
+  color: #506575;
+  text-shadow: white 1px 2px 1px;
+  top: 25px;
+  left: 33px;
+  letter-spacing: -2px;
+  font-size: 44px;
+  font-family: MerriweatherBold;
+}
+
+.page-articles .block-title h2 {
+  margin-bottom: 26px;
+}
+
+.page-articles .block-title.wrapper-block-content-item h3 {
+  color: #5e4f2f;
+  font: bold 26px "MerriweatherBold", sans-serif;
+  text-shadow: white 0px 1px 1px;
+  margin-bottom: 24px;
+}
+
+.page-articles .block-content-item {
+  float: left;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+}
+
+.page-articles .block-content-item h4 {
+  color: #5c83a1;
+  font: bold 20px "MerriweatherBold", sans-serif;
+  margin-bottom: 8px;
+}
+
+.page-articles .block-content-item p {
+  font: 14px/27px "MerriweatherRegular", sans-serif;
+  margin-bottom: 0;
+}
+
+.page-articles .block-content-item a.read-more {
+  float: right;
+  display: block;
+  width: 87px;
+  height: 30px;
+  text-align: center;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6872px no-repeat;
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 11px/25px "CabinBold", sans-serif;
+  text-shadow: #63512b 0px -1px 1px;
+  color: #f0e4c2;
+  margin-right: 20px;
+}
+
+.page-article2 .block-title.return_article {
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.page-article2 .block-title.return_article a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 16px "CabinSemiBold", sans-serif;
+  color: #5c83a1;
+}
+
+.page-article2 .block-content-item .block-title h2 {
+  color: #5e4f2f;
+  font-size: 28px;
+  padding: 8px 0 0;
+  background: none;
+  line-height: 38px;
+  margin-bottom: 13px;
+}
+
+.page-article2 .block-content-item .block-image-top {
+  width: 309px;
+  height: 362px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -387px no-repeat;
+  padding: 15px 0 0 15px;
+  margin-top: 0;
+}
+
+.page-article2 .block-content-item .block-image-top img {
+  width: 295px;
+  height: 350px;
+}
+
+.page-article2 .block-content-item .block-title h2,
+.page-phys .block-content-item .block-title h2,
+.page-orth .block-content-item .block-title h2 {
+  color: #5e4f2f;
+  font-size: 28px;
+  padding: 8px 0 0;
+  background: none;
+  line-height: 38px;
+  margin-bottom: 13px;
+}
+
+.page-article2 .block-content-item .sign-author,
+.page-phys .block-content-item .sign-author,
+.page-orth .block-content-item .sign-author {
+  color: #b59f64;
+  font: bold 16px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 43px;
+}
+
+.page-article2 .block-content-item .sign-author em,
+.page-phys .block-content-item .sign-author em,
+.page-orth .block-content-item .sign-author em {
+  font-family: 'CabinBoldItalic';
+  text-transform: none;
+}
+
+.page-phys .block-image-top {
+  width: 247px;
+  height: 162px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -3465px no-repeat;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.page-phys .block-image-top .button {
+  overflow: hidden;
+  display: block;
+  width: 205px;
+  height: 52px;
+  padding-top: 10px;
+  padding-left: 23px;
+  color: #f0e4c2;
+  text-shadow: #66552d 0px -1px 1px;
+  font: 16px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5239px no-repeat;
+  position: absolute;
+  bottom: -31px;
+  left: 11px;
+  z-index: 12;
+}
+
+.page-phys .block-title h2 {
+  margin-bottom: 0;
+}
+
+.page-phys .block-content-item {
+  float: left;
+  padding-bottom: 20px;
+  margin-bottom: 4px;
+}
+
+.page-phys .block-content-item.lift_up {
+  position: relative;
+  z-index: 11;
+}
+
+.page-phys .block-content-item.lift_up .sign-author {
+  margin-top: -26px;
+}
+
+.page-phys .block-content-item.lift_up .block-title {
+  margin-top: -35px;
+}
+
+.page-resource .block-image-top {
+  background: lime;
+  width: 206px;
+  height: 163px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -1666px no-repeat;
+  margin: 0px 0 23px 10px;
+  padding: 108px 20px 0;
+  position: relative;
+}
+
+.page-resource .block-image-top p {
+  color: #5e4f2f;
+  text-shadow: white 0px 1px 1px;
+  font: 16px/24px "CabinMedium", sans-serif;
+  text-align: center;
+  display: block;
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.page-resource .block-image-top a.button {
+  display: block;
+  width: 228px;
+  height: 59px;
+  position: absolute;
+  bottom: -20px;
+  right: 7px;
+  text-transform: uppercase;
+  color: #f0e4c2;
+  text-shadow: #614f29 0px -1px 1px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5305px no-repeat;
+  text-align: center;
+  text-decoration: none;
+  font: bold 16px/57px "CabinBold", sans-serif;
+}
+
+.page-resource .block-image-top a.button:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5543px no-repeat;
+}
+
+.page-orth {
+  position: relative;
+}
+
+.page-orth .block-content-item {
+  float: left;
+  width: 100%;
+}
+
+.page-orth .block-content-item h4 {
+  color: #b59f64;
+  font: 16px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.page-orth .block-content-item .block-title {
+  padding-bottom: 14px;
+  background: url("../images/horisont-line.png") no-repeat 0 100%;
+  margin-bottom: 30px;
+}
+
+.page-orth .block-content-item .block-title .description {
+  font: 16px "CabinSemiBoldItalic", sans-serif;
+  color: #b59f64;
+  padding-right: 80px;
+}
+
+.page-pa .block-content-item h3 {
+  margin-bottom: 27px;
+  font: 15px "MerriweatherHeavy", sans-serif;
+}
+
+.page-pa p em {
+  font: 14px "CabinMediumItalic", sans-serif;
+}
+
+.page-pa p em a {
+  color: #5c83a1;
+}
+
+.page-pa .block-image-top {
+  width: 247px;
+  height: 162px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -3465px no-repeat;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.page-pa .block-image-top .button {
+  overflow: hidden;
+  display: block;
+  width: 205px;
+  height: 52px;
+  padding-top: 10px;
+  padding-left: 23px;
+  color: #f0e4c2;
+  text-shadow: #66552d 0px -1px 1px;
+  font: 16px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5239px no-repeat;
+  position: absolute;
+  bottom: -31px;
+  left: 11px;
+  z-index: 12;
+}
+
+.page-pa .physicians-find-a-physicians-collapsible {
+  float: none;
+  margin-bottom: 50px;
+}
+
+.block-content-item p.remark {
+  font: 14px/20px "CabinMediumItalic", sans-serif;
+  color: #5e4f2f;
+  margin-bottom: 12px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form {
+  width: 700px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .form-item {
+  float: left;
+  margin-right: 31px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .form-item .form-text {
+  width: 215px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .form-item.form-amount span {
+  font: 15px "MerriweatherBold", sans-serif;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .form-item.form-amount .form-text {
+  width: 200px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item {
+  float: left;
+  clear: none;
+  position: relative;
+  margin-right: 15px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item label {
+  position: absolute;
+  top: -3px;
+  white-space: nowrap;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item .form-text {
+  width: 40px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item.form-year .form-text {
+  width: 65px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth,
+.page-payments .wrapper-block-content .block-content-item form .pation_name {
+  float: left;
+  position: relative;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth .form-item,
+.page-payments .wrapper-block-content .block-content-item form .pation_name .form-item {
+  padding-top: 24px;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .block-date-birth label,
+.page-payments .wrapper-block-content .block-content-item form .pation_name label {
+  position: absolute;
+  top: -3px;
+  white-space: nowrap;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .pation_name .form-item {
+  float: left;
+  clear: none;
+}
+
+.page-payments .wrapper-block-content .block-content-item form .form-amount {
+  margin-bottom: 22px;
+}
+
+.page-payments .wrapper-block-content .block-content-item .block-social-net {
+  margin-top: 25px;
+}
+
+.page-payments .wrapper-block-content .block-content-item .block-social-net li {
+  float: left;
+  margin-right: 5px;
+}
+
+.page-payments .wrapper-block-content .block-content-item .block-social-net li:first-child {
+  margin-right: 15px;
+}
+
+.page-visitors .block-title h3 {
+  margin-bottom: 11px;
+}
+
+.page-visitors .block-content-item {
+  padding-bottom: 2px;
+  margin-bottom: 21px;
+}
+
+.page-visitors .block-content-item.last {
+  float: left;
+}
+
+.page-visitors .block-content-item .remark {
+  margin-bottom: 25px;
+}
+
+.page-visitors .block-content-item h5 {
+  font: 15px "MerriweatherHeavy", "CabinBold", sans-serif;
+}
+
+.page-visitors .block-content-item .block-image-left {
+  float: left;
+  margin-right: 49px;
+  margin-left: -53px;
+}
+
+.page-visitors .block-content-item .block-schedule {
+  float: left;
+  width: 295px;
+}
+
+.page-visitors .block-content-item .block-schedule .schedule-days {
+  margin-bottom: 30px;
+}
+
+.page-visitors .block-content-item .block-schedule .schedule-days .block-title {
+  font: 14px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  color: #b59f64;
+}
+
+.page-visitors .block-content-item .block-schedule .schedule-days p {
+  padding: 0;
+  margin: 0;
+}
+
+.page-visitors .block-content-item .block-schedule .schedule-days p strong {
+  float: left;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.page-visitors .block-title h3 {
+  font: 26px "MerriweatherBold", sans-serif;
+  color: #5e4f2f;
+  text-shadow: white 0px 1px 1px;
+}
+
+.block-rounded {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 3px #666565 inset;
+  -moz-box-shadow: 0 1px 3px #666565 inset;
+  box-shadow: 0 1px 3px #666565 inset;
+  border: 1px solid #f2f0ea;
+  background: url('../images/backgrounds/block-rounded-bg.png') repeat 0 0;
+  position: relative;
+}
+
+.block-named-of {
+  width: 345px;
+  height: 253px;
+  float: left;
+  text-align: center;
+  margin-top: 13px;
+}
+
+.block-named-of h3, .block-named-of h2, .block-named-of h4 {
+  font-weight: normal;
+}
+
+.block-named-of h3 {
+  font-family: CabinBold;
+  text-transform: uppercase;
+  color: #b59d5b;
+  font-size: 16px;
+  margin: 25px 105px 9px 82px;
+}
+
+.block-named-of h2 {
+  font-family: MerriweatherBold;
+  text-shadow: white 1px 1px 0px;
+  color: #5e4f2f;
+  font-size: 26px;
+  margin: 0px 38px 0 16px;
+}
+
+.block-named-of h4 {
+  font-family: CabinMediumItalic;
+  font-size: 20px;
+  color: #5e4f2f;
+  margin: 22px 43px 0 43px;
+}
+
+.block-women-award-image {
+  position: relative;
+  left: 17px;
+  margin-top: 3px;
+}
+
+.block-mailing {
+  float: right;
+  clear: both;
+  position: relative;
+  width: 206px;
+  background: url("../images/bg-middle-news.png") repeat-y;
+  padding: 0 20px 0;
+  margin-top: 139px;
+  margin-bottom: 139px;
+}
+
+.block-mailing .block-mailing-before {
+  position: absolute;
+  top: -139px;
+  left: 0;
+}
+
+.block-mailing:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  width: 246px;
+  height: 10px;
+  background: url("../images/sprites/bg-bottom-news.png") no-repeat 0 0 !important;
+}
+
+.block-mailing .form-text {
+  width: 184px;
+}
+
+.block-mailing .form-text.watermark {
+  color: #c9c2ad;
+  font-family: 'CabinSemiBoldItalic';
+  font-size: 15px;
+}
+
+.block-mailing .form-item.field-state {
+  margin-right: 21px;
+  float: left;
+}
+
+.block-mailing .form-item.field-state .form-text {
+  width: 70px;
+}
+
+.block-mailing .form-item.field-zip {
+  float: left;
+  clear: none;
+}
+
+.block-mailing .form-item.field-zip .form-text {
+  width: 70px;
+}
+
+.block-mailing .button-wrapper {
+  text-align: center;
+}
+
+.button-return {
+  text-shadow: #624f2a 0px 1px 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: bold 16px/52px "CabinBold", sans-serif;
+  display: block;
+  height: 59px;
+  width: 215px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5606px no-repeat;
+  color: #f0e4c2;
+  text-align: center;
+}
+
+.button-return:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5668px no-repeat;
+}
+
+.middle-top {
+  background: url("../images/bg-middle.png") repeat;
+  height: 218px;
+}
+
+.middle-top.home {
+  height: 340px;
+}
+
+.carousel {
+  width: 940px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.middle-separate-shadow {
+  height: 5px;
+  background: url("../images/bg-middle-separate.png") repeat-x;
+}
+
+.wrapper-middle-content {
+  float: left;
+  width: 100%;
+  background: url("../images/bg-middle-content.png") repeat;
+  padding-bottom: 45px;
+}
+
+.block-read_more {
+  width: auto;
+  height: auto;
+  max-height: 273px;
+  position: absolute;
+  top: 35px;
+  left: 53px;
+}
+
+.block-read_more .block-read_more-top {
+  width: 290px;
+  height: 6px;
+  background: url("../images/bg-top-middle-read-more.png") repeat-x 0 0;
+  margin-left: 13px;
+  margin-right: 6px;
+  position: relative;
+}
+
+.block-read_more .block-read_more-top:before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 6px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7738px no-repeat;
+  top: 0;
+  left: -13px;
+  position: absolute;
+}
+
+.block-read_more .block-read_more-top:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 7px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7828px no-repeat;
+  top: 0;
+  right: -6px;
+  position: absolute;
+}
+
+.block-read_more .block-read_more-middle {
+  width: 290px;
+  height: 255px;
+  background: #e4dfd3;
+  margin: 0 6px 12px 13px;
+  position: relative;
+}
+
+.block-read_more .block-read_more-middle:before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: inherit;
+  background: url("../images/bg-left-middle-read-more.png") repeat-y;
+  top: 0;
+  left: -13px;
+  position: absolute;
+}
+
+.block-read_more .block-read_more-middle:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: inherit;
+  background: url("../images/bg-right-middle-read-more.png") repeat-y;
+  top: 0;
+  right: -6px;
+  position: absolute;
+}
+
+.block-read_more .block-read_more-middle h2 {
+  color: #506575;
+  font: bold 39px/41px "MerriweatherBold", sans-serif;
+  padding-left: 27px;
+  padding-top: 11px;
+  margin-bottom: 14px;
+  text-shadow: white 0 1px 0;
+}
+
+.block-read_more .block-read_more-middle p {
+  font: 20px "CabinSemiBold", sans-serif;
+  color: #8f7551;
+  text-shadow: white 0 1px 0;
+  margin: 0 27px 5px;
+  line-height: 23px;
+  max-height: 95px;
+  overflow: hidden;
+  display: block;
+}
+
+.block-read_more .block-read_more-middle p.sign-author {
+  text-transform: uppercase;
+  color: #5d4e2e;
+  font-size: 15px;
+  float: left;
+  position: absolute;
+  bottom: 38px;
+}
+
+.block-read_more .block-read_more-middle p.sign-author em {
+  font-family: 'CabinSemiBoldItalic';
+  text-transform: none;
+}
+
+.block-read_more .block-read_more-bottom {
+  width: 290px;
+  height: 12px;
+  background: url("../images/bg-bottom-middle-read-more.png") repeat-x 0 0;
+  margin: -12px 6px 0 13px;
+  position: relative;
+}
+
+.block-read_more .block-read_more-bottom:before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 12px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7512px no-repeat;
+  bottom: 0;
+  left: -13px;
+  position: absolute;
+}
+
+.block-read_more .block-read_more-bottom:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7722px no-repeat;
+  bottom: 0;
+  right: -6px;
+  position: absolute;
+}
+
+.block-read_more .read-more {
+  float: right;
+  display: block;
+  width: 112px;
+  height: 45px;
+  text-align: center;
+  text-decoration: none;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6248px no-repeat;
+  text-transform: uppercase;
+  font: bold 12px "CabinSemiBold", sans-serif;
+  color: #ece0bf;
+  text-shadow: #614e29 0 -1px 0;
+  line-height: 37px;
+  margin-top: -2px;
+  margin-right: -19px;
+  z-index: 15;
+  position: absolute;
+  right: 35px;
+  bottom: -24px;
+}
+
+.middle-content {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.bg-list-tabs {
+  margin-left: -3px;
+  padding-top: 72px;
+}
+
+.bg-list-tabs li {
+  float: left;
+  width: 140px;
+  height: 159px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -3797px no-repeat;
+  position: relative;
+  margin-right: 9px;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 64px;
+}
+
+.bg-list-tabs li.last {
+  margin-right: -3px;
+}
+
+.bg-list-tabs li h3 {
+  font: bold 26px "MerriweatherBold", sans-serif;
+  color: #736767;
+  margin-bottom: 10px;
+  text-shadow: white 0 1px 0;
+}
+
+.bg-list-tabs li img {
+  margin-top: -50px;
+}
+
+.bg-list-tabs li p {
+  color: #8f6f43;
+  font: 13px "CabinMedium", sans-serif;
+  line-height: 19px;
+  text-shadow: white 0 1px 0;
+}
+
+.bg-list-tabs li a {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-indent: -9999px;
+}
+
+.tab-image {
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  margin-bottom: 5px;
+}
+
+.wrapper-block-content {
+  width: 700px;
+  float: right;
+  padding-top: 23px;
+}
+
+.block-title h2 {
+  color: #b59f64;
+  text-shadow: white -1px 1px 1px;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-bottom: 14px;
+  font: 33px MerriweatherBold;
+  margin-bottom: 38px;
+}
+
+.call-to-action {
+  position: absolute;
+  right: 55px;
+}
+
+.call-to-action p {
+  display: block;
+  padding: 20px 15px 13px;
+  color: #c0beb1;
+  font: 100 14px "CabinSemiBold", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: #2c363e 0px 1px 1px;
+}
+
+.call-to-action b {
+  font-size: 16px;
+}
+
+.call-to-action span {
+  font-size: 12px;
+}
+
+.short-line {
+  width: 416px;
+}
+
+.block-image-top-wrap {
+  float: right;
+  margin-left: 20px;
+}
+
+.block-image-top-wrap .block-image-top {
+  float: none;
+}
+
+.block-image-top {
+  float: right;
+  margin: -58px 0 23px 15px;
+}
+
+.block-image-top-wrap .block-image-top {
+  float: none;
+}
+
+.block-image-top {
+  float: right;
+  margin: -58px 0 23px 15px;
+}
+
+.block-image-top {
+  float: right;
+  margin: -58px 0 23px 15px;
+}
+
+.block-content-item {
+  font: 13px MerriweatherRegular;
+  clear: left;
+  color: #5e4f2f;
+  padding-bottom: 40px;
+  margin-bottom: 32px;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+}
+
+.block-content-item:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.block-content-item p {
+  margin-bottom: 23px;
+  line-height: 29px;
+}
+
+.block-content-item p.note {
+  line-height: 20px;
+}
+
+.block-content-item .block-image-top {
+  margin-top: -18px;
+}
+
+.block-content-item.border-none {
+  background: none;
+  padding-bottom: 0;
+}
+
+.uppercase-notice {
+  font: 16px "MerriweatherBold", sans-serif;
+  text-transform: uppercase;
+  line-height: 29px;
+}
+
+.title-notice {
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.list-awards li {
+  display: inline-block;
+  margin-right: 45px;
+}
+
+.list-awards li.last {
+  margin-right: 0;
+}
+
+.sign {
+  padding: 13px 0;
+  text-align: center;
+  color: #b9a46c;
+  font: 14px "CabinSemiBoldItalic", sans-serif;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+}
+
+.block-image-top .sign {
+  max-width: 230px;
+}
+
+.image-doctor {
+  float: left;
+  margin-right: 27px;
+}
+
+.image-doctor img {
+  margin-left: -45px;
+}
+
+.image-doctor .sign {
+  width: 246px;
+}
+
+.image-hospital {
+  margin-top: 30px;
+  float: right;
+}
+
+.image-hospital .sign {
+  width: 453px;
+}
+
+.img_phys_owned {
+  float: right;
+  margin: -42px -7px 10px 10px;
+}
+
+.list_owned:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.list_owned ul {
+  float: left;
+  margin-top: 9px;
+  margin-right: 166px;
+}
+
+.list_owned ul.last {
+  margin-right: 0;
+}
+
+.list_owned li {
+  margin-bottom: 13px;
+}
+
+.list_owned li a {
+  text-decoration: none;
+  color: #5c83a1;
+  font-family: CabinSemiBold serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.page-articles .img_article {
+  float: left;
+  width: 189px;
+  height: 152px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6076px no-repeat;
+  padding: 16px 0 0 15px;
+  margin: 0 30px 20px 0;
+}
+
+.page-articles .img_article img {
+  width: 174px;
+  height: 136px;
+}
+
+.left-side-discription {
+  clear: both;
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-bottom: 22px;
+}
+
+.left-side-discription .img_article {
+  display: block;
+  width: 165px;
+  height: 190px;
+  padding: 15px 0 0 15px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -1025px no-repeat;
+  margin-bottom: 22px;
+}
+
+.left-side-discription .img_article img {
+  width: 150px;
+  height: 175px;
+}
+
+.left-side-discription .description {
+  color: #b59f64;
+  font: 13px/24px "CabinSemiBold", sans-serif;
+  text-decoration: none;
+}
+
+.left-side-discription .description span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.list-resourses li {
+  margin-bottom: 19px;
+}
+
+.list-resourses a {
+  text-decoration: none;
+  color: #5c83a1;
+  font: bold 16px "MerriweatherBold", sans-serif;
+}
+
+.new_search {
+  color: #5c83a1;
+  position: absolute;
+  text-transform: uppercase;
+  text-decoration: none;
+  font: 16px "CabinSemiBold", sans-serif;
+  right: 0;
+  top: 40px;
+}
+
+.new_search:visited {
+  color: #5c83a1;
+}
+
+.right-side {
+  float: right;
+  width: 248px;
+}
+
+.right-side .block-image-top {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6297px no-repeat;
+  width: 233px;
+  height: 348px;
+  padding: 15px 0 0 15px;
+  margin: 0 0 30px;
+}
+
+.right-side .block-image-top img {
+  width: 219px;
+  height: 333px;
+}
+
+.location {
+  margin-left: 14px;
+  margin-bottom: 21px;
+}
+
+.location a {
+  color: #5c83a1;
+  font: 15px/27px "MerriweatherBold", sans-serif;
+  text-decoration: none;
+}
+
+.appointments {
+  margin-left: 14px;
+  margin-bottom: 21px;
+}
+
+.appointments p {
+  font: bold 15px "MerriweatherRegular", sans-serif;
+}
+
+.button_request {
+  clear: both;
+}
+
+.button_request a {
+  display: block;
+  width: 209px;
+  height: 53px;
+  padding: 9px 0 0 30px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5368px no-repeat;
+  font: bold 16px "CabinBold", sans-serif;
+  color: #f0e4c2;
+  text-shadow: #5b4624 0px -1px 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button_request a:hover {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -5477px no-repeat;
+}
+
+.content-item {
+  margin-bottom: 30px;
+}
+
+.content-item p {
+  font: normal 15px "MerriweatherRegular", sans-serif;
+  padding-bottom: 0;
+  margin-bottom: 2px;
+  color: #5e4f2f;
+}
+
+.content-item p strong {
+  font-weight: bold;
+}
+
+.content-item p.town {
+  font-family: 'MerriweatherRegular';
+  font-weight: normal;
+}
+
+.list_info {
+  background: url("../images/horisont-line.png") repeat-x 0 0;
+  margin-bottom: 47px;
+}
+
+.list_info li {
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding: 14px 0;
+}
+
+.list_info li a {
+  display: block;
+  background: url("../images/icon-download.png") no-repeat 0 0;
+  padding: 14px 0 14px 60px;
+  color: #5c83a1;
+  font: 17px "MerriweatherBold", sans-serif;
+  text-decoration: none;
+}
+
+.note {
+  font: 14px "CabinSemiBold", sans-serif;
+  color: #b59f64;
+}
+
+.adobe-reader {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6774px no-repeat;
+  display: block;
+  width: 103px;
+  height: 40px;
+  padding-left: 57px;
+  padding-top: 5px;
+  color: #5c83a1;
+  font: 14px "MerriweatherBold", sans-serif;
+  text-decoration: none;
+}
+
+.list_faq-item {
+  background: url("../images/horisont-line.png") repeat-x 0 100%;
+  padding-left: 24px;
+}
+
+.list_faq-item h3 {
+  padding: 16px 0;
+  outline: none;
+  color: #5C83A1;
+}
+
+.answers {
+  padding-bottom: 1px;
+}
+
+.ui-state-default {
+  position: relative;
+}
+
+.ui-state-default:before {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 16px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7437px no-repeat;
+  left: -20px;
+  top: 20px;
+  position: absolute;
+}
+
+.ui-state-active {
+  position: relative;
+}
+
+.ui-state-active:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 11px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7529px no-repeat;
+  left: -25px;
+  top: 20px;
+  position: absolute;
+}
+
+.dot-list {
+  list-style-type: none;
+  margin-bottom: 35px;
+}
+
+.dot-list li {
+  position: relative;
+  margin-left: 8px;
+  line-height: 23px;
+}
+
+.dot-list li:before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7871px no-repeat;
+  left: -8px;
+  top: 8px;
+  position: absolute;
+}
+
+.physicians-find-a-physicians-collapsible {
+  margin-bottom: 42px;
+}
+
+.physicians-find-a-physicians-collapsible ul {
+  list-style: none;
+  display: none;
+}
+
+.physicians-find-a-physicians-collapsible ul ul ul {
+  position: absolute;
+}
+
+.main-hor-select {
+  cursor: pointer;
+  display: block;
+  width: 277px;
+  height: 34px;
+  background: url("../images/bg-hor-select.png") repeat-y 0 0;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 13px;
+  padding-left: 22px;
+  padding-right: 38px;
+  font: bold 16px/37px "CabinBold", sans-serif;
+  color: #5c83a1;
+  text-transform: uppercase;
+}
+
+.main-hor-select:before {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 10px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7327px no-repeat;
+  left: 0;
+  top: -10px;
+  position: absolute;
+}
+
+.physicians-find-a-physicians-collapsible {
+  position: relative;
+}
+
+.close-open-select {
+  position: absolute;
+  display: block;
+  top: 7px;
+  right: 18px;
+  min-height: 0 !important;
+}
+
+.collapsed .main-hor-select:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7256px no-repeat;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.collapsed .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6906px no-repeat;
+  width: 16px;
+  height: 22px;
+}
+
+.expanded .main-hor-select:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 7px;
+  background: url("../images/bg-hor-select.png") repeat-y 0 0;
+  left: 0;
+  bottom: -7px;
+  position: absolute;
+  border-bottom: 1px solid #e1dfda;
+}
+
+.expanded .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7086px no-repeat;
+  width: 22px;
+  height: 17px;
+  top: 11px;
+}
+
+.sub-hor-select {
+  margin-top: -6px;
+  width: 337px;
+  z-index: 10;
+}
+
+.sub-hor-select li {
+  border-bottom: 1px solid #e1dfda;
+  border-top: 1px solid #fdfdfd;
+}
+
+.sub-hor-select li span, .sub-hor-select li a {
+  cursor: pointer;
+  display: block;
+  text-transform: uppercase;
+  font: bold 14px "CabinBold", sans-serif;
+  color: #b59f64;
+  text-shadow: white -1px 1px 1px;
+  width: 315px;
+  padding: 11px 0 11px 22px;
+  background: url("../images/bg-hor-select.png") repeat-y 0 0;
+}
+
+.sub-hor-select li span.last, .sub-hor-select li a.last {
+  position: relative;
+}
+
+.sub-hor-select li span.last ul li:first-child, .sub-hor-select li a.last ul li:first-child {
+  border: none;
+}
+
+.sub-hor-select li span.last:after, .sub-hor-select li a.last:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7256px no-repeat;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.sub-hor-select li span .close-open-select, .sub-hor-select li a .close-open-select {
+  padding: 0;
+  margin: 0;
+}
+
+.sub-hor-select li.expanded span {
+  background: url("../images/bg-hor-select-active.png") repeat-y 0 0;
+  color: #8c6c31;
+}
+
+.sub-hor-select li.expanded span.last {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.sub-hor-select li.expanded span.last:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 25px;
+  background: url("../images/bg-hor-select-active.png") repeat-y 0 0;
+  left: 0;
+  bottom: -5px;
+  position: absolute;
+}
+
+.sub-hor-select li.expanded span .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7086px no-repeat;
+}
+
+.sub-hor-select li.collapsed span.last:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7256px no-repeat;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.sub-hor-select li.collapsed ul li:first-child {
+  border: none;
+}
+
+.sub-hor-select li.expanded, .sub-hor-select li.collapsed {
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.sub-hor-select li.collapsed .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6906px no-repeat;
+  width: 16px;
+  height: 22px;
+}
+
+.sub-hor-select li.last span:after, .sub-hor-select li.last a:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7256px no-repeat;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.sub-hor-select li.last span span.close-open-select:after, .sub-hor-select li.last a span.close-open-select:after {
+  background: none;
+}
+
+/*
+.sub-hor-select-links{
+  li{
+    position:relative;
+    z-index:11;
+    a{
+      $space-left:50px;
+      display:block;
+      width:$width - $space-left;
+      background:url('../images/bg-hor-select-link.png') repeat-y 0 0;
+      padding:11px 0 11px $space-left;
+      color:#b59f64;
+      font:bold 14px 'CabinBold', sans-serif;
+      text-transform:uppercase;
+      text-decoration:none;
+      @include text-shadow(#fff -1px 1px 1px);
+      &:hover{
+        background:url('../images/bg-hor-select-link-hover.png') repeat-y 0 0;
+      }      
+    }
+    &.last{
+      a{
+        position:relative;
+        padding-bottom:5px;
+        &:after{
+            content: '';
+            display: block;
+            width: $width;
+            height: 13px;
+            background:sprite($sprites, bg-hor-select-link_bottom) no-repeat; 
+            left:0;
+            bottom:-13px;
+            position: absolute;
+        }
+        &:hover{
+          &:after{
+            background:sprite($sprites, bg-hor-select-link_bottom-hover) no-repeat; 
+          }
+        }
+      }
+    }
+  }
+}*/
+.expanded .sub-hor-select li .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6906px no-repeat;
+  width: 16px;
+  height: 22px;
+}
+
+.expanded .sub-hor-select li.expanded .close-open-select {
+  width: 22px;
+  height: 17px;
+}
+
+li.last {
+  border-bottom: none;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li {
+  position: relative;
+  z-index: 11;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li span {
+  display: block;
+  width: 287px;
+  background: url("../images/bg-hor-select-link.png") repeat-y 0 0;
+  padding: 11px 0 11px 50px;
+  color: #b59f64;
+  font: bold 14px "CabinBold", sans-serif;
+  text-transform: uppercase;
+  text-shadow: white -1px 1px 1px;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li span span.close-open-select {
+  display: none;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first a:before, .sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first span:before {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 10px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7327px no-repeat;
+  left: 0;
+  top: -10px;
+  position: absolute;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first:hover span:before, .sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first:hover a:before {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6857px no-repeat;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first.last a:before, .sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first.last span:before {
+  background: none;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first.last:hover a, .sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span li.first.last:hover span {
+  background: none;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span:hover span, .sub-hor-select li.expanded .sub-hor-select-span li.first .sub-hor-select-span:hover a {
+  background: url("../images/bg-hor-select-link-hover.png") repeat-y 0 0;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.first:hover {
+  background: url("../images/bg-hor-select-link-hover.png") repeat-y 0 0;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.last a:before, .sub-hor-select li.expanded .sub-hor-select-span li.last span:before {
+  background: none;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.last span, .sub-hor-select li.expanded .sub-hor-select-span li.last a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.last span:after, .sub-hor-select li.expanded .sub-hor-select-span li.last a:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  background: none;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.last:hover span, .sub-hor-select li.expanded .sub-hor-select-span li.last:hover a {
+  position: relative;
+  background: url("../images/bg-hor-select-link-hover.png") repeat-y 0 0;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li.last:hover span:after, .sub-hor-select li.expanded .sub-hor-select-span li.last:hover a:after {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 13px;
+  left: 0;
+  bottom: -13px;
+  position: absolute;
+}
+
+.sub-hor-select li.expanded .sub-hor-select-span li:hover span {
+  background: url("../images/bg-hor-select-link-hover.png") repeat-y 0 0;
+  color: #8c6c31;
+}
+
+/*
+.sub-drop_out-right{
+  li{
+    a,
+    span{
+      display:block;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+  }
+}
+
+ul.sub-hor-select{
+  li.expanded{
+ul.sub-hor-select-span{
+  li{
+    ul.sub-drop_out-right{
+      top:0 !important;
+      li{ 
+        position:relative;
+        margin-left:9px;
+        margin-right:9px;
+        padding:0 7px;
+         &:before{
+            content: '';
+            display: block;
+            width: 9px;
+            height:38px;
+            background:url('../images/submenu-left.png') repeat-y; 
+            left:-2px;
+            top:0;
+            position: absolute;
+        }  
+        &:after{
+            content: '';
+            display: block;
+            width: 9px;
+            height: 38px;
+            background:url('../images/right-submenu.png') repeat-y;  
+            top:0;
+            right:-2px;
+            position: absolute;
+        }  
+        
+        span,a{
+          width:auto;
+          padding:0;
+          height:38px;
+          line-height:38px;
+          display:block;
+          background:url('../images/bg-sub-submenu.png') repeat;
+        }        
+        &.first{
+          border-top:none;
+          &:before,
+          &:after{
+            height: 34px;
+            top: 8px;
+          }
+          ul{
+            li{
+              &:before,
+              &:after{
+                height:40px;
+              }
+              a,span{
+                border:none;
+              &:before,
+              &:after{
+                background:none;
+                }
+              }
+              &.first{
+                height: 36px;
+                &:before,
+                &:after{
+                  top: 6px;
+                }
+                a{
+                  border-top:2px solid #C4BEAF;
+                  &:after{
+                    background:sprite($sprites, right-top-corner-submenu) no-repeat; 
+                  }
+                  &:before{
+                    background:sprite($sprites, left-corner-submenu) no-repeat;
+                  }
+                }
+              }
+              &.last{
+                height: 36px;
+                &:before,
+                &:after{
+                  bottom: 6px;
+                  height: 36px;
+                }
+                a,span{
+                  border-bottom:1px solid #C4BEAF;
+                  &:after{
+                    background:sprite($sprites, right-bottom-corner-submenu) no-repeat;                 
+                  }
+                  &:before{
+                    background:sprite($sprites, left-bottom-corner-submenu) no-repeat;
+                  }
+                }
+              }
+              
+            }
+          }
+          
+          a,span{
+            position:relative;
+            height:40px;
+            overflow:visible;
+            border-top:2px solid #c4beaf;
+             &:after{
+              content: '';
+              display: block;
+              width: 9px;
+              height: 9px;
+              background:sprite($sprites, right-top-corner-submenu) no-repeat; 
+              top:-3px;
+              right:-9px;
+              position: absolute;
+           } 
+           &:before{
+              content: '';
+              display: block;
+              width: 9px;
+              height: 9px;
+              background:sprite($sprites, left-corner-submenu) no-repeat; 
+              top:-3px;
+              left:-9px;
+              position: absolute;
+           } 
+          }
+          ul{
+            li{
+              &.last{
+                height:36px;
+                a,span{
+                  &:before,
+                  &:after{
+                    top:32px;
+                  }
+                } 
+              }
+            }
+          }
+        }
+       &.last{
+          border-bottom:none;
+          &:before,
+          &:after{
+            height: 34px;
+            bottom: 8px;
+          }
+          
+          a,span{
+            position:relative;
+            height:40px;
+            overflow:visible;
+            border-bottom:1px solid #c4beaf;
+             &:after{
+              content: '';
+              display: block;
+              width: 9px;
+              height: 14px;
+              background:sprite($sprites, right-bottom-corner-submenu) no-repeat; 
+              bottom:-8px;
+              right:-9px;
+              position: absolute;
+           } 
+           &:before{
+              content: '';
+              display: block;
+              width: 9px;
+              height: 14px;
+              background:sprite($sprites, left-bottom-corner-submenu) no-repeat;  
+              bottom:-8px;
+              left:-9px;
+              position: absolute;
+           } 
+          }
+        }
+        }
+      }
+    }
+  }
+ }
+}*/
+/*
+
+.left-column{
+  float:left; 
+  position:relative;
+  z-index: 10;
+  margin-right:22px;
+}
+
+.right-column{
+  float: right; 
+  position:relative;
+  z-index: 10;
+}*/
+/*
+
+.block-content-item{ 
+  &.small-selects{
+    width:100%;    
+    .right-column{
+    right:78px;
+  }
+    .main-hor-select{
+      width:$width-small - ($padding-lf + $padding-rt);
+      background:url('../images/bg-hor-select_small.png') repeat-y 0 0; 
+      &:before {
+        background:sprite($sprites, bg-right-part-select_small) no-repeat; 
+      }
+    }
+   .collapsed{
+     .main-hor-select{
+     &:after {
+       width: $width-small;
+       background:sprite($sprites, bg-left-part-select_small) no-repeat;
+      }
+     }
+   }
+   .expanded{
+    .main-hor-select{
+      &:after {
+       width: $width-small;
+        background:url('../images/bg-hor-select_small.png') repeat-y 0 0; 
+      }
+    }
+   }
+   .sub-hor-select{
+     li{
+      width:$width-small;
+       span,a{
+         width:$width-small - $padding-lf;
+         background:url('../images/bg-hor-select_small.png') repeat-y 0 0;
+         text-decoration:none;
+         
+       }
+       &:hover{
+         span,a{
+           background:url('../images/bg-hor-select_small-hover.png') repeat-y 0 0;
+           color:#8c6c31;
+         }
+       }
+     }
+   }
+  }
+}*/
+/*---------------------new styles-------------------------*/
+.physicians-find-a-physicians-items {
+  width: 750px;
+  display: block;
+}
+
+.physicians-find-a-physicians-collapsible {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+.physicians-find-a-physicians-collapsible span, .physicians-find-a-physicians-collapsible a {
+  font-weight: normal !important;
+}
+
+.sub-hor-select li.last .sub-hor-select-span li.last span:after, .sub-hor-select li.last .sub-hor-select-span li.last a:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -6840px no-repeat;
+}
+
+.sub-hor-select li.last .sub-hor-select-span li.last:hover span:after, .sub-hor-select li.last .sub-hor-select-span li.last:hover a:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7222px no-repeat;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li span, .sub-hor-select-span li .sub-hor-select-span li a {
+  text-decoration: none;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.first span:before, .sub-hor-select-span li .sub-hor-select-span li.first a:before {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 10px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7327px no-repeat;
+  left: 0;
+  top: -10px;
+  position: absolute;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.first:hover span:before, .sub-hor-select-span li .sub-hor-select-span li.first:hover a:before {
+  content: '';
+  display: block;
+  width: 337px;
+  height: 10px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7107px no-repeat !important;
+  left: 0;
+  top: -10px;
+  position: absolute;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.first.last span:before, .sub-hor-select-span li .sub-hor-select-span li.first.last a:before {
+  background: none !important;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.last span:after, .sub-hor-select-span li .sub-hor-select-span li.last a:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7256px no-repeat !important;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.last:hover span:after, .sub-hor-select-span li .sub-hor-select-span li.last:hover a:after {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7165px no-repeat !important;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li:hover span, .sub-hor-select-span li .sub-hor-select-span li:hover a {
+  background: url("../images/bg-hor-select-link-sub-hover.png") repeat-y !important;
+  color: #8C6C31;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.first.last span:before, .sub-hor-select-span li .sub-hor-select-span li.first.last a:before {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7327px no-repeat !important;
+}
+
+.sub-hor-select-span li .sub-hor-select-span li.first.last:hover span:before, .sub-hor-select-span li .sub-hor-select-span li.first.last:hover a:before {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7107px no-repeat !important;
+}
+
+/*
+
+.form-item-select{
+  clear:both;
+  border:none;
+  margin:0 5px 0px 0px;
+  width:255px;
+}
+
+
+.setScroll{
+  overflow-y:scroll;
+}
+.hideitem,.elmValue{
+  display: none; 
+}
+
+.selectbox,
+.selectboxopen{
+  $space-left:23px;
+  $space-top:18px;
+  width:252px;
+  float:left;  
+  ul{    
+    margin:0;
+    vertical-align:top;
+    list-style: none;
+    height:57px - $space-top;    
+    width:252px - $space-left;    
+    padding:$space-top 0 0 $space-left;
+    li{      
+      list-style: none;
+      color:#b59f64;
+      font: 16px 'CabinBold',sans-serif;
+      text-transform:uppercase;
+      cursor: pointer;
+    }
+  }
+}
+.selectbox{   
+  background:sprite($sprites, select-form-close) no-repeat;  
+  margin:0 0 12px 0;  
+}
+
+.selectboxopen{
+   $space-top:18px;
+  clear:both;  
+  background:sprite($sprites, select-form-open) no-repeat;
+  margin:0;
+  ul{
+    height:52px - $space-top;
+  }
+}
+
+
+
+.selectboxoptions_wrap{
+  display:none;
+  clear:both;
+  padding:0;
+  margin:0;
+}
+.selectboxoptions_radio,.selectboxoptions_check{
+  clear:both;
+  list-style: none;
+  padding:0;
+  margin:0; 
+  width:252px !important;
+}
+
+.selectboxoptions_radio li, .selectboxoptions_check li{
+  list-style: none;
+  font-family: arial,helvetica,san-serif;
+  color:#333;
+  font-size: 12px;
+  cursor: pointer;
+  border-top:1px solid #e1dfda;
+  border-bottom:1px solid #fdfdfd;
+  padding:12px 0 12px 22px;
+  &.hover{
+    background: url('../images/bg-hor-select-form-hover.png') repeat-y 0 0 !important; 
+  }
+}
+
+.selectboxoptions_radio li{
+  background:url('../images/bg-hor-select-form.png') repeat-y 0 0;
+  font: 16px 'CabinBold',sans-serif;
+  text-transform:uppercase;
+  color:#bdac7d;
+  @include text-shadow(#fff 0px 1px 1px);
+  &:last-child{
+      border-bottom:none;
+      position:relative;
+      &:before {
+        content: '';
+        display: block;
+        width:252px;
+        height:14px;
+        background:sprite($sprites, select-form-bottom) no-repeat; 
+        left:0;
+        bottom:-14px;
+        position: absolute;
+     }
+  }
+  &.hover{
+    color:#8c6c31;         
+    &:last-child{
+      &:before {
+        background:sprite($sprites, select-form-bottom-hover) no-repeat; 
+      }
+    }
+  }
+}
+.selectboxfoot{  
+  margin-bottom:20px;
+  float:left;
+}
+.selectboxfoot div{
+  background:url("images/selectfoot.png") no-repeat top right;
+  padding:7px 22px 10px 0px;
+  margin:0;
+}
+
+
+.wrapper-form-select{
+  clear:both;
+  position:relative;
+  p{
+    
+    position:absolute;
+    margin-top:19px;
+    font:bold 13px 'MerriweatherBold',sans-serif;
+  }
+  &.last{
+    padding-bottom: 95px;
+  }
+}
+
+.select_wrap{
+  margin-left:120px;
+}
+
+.form-textarea-wrapper{
+  margin-bottom:34px;
+}
+
+
+
+
+
+*/
+.left-nav-menu {
+  float: left;
+  margin: -25px 0 0 17px;
+  width: 185px;
+}
+
+.left-nav-menu ul {
+  position: relative;
+}
+
+.left-nav-menu ul li {
+  float: left;
+  position: relative;
+  zoom: 1;
+  background: url("../images/bg-left-menu-item.png") repeat-y 0 0;
+  width: 190px;
+}
+
+.left-nav-menu ul li:hover {
+  background: url("../images/bg-left-menu-item-hover.png") repeat-y 0 0;
+}
+
+.left-nav-menu ul li:hover a {
+  color: #8c6c31;
+}
+
+.left-nav-menu ul li:hover a .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7457px no-repeat;
+}
+
+.left-nav-menu ul li.active-trail {
+  background: url("../images/bg-left-menu-item-hover.png") repeat-y 0 0;
+}
+
+.left-nav-menu ul li.active-trail a {
+  color: #8c6c31;
+}
+
+.left-nav-menu ul li.active-trail a .close-open-select {
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7457px no-repeat;
+}
+
+.left-nav-menu ul li.active-trail.first:hover a:before {
+  background: url("../images/bg-left-menu-first-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li.active-trail.last:hover a:after {
+  background: url("../images/bg-left-menu-last-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li a {
+  display: block;
+  width: 142px;
+  min-height: 20px;
+  margin-left: 3px;
+  padding: 10px 17px;
+  border-bottom: 1px solid #e1dfda;
+  border-top: 1px solid #fdfdfd;
+  color: #bdac7d;
+  text-shadow: white -1px 1px 0;
+  font: bold 14px "CabinBold", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: normal;
+}
+
+.left-nav-menu ul li a .close-open-select {
+  height: 15px;
+  width: 11px;
+  background: url('../images/sprites-s95d247b3c3.png') 0 -7493px no-repeat;
+  position: absolute;
+  left: 155px;
+  top: 35%;
+}
+
+.left-nav-menu ul li.first a {
+  min-height: 12px;
+  position: relative;
+  margin-top: 1px;
+  padding-top: 10px;
+  border-top: none;
+}
+
+.left-nav-menu ul li.first a:before {
+  content: '';
+  display: block;
+  width: 182px;
+  height: 8px;
+  background: url("../images/bg-left-menu-first-item.png") no-repeat 0 0;
+  top: -8px;
+  left: -3px;
+  position: absolute;
+}
+
+.left-nav-menu ul li.first a:hover:before {
+  background: url("../images/bg-left-menu-first-item.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li.first:hover a:before {
+  background: url("../images/bg-left-menu-first-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li.last {
+  margin-bottom: 37px;
+}
+
+.left-nav-menu ul li.last a {
+  min-height: 12px;
+  position: relative;
+  margin-bottom: 1px;
+  padding-bottom: 12px;
+  border-bottom: none;
+}
+
+.left-nav-menu ul li.last a:after {
+  content: '';
+  display: block;
+  width: 182px;
+  height: 12px;
+  background: url("../images/bg-left-menu-last-item.png") no-repeat 0 0;
+  bottom: -12px;
+  left: -3px;
+  position: absolute;
+}
+
+.left-nav-menu ul li.last:hover a:after {
+  background: url("../images/bg-left-menu-last-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li.active-trail a:before {
+  background: url("../images/bg-left-menu-first-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul li.active-trail a:after {
+  background: url("../images/bg-left-menu-last-item-hover.png") no-repeat 0 0;
+}
+
+.left-nav-menu ul ul {
+  width: 194px;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 190px;
+  z-index: 12;
+}
+
+.left-nav-menu ul ul li {
+  font-weight: normal;
+  float: none;
+  position: relative;
+}
+
+.left-nav-menu ul ul li a {
+  display: inline-block;
+  position: relative;
+  color: #bdac7d !important;
+}
+
+.left-nav-menu ul ul li a:before {
+  background: none !important;
+}
+
+.left-nav-menu ul ul li.first a:before {
+  background: url("../images/bg-left-menu-first-item.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li.first a:hover:before {
+  background: url("../images/bg-left-menu-first-item-hover.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li.last a:after {
+  background: url("../images/bg-left-menu-last-item.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li.last a:hover:after {
+  background: url("../images/bg-left-menu-last-item-hover.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li:hover > ul {
+  visibility: visible;
+  top: 8px;
+}
+
+.left-nav-menu ul ul li.active-trail a {
+  color: #8c6c31 !important;
+}
+
+.left-nav-menu ul ul li.active-trail.first a:before {
+  background: url("../images/bg-left-menu-first-item-hover.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li.active-trail.last a:after {
+  background: url("../images/bg-left-menu-last-item-hover.png") no-repeat 0 0 !important;
+}
+
+.left-nav-menu ul ul li:hover a {
+  color: #8c6c31 !important;
+}
+
+.left-nav-menu ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+.page-payments form .form-text.watermarkPluginCustomClass {
+  font: 15px "MerriweatherBold", sans-serif;
+  color: #c4c0b1;
+  letter-spacing: 1px;
+}
+
+.page-payments form .block-date-birth .form-text.watermarkPluginCustomClass {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

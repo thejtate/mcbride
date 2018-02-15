@@ -1,0 +1,88 @@
+<?php
+
+define('VOLCANO_TYPE_KEY', 'volcano_content_type_');
+define('VOLCANO_ROLE_KEY', 'volcano_content_role_');
+define('VOLCANO_FIELD_KEY', 'volcano_field_type_');
+define('VOLCANO_MODULE_KEY', 'volcano_module_type_');
+define('VOLCANO_NODE_BASE_KEY', 'volcano_node_base_');
+
+
+/**
+ * @file volcano.module
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
+function volcano_menu() {
+    // This is the minimum information you can provide for a menu item.
+    $items = array();
+    $items['admin/config/system/volcano'] = array(
+        'title' => 'Volcano Settings',
+        'type' => MENU_NORMAL_ITEM,
+        'access arguments' => array('administer volcano settings'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('volcano_admin_page_form'),
+        'file' => 'volcano.admin.inc'
+    );
+
+    return $items;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function volcano_theme($existing, $type, $theme, $path) {
+    
+    $hooks = array();
+    
+    $hooks['volcano_admin_page_form'] = array(
+      'render element' => 'form',
+      'file' => 'volcano.admin.inc',
+    );
+
+    return $hooks;
+}
+
+
+/**
+ * Implementation of hook_cron().
+ */
+function volcano_cron() {
+    
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function volcano_form_alter(&$form, &$form_state, $form_id) {
+    global $user;
+    if (isset($form['#node_edit_form']) && $form['#node_edit_form']) {
+        $volcano_settings = variable_get('volcano_settings', array());
+        $node_type = $form['type']['#value'];
+        foreach ($user->roles as $role_id => $role) {
+            if (isset($volcano_settings[$role_id])) {
+                if (isset($volcano_settings[$role_id][$node_type])) {
+                    foreach ($volcano_settings[$role_id][$node_type] as $field => $access) {
+                        $form[$field]['#access'] = ($access) ? false : true;
+                    }
+                }
+                if (isset($volcano_settings[$role_id][VOLCANO_MODULE_KEY])) {
+                    foreach ($volcano_settings[$role_id][VOLCANO_MODULE_KEY] as $field => $access) {
+                        $form[$field]['#access'] = ($access) ? false : true;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Implementation of hook_init().
+ */
+function volcano_init() {
+}
+
+
+

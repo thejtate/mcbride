@@ -1,0 +1,18 @@
+
+.image-doctor {
+  float: left;
+  margin-right: 27px;
+}
+.image-doctor img {
+  margin-left: -45px;
+}
+.image-hospital {
+  margin-top: 30px;
+  float: right;
+}
+
+.block-content-item .remark {
+    color: #5E4F2F;
+    font: 14px/20px "CabinMediumItalic",sans-serif;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,9 @@
+name = Volcano
+description = Volcano setting module
+dependencies[] = views
+package = Volcano
+core = 7.x
+files[] = Volcano.module
+configure = admin/config/system/volcano
+
+version = "7.x-1.0"

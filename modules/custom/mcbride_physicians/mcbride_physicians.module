@@ -1,0 +1,455 @@
+<?php
+
+/**
+ * @file
+ * mcbride_physicians functionnality.
+ */
+
+define('PHYSICAN_QID', '4');
+
+/**
+ * Implementation of hook_menu().
+ */
+function mcbride_physicians_menu() {
+  // This is the minimum information you can provide for a menu item.
+  $items = array();
+
+  $items['find-a-physicians'] = array(
+      'title' => 'Find a Physicians',
+      'page callback' => 'mcbride_physicians_find_a_physicians',
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_init().
+ */
+function mcbride_physicians_init() {
+  // This is the minimum information you can provide for a menu item.
+  global $theme_key;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function mcbride_physicians_theme() {
+//  global $theme_key;
+  $path = drupal_get_path('module', 'mcbride_physicians');
+
+
+  $hooks = array();
+//  if ($theme_key == 'mcbride_mobile') {
+//    $hooks['physicians_find_a_physicians_items'] = array(
+//        'path' => $path . '/templates',
+//        'variables' => array('tree' => NULL, 'list_name' => NULL),
+//        'template' => 'physicians_find_a_physicians_items_mobile',
+//    );
+//    $hooks['physicians_find_a_physicians_item_mobile'] = array(
+//        'variables' => array('items' => NULL, 'level' => 1),
+//    );
+//  } else {
+//    $hooks['physicians_find_a_physicians_items'] = array(
+//        'path' => $path . '/templates',
+//        'variables' => array('tree' => NULL),
+//        'template' => 'physicians_find_a_physicians_items',
+//    );
+//    $hooks['physicians_find_a_physicians_item'] = array(
+//        'variables' => array('items' => NULL, 'level' => 1),
+//    );
+//  }
+
+  $hooks['physicians_find_a_physicians_items'] = array(
+    'variables' => array('tree' => NULL, 'list_name' => NULL),
+  );
+  $hooks['physicians_find_a_physicians_items_full'] = array(
+    'path'      => $path . '/templates',
+    'variables' => array('tree' => NULL),
+    'template'  => 'physicians_find_a_physicians_items',
+  );
+  $hooks['physicians_find_a_physicians_items_mobile'] = array(
+    'path'      => $path . '/templates',
+    'variables' => array('tree' => NULL),
+    'template'  => 'physicians_find_a_physicians_items_mobile',
+  );
+
+  $hooks['physicians_find_a_physicians_item'] = array(
+    'variables' => array('items' => NULL, 'level' => 1),
+  );
+  $hooks['physicians_find_a_physicians_item_full'] = array(
+    'variables' => array('items' => NULL, 'level' => 1),
+  );
+  $hooks['physicians_find_a_physicians_item_mobile'] = array(
+    'variables' => array('items' => NULL, 'level' => 1),
+  );
+
+
+  $hooks['physicians_find_a_physicians_item_separator'] = array(
+      'variables' => array(),
+  );
+
+  return $hooks;
+}
+
+/**
+ * Override or insert variables into the page templates.
+ * Implements hook_preprocess_page
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("page" in this case.)
+ */
+function mcbride_physicians_preprocess_page(&$vars, $hook) {
+  if (!empty($vars['node'])) {
+    $node = $vars['node'];
+    switch ($node->type) {
+      case 'physician_assistants_landing_pag':
+        drupal_add_css(drupal_get_path('module', 'mcbride_physicians') . '/css/mcbride_physicians.css');
+        break;
+    }
+  }
+}
+
+/**
+ * Override or insert variables into thenode templates.
+ * Implements hook_preprocess_page
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("page" in this case.)
+ */
+function mcbride_physicians_preprocess_node(&$vars, $hook) {
+  switch ($vars['type']) {
+    case 'physician_assistants_landing_pag':
+      $vars['select_physician_assistants'] = drupal_render(module_invoke('views', 'block_view', 'physician_assistant-block'));
+
+      // Add js and css to use dropdown menu
+      global $theme_key;
+      if ($theme_key == 'mcbride_mobile')
+        drupal_add_js(base_path() . drupal_get_path('module', 'mcbride_physicians') . '/js/mcbride_physicians_mobile.js');
+      else
+        drupal_add_js(base_path() . drupal_get_path('module', 'mcbride_physicians') . '/js/mcbride_physicians.js');
+      drupal_add_css(drupal_get_path('module', 'mcbride_physicians') . '/css/mcbride_physicians.css');
+
+      break;
+    default:
+      break;
+  }
+}
+
+/**
+ * Find a Physicians page
+ * @return string
+ */
+function mcbride_physicians_find_a_physicians() {
+  global $theme_key;
+  if ($theme_key == 'mcbride_mobile')
+    drupal_add_js(base_path() . drupal_get_path('module', 'mcbride_physicians') . '/js/mcbride_physicians_mobile.js');
+  else
+    drupal_add_js(base_path() . drupal_get_path('module', 'mcbride_physicians') . '/js/mcbride_physicians.js');
+  drupal_add_css(drupal_get_path('module', 'mcbride_physicians') . '/css/mcbride_physicians.css');
+  $content = '';
+
+  $speciality = mcbride_physicians_get_physicians_by_vid_name('speciality');
+  $procedure = mcbride_physicians_get_physicians_by_vid_name('procedure');
+  $body_part = mcbride_physicians_get_physicians_by_vid_name('body_part');
+  $location = mcbride_physicians_get_physicians_by_vid_name('location');
+
+    // get physicians by name
+  $physicians = mcbride_physicians_get_physicians();
+  $additional_tree = array(
+      'Physician\'s Name' => $physicians,
+  );
+  $content .= '<div class="block-title lift_up"><h2>' . t('Name') . '</h2></div>';
+  if ($theme_key == 'mcbride_mobile') {
+    $content_mame = theme('physicians_find_a_physicians_items', array('tree' => $additional_tree, 'list_name' => 'Name'));
+  } else {
+    $content .= theme('physicians_find_a_physicians_items', array('tree' => $additional_tree, 'list_name' => 'Name'));
+  }
+   
+  /*
+  $result_array_loc = array();
+  // additional
+  foreach ($location as $value => $name) {
+    $title = explode(",", $value);
+    if (isset($title[0]) && !empty($title[0])) {
+      $last_name = explode(" ", trim($title[0]));
+      if (strlen(end($last_name)) <= 3 ) {
+        array_pop($last_name);
+      }
+      $result_array_loc[end($last_name) . ' ' . $value] = $value;
+    }
+    else {
+      $result_array_loc[$value] = $value;
+    }
+  }
+  //ksort($result_array_loc);
+  $location_items = array();
+  foreach ($result_array_loc as $name => $data) {
+    foreach ($location[$data] as $key => $value) {
+      $location_items[$value['name']][] = array(
+          'nid' => $value['nid'],
+          'name' => $data
+      );
+    }
+  }
+  */
+  $additional_tree = array(
+      'Select a Location' => $location,
+  );
+  $content .= '<div class="block-title lift_up"><h2>' . t('Location') . '</h2></div>';
+  if ($theme_key == 'mcbride_mobile') {
+    $content_location = theme('physicians_find_a_physicians_items', array('tree' => $additional_tree, 'list_name' => 'Location'));
+  }
+  else {
+    $content .= theme('physicians_find_a_physicians_items', array('tree' => $additional_tree, 'list_name' => 'Location'));
+  }
+  
+  /*
+  $speciality_tree = array();
+  foreach ($speciality as $value => $name) {
+    $title = explode(",",$value);
+    if (isset($title[0]) && !empty($title[0])) {
+      $last_name = explode(" ",trim($title[0]));
+      if (strlen(end($last_name)) <= 3 ) {
+        array_pop($last_name);
+      }
+      $result_array[end($last_name) . ' ' . $value] = $value;
+    }
+    else {
+      $result_array[$value] = $value;
+    }
+  }
+  ksort($result_array);
+  foreach ($result_array as $name => $data) {
+    foreach ($speciality[$data] as $key => $term) {
+      if (isset($speciality[$data])) {
+          $speciality_tree['Select a Specialty'][$speciality[$data][$key]['name']][] = array('nid' => $term['nid'], 'name' => $data);
+      }
+    }
+  }
+  foreach ($speciality as $name => $data) {
+    foreach ($data as $key => $term) {
+      if (isset($speciality[$name])) {
+        foreach ($speciality[$name] as $k => $v) {
+          $speciality_tree['Select a Specialty'][$speciality[$name][$k]['name']][] = array('nid' => $term['nid'], 'name' => $name);
+        }
+      }
+    }
+  }
+  // remove tree levels if there only one item in second and third levels
+  foreach ($speciality_tree as $key => $value) {
+    $data = array_values($value);
+    if (count($data) <= 1 && isset($data[0]) && count($data[0]) <= 1) {
+      $data = array_values($data[0]);
+      $speciality_tree[$key] = $data[0];
+    }
+  }
+   */
+  $speciality_tree = array(
+    'Select a Specialty' => $speciality
+  );
+  if ($theme_key == 'mcbride_mobile')
+    $content_peciality = theme('physicians_find_a_physicians_items', array('tree' => $speciality_tree, 'list_name' => 'Speciality'));
+  else{
+    $content .= '<div class="block-title lift_up"><h2>' . t('Specialty') . '</h2></div>';
+    $content .= theme('physicians_find_a_physicians_items', array('tree' => $speciality_tree, 'show' => 'dropdown') );
+  }
+
+  if ($theme_key == 'mcbride_mobile') {
+    $content = $content_mame . $content_location . $content_peciality;
+  }
+
+  return $content;
+}
+
+/**
+ * get all physicians
+ * @return array
+ */
+function mcbride_physicians_get_physicians() {
+  $query = db_select('node', 'n');
+  $query->fields('n', array('title'))
+          ->fields('n', array('nid'));
+  $query->leftJoin('nodequeue_nodes', 'nodequeue_nodes_node', "n.nid = nodequeue_nodes_node.nid");
+  $query->where('n.type = :type', array(':type' => 'physician'));
+  $query->where('n.status = :status', array(':status' => 1));
+  $query->where('nodequeue_nodes_node.qid = :queue', array(':queue' => PHYSICAN_QID));
+  $query->orderBy('nodequeue_nodes_node.position');
+
+  $result = $query->execute();
+  $result = $result->fetchAll();
+  $result_array = array();
+  foreach ($result as $value) {
+    $title = explode(",",trim($value->title));
+    if (isset($title[0]) && !empty($title[0])) {
+      $last_name = explode(" ",trim($title[0]));
+      if (strlen(end($last_name)) <= 3 ) {
+        array_pop($last_name);
+      }
+      $result_array[end($last_name) . ' ' . $value->title] = array('name' => $value->title, 'nid' => $value->nid);
+    }
+    else {
+      $result_array[$value->title] = array('name' => $value->title, 'nid' => $value->nid);
+    }
+  }
+  return $result_array;
+}
+
+/**
+ * Get keyed array of physicians by taxonomy vid
+ * @param string $vid_name
+ * @return array
+ */
+function mcbride_physicians_get_physicians_by_vid_name($vid_name) {
+  $query = db_select('field_data_field_physician_' . $vid_name, 'p');
+  $query->fields('n', array('title'))
+          ->fields('n', array('nid'))
+          ->leftJoin('node', 'n', "n.nid = p.entity_id");
+
+  $query->fields('t', array('term_name' => 'name', 'weight'))
+          ->leftJoin('taxonomy_term_data', 't', "t.tid = p.field_physician_" . $vid_name . "_tid");
+  $query->leftJoin('taxonomy_vocabulary', 'v', "v.vid = t.vid");
+
+  $query->where('v.machine_name = :v_machine_name', array(':v_machine_name' => $vid_name));
+  $query->where('n.status = :status', array(':status' => 1));
+
+  $query->orderBy('t.weight');
+  $result = $query->execute();
+//kpr($result);
+  $result = $result->fetchAll();
+  $result_array = array();
+  foreach ($result as $value) {
+    //$result_array[$value->title][] = array('name' => $value->name, 'nid' => $value->nid);
+    $result_array[$value->name][] = array('name' => $value->title, 'nid' => $value->nid);
+  }
+//kpr($result_array);
+  return $result_array;
+}
+
+/**
+ * Theme find_a_physicians
+ * @param array $data
+ * @return string
+ */
+function theme_physicians_find_a_physicians_item_full($data) {
+  $content = '<ul>';
+  foreach ($data['items'] as $key => $value) {
+    $attributes = array();
+    if (isset($value['nid'])) {
+      $item = l($value['name'], 'node/' . $value['nid']);
+    } else {
+      $item = '<span>' . $key . '</span>' . theme('physicians_find_a_physicians_item', array('items' => $value, 'level' => $data['level'] + 1));
+      $attributes = array('class' => 'collapsed');
+    }
+    $content .= '<li ' . drupal_attributes($attributes) . '>' . $item . '</li>';
+  }
+  $content .= '</ul>';
+  return $content;
+}
+
+/**
+ * Theme find_a_physicians
+ * @param array $data
+ * @return string
+ */
+function theme_physicians_find_a_physicians_item_mobile($data) {
+  if ($data['level'] > 1) {
+    $cl = 'sub-hor-select-span';
+  } else {
+    $cl = 'sub-hor-select level-1';
+  }
+  $content = '<ul class="' . $cl . '">';
+  $first = 'first';
+  foreach ($data['items'] as $key => $value) {
+    $attributes = array();
+    if (isset($value['nid'])) {
+      $item = l($value['name'], 'node/' . $value['nid']);
+    } else {
+      $item = '<span class="external"><span>' . $key . '<span class="close-open-select"></span></span></span>' . theme('physicians_find_a_physicians_item_mobile', array('items' => $value, 'level' => $data['level'] + 1));
+      $attributes = array('class' => $first . ' collapsed');
+    }
+    $content .= '<li ' . drupal_attributes($attributes) . '>' . $item . '</li>';
+    $first = '';
+  }
+  $content .= '</ul>';
+  return $content;
+}
+
+/**
+ * theme for separator
+ * @return string
+ */
+function theme_physicians_find_a_physicians_item_separator() {
+  return '<div class="physicians-item-separator"><hr></div>';
+}
+
+function theme_physicians_find_a_physicians_items($data) {
+  global $theme_key;
+  $result = array();
+  $result_last = array();
+  if (isset($data['show'])) {
+    $show = $data['show'];
+    $data['list_name'] = $show;
+  }
+  else {
+    $show = '';
+  }
+  if ($data['list_name'] == 'Location' ||  $data['list_name'] == 'Speciality' || !empty($show) ) {
+    switch ($data['list_name']) {
+      case 'Speciality':
+      case 'dropdown':
+        $select_name = 'Select a Specialty';
+        $select_sub = 'Speciality';
+        break;
+      case 'Location':
+        $select_name = 'Select a Location';
+        $select_sub = 'Location';
+        break;        
+      default:
+        $select_name = '';
+        break;
+    }
+    foreach ($data['tree'][$select_name] as $key => $val) {
+       $result_array = array();
+       foreach ($val as $key2 => $value) {
+         $title = explode(",",trim($value['name']));
+         if (isset($title[0]) && !empty($title[0])) {
+           $last_name = explode(" ",trim($title[0]));
+           if (strlen(end($last_name)) <= 3 && end($last_name)!= 'Low') {
+             array_pop($last_name);
+           }
+           $result_array[end($last_name) . ' ' . $value['name']] = array('name' => $value['name'], 'nid' => $value['nid']);
+         }
+         else {
+           $result_array[][$value['name']] = array('name' => $value['name'], 'nid' => $value['nid']);
+         }
+       }
+     ksort($result_array);
+     $result[$key] = $result_array;
+    }
+    $result_last['tree'][$select_name] = $result;
+    $result_last['list_name'] = $select_sub;    
+  }
+  if ($theme_key == 'mcbride_mobile') {
+    return theme('physicians_find_a_physicians_items_mobile', $result_last ? $result_last : $data);
+  }
+  else {
+    return theme('physicians_find_a_physicians_items_full', $result_last ? $result_last : $data);
+  }
+}
+
+function theme_physicians_find_a_physicians_item($data) {
+  global $theme_key;
+
+  if ($theme_key == 'mcbride_mobile') {
+    return theme('physicians_find_a_physicians_item_mobile', $data);
+  }
+  else {
+    return theme('physicians_find_a_physicians_item_full', $data);
+  }
+}

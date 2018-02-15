@@ -1,0 +1,13 @@
+diff --git a/captcha.module b/captcha.module
+index 87124d0..f1a1f6a 100644
+--- a/captcha.module
++++ b/captcha.module
+@@ -531,7 +531,7 @@ function _captcha_get_posted_captcha_info($element, $form_state, $this_form_id)
+           array(':csid' => $posted_captcha_sid)
+         )->fetchField();
+         if ($expected_captcha_token !== $posted_captcha_token) {
+-          drupal_set_message(t('CAPTCHA session reuse attack detected.'), 'error');
++          drupal_set_message(t('The answer you entered for the CAPTCHA was not correct.'), 'error');
+           // Invalidate the CAPTCHA session.
+           $posted_captcha_sid = NULL;
+         }

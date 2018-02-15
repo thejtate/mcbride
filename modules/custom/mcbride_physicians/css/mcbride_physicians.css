@@ -1,0 +1,19 @@
+.physicians-find-a-physicians-collapsible span{
+    display: block;
+}
+
+.physicians-find-a-physicians-collapsible ul {
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+.physicians-find-a-physicians-collapsible ul li {
+    margin: 0;
+    padding: 0;
+}
+.physicians-find-a-physicians-collapsible ul ul ul {
+    position: absolute;
+}
+.middle-content .physicians-find-a-physicians-collapsible ul ul ul {
+    position: relative!important;
+}

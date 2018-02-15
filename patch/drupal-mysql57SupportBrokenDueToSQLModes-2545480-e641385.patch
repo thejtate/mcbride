@@ -1,0 +1,13 @@
+diff --git a/includes/database/mysql/database.inc b/includes/database/mysql/database.inc
+index 0b84f27..7821978 100644
+--- a/includes/database/mysql/database.inc
++++ b/includes/database/mysql/database.inc
+@@ -76,7 +76,7 @@ class DatabaseConnection_mysql extends DatabaseConnection {
+       'init_commands' => array(),
+     );
+     $connection_options['init_commands'] += array(
+-      'sql_mode' => "SET sql_mode = 'ANSI,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'",
++      'sql_mode' => "SET sql_mode = 'REAL_AS_FLOAT,PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER'",
+     );
+     // Set connection options.
+     $this->exec(implode('; ', $connection_options['init_commands']));

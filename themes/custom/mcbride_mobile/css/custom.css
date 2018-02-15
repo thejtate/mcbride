@@ -1,0 +1,248 @@
+/* Social icons */
+.social li {
+  margin: 0 0 0 10px !important;
+}
+
+/* End for Social icons */
+
+/* Sub menu */
+.block-about-menu li {
+  list-style: none !important;
+}
+
+.block-about-menu li.first a,
+.block-about-menu li.last a {
+  margin-left: 0 !important;
+}
+
+/* End for Sub menu */
+
+/* All pages */
+.title-notice {
+  text-transform: none;
+}
+
+.field-collection-container {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.field-collection-view {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+
+.field-collection-container .field-items .field-item {
+  margin-bottom: 0;
+}
+
+/* End for All pages */
+
+/* Main page */
+.node-physician-owned img {
+  width: 129px;
+  height: auto;
+}
+
+/* End for main page */
+/* Privacy page */
+.node-common-page .field-name-body h3 {
+  color: #5E4F2F;
+  font: 0.875em/1.413em "CabinMedium", sans-serif;
+  font-weight: bold;
+  font-family: 'MerriweatherRegular', sans-serif;
+}
+
+.node-common-page .field-name-body .uppercase-notice {
+  font-weight: bold;
+}
+
+/* Patients-Hospital visitors page*/
+.schedule-days .content p {
+  float: left;
+}
+
+.block-content p.remark {
+  font: 0.813em 'CabinMediumItalic', sans-serif;
+}
+
+.blue-text p {
+  color: #5c83a1;
+  font: 0.938em/1.313em "MerriweatherBold", sans-serif;
+  margin-bottom: 0;
+  width: 200px;
+}
+
+.blue-text h5 {
+  color: #5C83A1;
+  font: 0.938em/1.313em "MerriweatherBold", sans-serif;
+  margin-bottom: 1.313em;
+  width: 200px;
+}
+
+.node-locations .blue-text p {
+  color: #5E4F2F;
+  font: 0.913em 'CabinMediumItalic', sans-serif;
+  width: 100%;
+}
+
+.node-locations-landing-page .blue-text p {
+  color: #5E4F2F;
+  font: 0.913em 'CabinMediumItalic', sans-serif;
+  width: 100%;
+}
+
+.node-locations-landing-page .block-item:after {
+  padding-top: 1.438em;
+}
+
+.node-locations-landing-page .block-item.first:after {
+  padding-top: 0;
+}
+
+.block-content .block-news li .date {
+  text-transform: uppercase;
+}
+
+/* Make an apt */
+body.page-node-92.node-type-webform .form-item, .form-actions {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+body.page-node-92.node-type-webform .form-item.form-item-select {
+  margin-bottom: 15px;
+}
+
+/* End of Make an apt */
+.appointments p a {
+  color: #5E4F2F;
+  font: 0.938em 'MerriweatherRegular', sans-serif;
+}
+
+/* Physican */
+.physicians-find-a-physicians-items ul li.collapsed,
+.physicians-find-a-physicians-items ul li.expanded {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+body.section-location .button_request {
+  clear: both;
+}
+
+.node-type-locations-landing-page .block-map-none {
+  clear: both;
+  width: 274px !important;
+  height: 238px;
+}
+
+.node-type-locations-landing-page .block-map-none a {
+  clear: both;
+  float: right;
+  text-decoration: none;
+  color: #5c83a1;
+  font: 11px 'CabinSemiBold', sans-serif;
+  padding-right: 4px;
+}
+
+.node-type-locations-landing-page .block-map-none {
+  visibility: hidden;
+  height: 0px;
+}
+
+.node-type-locations-landing-page .block-map-none.current {
+  visibility: visible;
+  height: 100%;
+}
+
+.webform-container-inline div.hidden {
+  display: none;
+}
+
+.webform-component-select div.hidden {
+  display: none;
+}
+
+.webform-client-form .form-item-select-list {
+  padding: 0;
+}
+
+.form-item-select-list .title-list + ul li:first-child {
+  display: none;
+}
+
+.node-physician .button_request {
+  clear: both;
+}
+
+.block-item div.description,
+.block-item div.description a {
+  font: 0.9em/1.5em "CabinSemiBoldItalic", sans-serif;
+  color: #B59F64;
+  margin-bottom: 0.6em;
+}
+
+.block-content form .form-item .form-text.error {
+  border: 2px solid red;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+.video h4 {
+  font: 0.813em/1.438em "CabinBold", sans-serif;
+  color: #b59f64;
+  text-transform: uppercase;
+}
+
+.block-img {
+  text-align: center;
+}
+
+.block-img a img{
+  width: 100px;
+}
+
+form#payment-form .form-radios {
+  margin-bottom: 10px;
+}
+
+form#payment-form .form-radios div.form-type-radio.form-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+form#payment-form .form-radios div.form-type-radio.form-item label {
+  float: left;
+  font-family: CabinBold;
+  font-size: 13px;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+.ui-datepicker-calendar .ui-state-default, .ui-datepicker-calendar .ui-widget-content .ui-state-default, .ui-datepicker-calendar .ui-widget-header .ui-state-default, .ui-datepicker-calendar .ui-state-default::before {
+  background: none;
+}
+
+.payment-submit input[type="submit"] {
+  background: #fff;
+  border: 1px solid #b8a166;
+  padding: 6px 8px;
+  border-radius: 0;
+  line-height: 1.2;
+  appearance: none;
+  box-shadow: none;
+}
+
+/* Task https://funneleyes.com/node/94241 */
+.page-node-130 .node-common-page ul li {
+  margin-bottom: 10px;
+}
